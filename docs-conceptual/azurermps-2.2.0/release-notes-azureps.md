@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell-Änderungsprotokoll | Microsoft-Dokumentation"
-description: "Hierbei handelt es sich um einen Verlauf der Änderungen, die in der neuesten Version an Azure PowerShell vorgenommen wurden."
+title: Azure PowerShell-Änderungsprotokoll | Microsoft-Dokumentation
+description: Hierbei handelt es sich um einen Verlauf der Änderungen, die in der neuesten Version an Azure PowerShell vorgenommen wurden.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 143d92384fd270711378f6741ba59e88c12833d1
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Versionshinweise
 
@@ -62,7 +62,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     + Remove-AzureRmVirtualNetworkGatewayIpConfig
   - Ein neues Cmdlet wurde hinzugefügt.
     + Test-AzureRmPrivateIpAddressAvailability
-* Ressourcen
+* angeben
   - Zonen in Anbieter- und Ressourcen-Cmdlets werden unterstützt.
     + Get-AzureRmProvider
     + New-AzureRmResource
@@ -75,7 +75,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   - Neue Cmdlets wurden hinzugefügt, um die Aktivierung/Deaktivierung von „GeoBackupPolicy“ für SQL Azure Data Warehouses zu unterstützen.
     + Get-AzureRmSqlDatabaseGeoBackupPolicy
     + Set-AzureRmSqlDatabaseGeoBackupPolicy
-  - Neue Cmdlets für Azure SQL-Ratgeber und empfohlene Aktions-APIs wurden hinzugefügt.
+  - Neue Cmdlets für Azure SQL Advisor und empfohlene Aktions-APIs wurden hinzugefügt.
     + Get-AzureRmSqlDatabaseAdvisor
     + Get-AzureRmSqlElasticPoolAdvisor
     + Get-AzureRmSqlServerAdvisor

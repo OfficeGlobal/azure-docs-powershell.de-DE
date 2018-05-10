@@ -64,7 +64,7 @@ Diese Änderung betrifft folgende Cmdlets:
 - Stop-AzureRmResourceGroupDeployment
 - Unregister-AzureRmResourceProvider
 
-**Storage**
+**Speicher**
 - Remove-AzureStorageContainerStoredAccessPolicy
 - Remove-AzureStorageQueueStoredAccessPolicy
 - Remove-AzureStorageShareStoredAccessPolicy
@@ -174,7 +174,7 @@ Diese Änderung betrifft folgende Cmdlets:
 - Set-AzureRmSqlElasticPool
 - Set-AzureRmSqlServer
 
-**Storage**
+**Speicher**
 - New-AzureRmStorageAccount
 - Set-AzureRmStorageAccount
 

@@ -1,6 +1,6 @@
 ---
 title: Erste Schritte mit Azure PowerShell | Microsoft-Dokumentation
-description: 
+description: ''
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
 ms.openlocfilehash: cbe8507a89c048351dab64e28552596ed802bf21
-ms.sourcegitcommit: 5fe9a579d2e0d1cb5a05aadaeba5db784f1b18fa
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="getting-started-with-azure-powershell"></a>Erste Schritte mit Azure PowerShell
 
@@ -367,7 +367,7 @@ Weitere Informationen zu den Verwendungsmöglichkeiten von Azure PowerShell find
 * [Anmelden mit Azure PowerShell](authenticate-azureps.md)
 * [Verwalten von Azure-Abonnements mit Azure PowerShell](manage-subscriptions-azureps.md)
 * [Erstellen eines Azure-Dienstprinzipals mit Azure PowerShell](create-azure-service-principal-azureps.md)
-* Informationen zum Migrieren einer älteren Version finden Sie in den Versionshinweisen: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Lesen Sie die Versionshinweise zur Migration von einer älteren Version: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Hilfe aus der Community:
   * [Azure-Forum auf MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
