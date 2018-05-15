@@ -12,7 +12,6 @@ ms.manager: carmonm
 ms.date: 08/31/2017
 ms.openlocfilehash: cd6b57ff6234895ec4f7a4200f9df0852b2280c2
 ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
-ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/08/2018
 ---

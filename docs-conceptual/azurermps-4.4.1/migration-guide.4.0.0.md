@@ -1,24 +1,24 @@
-# <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Grundlegende Änderungen für Microsoft Azure PowerShell 4.0.0
+# <a name="breaking-changes-for-microsoft-azure-powershell-400"></a><span data-ttu-id="5fcdb-101">Grundlegende Änderungen für Microsoft Azure PowerShell 4.0.0</span><span class="sxs-lookup"><span data-stu-id="5fcdb-101">Breaking changes for Microsoft Azure PowerShell 4.0.0</span></span>
 
-Dieses Dokument informiert über grundlegende Änderungen und fungiert als Migrationsleitfaden für Kunden mit Microsoft Azure PowerShell-Cmdlets. In den einzelnen Abschnitten werden jeweils der Grund für die grundlegende Änderung und der Migrationspfad des geringsten Widerstands beschrieben. Ausführlichen Kontext finden Sie unter der Pull-Anforderung für die jeweilige Änderung.
+<span data-ttu-id="5fcdb-102">Dieses Dokument informiert über grundlegende Änderungen und fungiert als Migrationsleitfaden für Kunden mit Microsoft Azure PowerShell-Cmdlets.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-102">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="5fcdb-103">In den einzelnen Abschnitten werden jeweils der Grund für die grundlegende Änderung und der Migrationspfad des geringsten Widerstands beschrieben.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-103">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="5fcdb-104">Ausführlichen Kontext finden Sie unter der Pull-Anforderung für die jeweilige Änderung.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-104">For in-depth context, please refer to the pull request associated with each change.</span></span>
 
-## <a name="table-of-contents"></a>Inhaltsverzeichnis
+## <a name="table-of-contents"></a><span data-ttu-id="5fcdb-105">Inhaltsverzeichnis</span><span class="sxs-lookup"><span data-stu-id="5fcdb-105">Table of Contents</span></span>
 
-- [Grundlegende Änderungen für Compute-Cmdlets](#breaking-changes-to-compute-cmdlets)
-- [Grundlegende Änderungen für EventHub-Cmdlets](#breaking-changes-to-eventhub-cmdlets)
-- [Grundlegende Änderungen für Insights-Cmdlets](#breaking-changes-to-insights-cmdlets)
-- [Grundlegende Änderungen für Network-Cmdlets](#breaking-changes-to-network-cmdlets)
-- [Grundlegende Änderungen für ServiceBus-Cmdlets](#breaking-changes-to-servicebus-cmdlets)
-- [Grundlegende Änderungen für Sql-Cmdlets](#breaking-changes-to-sql-cmdlets)
-- [Grundlegende Änderungen für Storage-Cmdlets](#breaking-changes-to-storage-cmdlets)
-- [Grundlegende Änderungen für Profile-Cmdlets](#breaking-changes-to-profile-cmdlets)
-## <a name="breaking-changes-to-compute-cmdlets"></a>Grundlegende Änderungen für Compute-Cmdlets
+- [<span data-ttu-id="5fcdb-106">Grundlegende Änderungen für Compute-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-106">Breaking changes to Compute cmdlets</span></span>](#breaking-changes-to-compute-cmdlets)
+- [<span data-ttu-id="5fcdb-107">Grundlegende Änderungen für EventHub-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-107">Breaking changes to EventHub cmdlets</span></span>](#breaking-changes-to-eventhub-cmdlets)
+- [<span data-ttu-id="5fcdb-108">Grundlegende Änderungen für Insights-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-108">Breaking changes to Insights cmdlets</span></span>](#breaking-changes-to-insights-cmdlets)
+- [<span data-ttu-id="5fcdb-109">Grundlegende Änderungen für Network-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-109">Breaking changes to Network cmdlets</span></span>](#breaking-changes-to-network-cmdlets)
+- [<span data-ttu-id="5fcdb-110">Grundlegende Änderungen für ServiceBus-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-110">Breaking changes to ServiceBus cmdlets</span></span>](#breaking-changes-to-servicebus-cmdlets)
+- [<span data-ttu-id="5fcdb-111">Grundlegende Änderungen für Sql-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-111">Breaking changes to Sql cmdlets</span></span>](#breaking-changes-to-sql-cmdlets)
+- [<span data-ttu-id="5fcdb-112">Grundlegende Änderungen für Storage-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-112">Breaking changes to Storage cmdlets</span></span>](#breaking-changes-to-storage-cmdlets)
+- [<span data-ttu-id="5fcdb-113">Grundlegende Änderungen für Profile-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-113">Breaking Changes to Profile Cmdlets</span></span>](#breaking-changes-to-profile-cmdlets)
+## <a name="breaking-changes-to-compute-cmdlets"></a><span data-ttu-id="5fcdb-114">Grundlegende Änderungen für Compute-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-114">Breaking changes to Compute cmdlets</span></span>
 
-Diese Version hat Auswirkungen auf folgende Ausgabetypen:
+<span data-ttu-id="5fcdb-115">Diese Version hat Auswirkungen auf folgende Ausgabetypen:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-115">The following output types were affected this release:</span></span>
 
-### <a name="psvirtualmachine"></a>PSVirtualMachine
-- Die übergeordneten Eigenschaften `DataDiskNames` und `NetworkInterfaceIDs` des Objekts `PSVirtualMachine` wurden aus dem Ausgabetyp entfernt. Diese Eigenschaften waren schon immer in den Eigenschaften `StorageProfile` und `NetworkProfile` des Objekts `PSVirtualMachine` verfügbar und müssen fortan für den Zugriff auf die Eigenschaften verwendet werden.
-- Diese Änderung wirkt sich auf folgende Cmdlets aus:
+### <a name="psvirtualmachine"></a><span data-ttu-id="5fcdb-116">PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="5fcdb-116">PSVirtualMachine</span></span>
+- <span data-ttu-id="5fcdb-117">Die übergeordneten Eigenschaften `DataDiskNames` und `NetworkInterfaceIDs` des Objekts `PSVirtualMachine` wurden aus dem Ausgabetyp entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-117">Top level properties `DataDiskNames` and `NetworkInterfaceIDs` of nthe `PSVirtualMachine` object have been removed from the output type.</span></span> <span data-ttu-id="5fcdb-118">Diese Eigenschaften waren schon immer in den Eigenschaften `StorageProfile` und `NetworkProfile` des Objekts `PSVirtualMachine` verfügbar und müssen fortan für den Zugriff auf die Eigenschaften verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-118">These properties have always been available in the `StorageProfile` and `NetworkProfile` properties of the `PSVirtualMachine` object and will be the way they will need to be accessed going forward.</span></span>
+- <span data-ttu-id="5fcdb-119">Diese Änderung wirkt sich auf folgende Cmdlets aus:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-119">This change affects the following cmdlets:</span></span>
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`
     - `Get-AzureRmVM`
@@ -36,25 +36,25 @@ $vm.StorageProfile.DataDisks | Select -Property Name
 $vm.NetworkProfile.NetworkInterfaces | Select -Property Id
 ```
 
-## <a name="breaking-changes-to-eventhub-cmdlets"></a>Grundlegende Änderungen für EventHub-Cmdlets
+## <a name="breaking-changes-to-eventhub-cmdlets"></a><span data-ttu-id="5fcdb-120">Grundlegende Änderungen für EventHub-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-120">Breaking changes to EventHub cmdlets</span></span>
 
-Diese Version hat Auswirkungen auf folgende Cmdlets:
+<span data-ttu-id="5fcdb-121">Diese Version hat Auswirkungen auf folgende Cmdlets:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-121">The following cmdlets were affected this release:</span></span>
 
-### <a name="get-azurermeventhubnamespace"></a>Get-AzureRmEventHubNamespace
-- Die Eigenschaft `ResourceGroupName` wurde aus dem Ausgabetyp `NamespaceAttributes` entfernt.
+### <a name="get-azurermeventhubnamespace"></a><span data-ttu-id="5fcdb-122">Get-AzureRmEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="5fcdb-122">Get-AzureRmEventHubNamespace</span></span>
+- <span data-ttu-id="5fcdb-123">Die Eigenschaft `ResourceGroupName` wurde aus dem Ausgabetyp `NamespaceAttributes` entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-123">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
 
-### <a name="new-azurermeventhubnamespace"></a>New-AzureRmEventHubNamespace
-- Die Eigenschaft `ResourceGroupName` wurde aus dem Ausgabetyp `NamespaceAttributes` entfernt.
+### <a name="new-azurermeventhubnamespace"></a><span data-ttu-id="5fcdb-124">New-AzureRmEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="5fcdb-124">New-AzureRmEventHubNamespace</span></span>
+- <span data-ttu-id="5fcdb-125">Die Eigenschaft `ResourceGroupName` wurde aus dem Ausgabetyp `NamespaceAttributes` entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-125">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
 
-## <a name="breaking-changes-to-insights-cmdlets"></a>Grundlegende Änderungen für Insights-Cmdlets
+## <a name="breaking-changes-to-insights-cmdlets"></a><span data-ttu-id="5fcdb-126">Grundlegende Änderungen für Insights-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-126">Breaking changes to Insights cmdlets</span></span>
 
-Diese Version hat Auswirkungen auf folgende Cmdlets:
+<span data-ttu-id="5fcdb-127">Diese Version hat Auswirkungen auf folgende Cmdlets:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-127">The following cmdlets were affected this release:</span></span>
     
-### <a name="get-azurermusage"></a>Get-AzureRmUsage
-- Dieses Cmdlet ist veraltet.
+### <a name="get-azurermusage"></a><span data-ttu-id="5fcdb-128">Get-AzureRmUsage</span><span class="sxs-lookup"><span data-stu-id="5fcdb-128">Get-AzureRmUsage</span></span>
+- <span data-ttu-id="5fcdb-129">Dieses Cmdlet ist veraltet.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-129">This cmdlet has been deprecated.</span></span>
 
-### <a name="remove-azurermalertrule"></a>Remove-AzureRmAlertRule
-- Die Ausgabe dieses Cmdlets wurde von einer Liste mit einem einzelnen Objekt in ein einzelnes Objekt geändert, das die Anforderungs-ID und den Statuscode enthält.
+### <a name="remove-azurermalertrule"></a><span data-ttu-id="5fcdb-130">Remove-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="5fcdb-130">Remove-AzureRmAlertRule</span></span>
+- <span data-ttu-id="5fcdb-131">Die Ausgabe dieses Cmdlets wurde von einer Liste mit einem einzelnen Objekt in ein einzelnes Objekt geändert, das die Anforderungs-ID und den Statuscode enthält.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-131">The output of this cmdlet has changed from a list with a single object to a single object; this object includes the requestId, and status code.</span></span>
     
 ```powershell
 # Old  
@@ -71,11 +71,11 @@ $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
     
-### <a name="add-azurermlogalertrule"></a>Add-AzureRmLogAlertRule
-- Dieses Cmdlet ist veraltet.
+### <a name="add-azurermlogalertrule"></a><span data-ttu-id="5fcdb-132">Add-AzureRmLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="5fcdb-132">Add-AzureRmLogAlertRule</span></span>
+- <span data-ttu-id="5fcdb-133">Dieses Cmdlet ist veraltet.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-133">This cmdlet has been deprecated.</span></span>
     
-### <a name="get-azurermalertrule"></a>Get-AzureRmAlertRule
-- Jedes Element der Ausgabe dieses Cmdlets (eine Liste mit Objekten) wird vereinfacht. Anstelle von Objekten mit der Struktur `{ Id, Location, Name, Tags, Properties }` werden also Objekte mit der Struktur `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}` zurückgegeben. Diese umfasst alle Attribute einer Azure-Ressource sowie alle Attribute eines AlertRuleResource-Objekts auf der obersten Ebene.
+### <a name="get-azurermalertrule"></a><span data-ttu-id="5fcdb-134">Get-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="5fcdb-134">Get-AzureRmAlertRule</span></span>
+- <span data-ttu-id="5fcdb-135">Jedes Element der Ausgabe dieses Cmdlets (eine Liste mit Objekten) wird vereinfacht. Anstelle von Objekten mit der Struktur `{ Id, Location, Name, Tags, Properties }` werden also Objekte mit der Struktur `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}` zurückgegeben. Diese umfasst alle Attribute einer Azure-Ressource sowie alle Attribute eines AlertRuleResource-Objekts auf der obersten Ebene.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-135">Each element of the the output (a list of objects) of this cmdlet is flattened, i.e. instead of returning objects with the structure `{ Id, Location, Name, Tags, Properties }` it will return objects with the structure `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, which is all of the attributes of an Azure Resource plus all of the attributes of an AlertRuleResource at the top level.</span></span>
     
 ```powershell
 # Old
@@ -106,8 +106,8 @@ if ($rules -and $rules.count -ge 1)
 }
 ```
     
-### <a name="get-azurermautoscalesetting"></a>Get-AzureRmAutoscaleSetting
-- Das Feld `AutoscaleSettingResourceName` ist veraltet, da es immer denselben Wert besitzt wie das Feld `Name`.
+### <a name="get-azurermautoscalesetting"></a><span data-ttu-id="5fcdb-136">Get-AzureRmAutoscaleSetting</span><span class="sxs-lookup"><span data-stu-id="5fcdb-136">Get-AzureRmAutoscaleSetting</span></span>
+- <span data-ttu-id="5fcdb-137">Das Feld `AutoscaleSettingResourceName` ist veraltet, da es immer denselben Wert besitzt wie das Feld `Name`.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-137">The `AutoscaleSettingResourceName` field is deprecated since it always has the same value as the `Name` field.</span></span>
 
 ```powershell
 # Old  
@@ -124,8 +124,8 @@ $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 Write-Host $s1.Name
 ```
     
-### <a name="remove-azurermlogprofile"></a>Remove-AzureRmLogProfile
-- Die Ausgabe dieses Cmdlets ändert sich von `Boolean` in ein Objekt mit `RequestId` und `StatusCode`.
+### <a name="remove-azurermlogprofile"></a><span data-ttu-id="5fcdb-138">Remove-AzureRmLogProfile</span><span class="sxs-lookup"><span data-stu-id="5fcdb-138">Remove-AzureRmLogProfile</span></span>
+- <span data-ttu-id="5fcdb-139">Die Ausgabe dieses Cmdlets ändert sich von `Boolean` in ein Objekt mit `RequestId` und `StatusCode`.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-139">The output of this cmdlet will change from `Boolean` to and object containing `RequestId` and `StatusCode`</span></span>
 
 ```powershell
 # Old  
@@ -145,8 +145,8 @@ $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
     
-### <a name="add-azurermlogprofile"></a>Add-AzureRmLogProfile
-- Die Ausgabe dieses Cmdlets ändert sich von einem Objekt mit Anforderungs-ID, Statuscode und aktualisierter oder neu erstellter Ressource.
+### <a name="add-azurermlogprofile"></a><span data-ttu-id="5fcdb-140">Add-AzureRmLogProfile</span><span class="sxs-lookup"><span data-stu-id="5fcdb-140">Add-AzureRmLogProfile</span></span>
+- <span data-ttu-id="5fcdb-141">Die Ausgabe dieses Cmdlets ändert sich von einem Objekt mit Anforderungs-ID, Statuscode und aktualisierter oder neu erstellter Ressource.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-141">The output of this cmdlet will change from an object that includes the requestId, status code, and the updated or newly created resource</span></span>
     
 ```powershell
 # Old  
@@ -161,8 +161,8 @@ $a = $s1.NewResource.ServiceBusRuleId
     
 ```
     
-### <a name="set-azurermdiagnosticsettings"></a>Set-AzureRmDiagnosticSettings
-- Der Befehl wird in `Update-AzureRmDiagnsoticSettings` umbenannt.
+### <a name="set-azurermdiagnosticsettings"></a><span data-ttu-id="5fcdb-142">Set-AzureRmDiagnosticSettings</span><span class="sxs-lookup"><span data-stu-id="5fcdb-142">Set-AzureRmDiagnosticSettings</span></span>
+- <span data-ttu-id="5fcdb-143">Der Befehl wird in `Update-AzureRmDiagnsoticSettings` umbenannt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-143">The command is going to be renamed to `Update-AzureRmDiagnsoticSettings`</span></span>
 
 ```powershell
 # Old
@@ -172,12 +172,12 @@ Set-AzureRmDiagnosticSettings
 Update-AzureRmDiagnosticSettings
 ```
 
-## <a name="breaking-changes-to-network-cmdlets"></a>Grundlegende Änderungen für Network-Cmdlets
+## <a name="breaking-changes-to-network-cmdlets"></a><span data-ttu-id="5fcdb-144">Grundlegende Änderungen für Network-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-144">Breaking changes to Network cmdlets</span></span>
 
-Diese Version hat Auswirkungen auf folgende Cmdlets:
+<span data-ttu-id="5fcdb-145">Diese Version hat Auswirkungen auf folgende Cmdlets:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-145">The following cmdlets were affected this release:</span></span>
 
-### <a name="new-azurermvirtualnetworkgatewayconnection"></a>New-AzureRmVirtualNetworkGatewayConnection
-- Der Parameter `EnableBgp` wurde geändert und akzeptiert nun einen Wert vom Typ `boolean` anstelle eines Werts vom Typ `string`.
+### <a name="new-azurermvirtualnetworkgatewayconnection"></a><span data-ttu-id="5fcdb-146">New-AzureRmVirtualNetworkGatewayConnection</span><span class="sxs-lookup"><span data-stu-id="5fcdb-146">New-AzureRmVirtualNetworkGatewayConnection</span></span>
+- <span data-ttu-id="5fcdb-147">Der Parameter `EnableBgp` wurde geändert und akzeptiert nun einen Wert vom Typ `boolean` anstelle eines Werts vom Typ `string`.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-147">`EnableBgp` parameter has been changed to take a `boolean` instead of a `string`</span></span>
 
 ```powershell
 # Old
@@ -187,24 +187,24 @@ New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1"
 New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1" -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localnetGateway -ConnectionType IPsec -SharedKey "key" -EnableBgp $true
 ```
 
-## <a name="breaking-changes-to-servicebus-cmdlets"></a>Grundlegende Änderungen für ServiceBus-Cmdlets
+## <a name="breaking-changes-to-servicebus-cmdlets"></a><span data-ttu-id="5fcdb-148">Grundlegende Änderungen für ServiceBus-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-148">Breaking changes to ServiceBus cmdlets</span></span>
 
-Diese Version hat Auswirkungen auf folgende Cmdlets:
+<span data-ttu-id="5fcdb-149">Diese Version hat Auswirkungen auf folgende Cmdlets:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-149">The following cmdlets were affected this release:</span></span>
 
-### <a name="get-azurermservicebusnamespace"></a>Get-AzureRmServiceBusNamespace
-- Die Eigenschaft `ResourceGroupName` wurde aus dem Ausgabetyp `NamespaceAttributes` entfernt.
+### <a name="get-azurermservicebusnamespace"></a><span data-ttu-id="5fcdb-150">Get-AzureRmServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="5fcdb-150">Get-AzureRmServiceBusNamespace</span></span>
+- <span data-ttu-id="5fcdb-151">Die Eigenschaft `ResourceGroupName` wurde aus dem Ausgabetyp `NamespaceAttributes` entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-151">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
 
-### <a name="new-azurermservicebusnamespace"></a>New-AzureRmServiceBusNamespace
+### <a name="new-azurermservicebusnamespace"></a><span data-ttu-id="5fcdb-152">New-AzureRmServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="5fcdb-152">New-AzureRmServiceBusNamespace</span></span>
 
-- Die Eigenschaft `ResourceGroupName` wurde aus dem Ausgabetyp `NamespaceAttributes` entfernt.
+- <span data-ttu-id="5fcdb-153">Die Eigenschaft `ResourceGroupName` wurde aus dem Ausgabetyp `NamespaceAttributes` entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-153">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
 
-## <a name="breaking-changes-to-sql-cmdlets"></a>Grundlegende Änderungen für Sql-Cmdlets
+## <a name="breaking-changes-to-sql-cmdlets"></a><span data-ttu-id="5fcdb-154">Grundlegende Änderungen für Sql-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-154">Breaking changes to Sql cmdlets</span></span>
 
-Diese Version hat Auswirkungen auf folgende Cmdlets:
+<span data-ttu-id="5fcdb-155">Diese Version hat Auswirkungen auf folgende Cmdlets:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-155">The following cmdlets were affected this release:</span></span>
 
-### <a name="new-azurermsqldatabasefailovergroup"></a>New-AzureRmSqlDatabaseFailoverGroup
-- Der Parameter `Tag` wurde entfernt.
-- Der Parameter `GracePeriodWithDataLossHour` wurde in `GracePeriodWithDataLossHours` umbenannt.
+### <a name="new-azurermsqldatabasefailovergroup"></a><span data-ttu-id="5fcdb-156">New-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="5fcdb-156">New-AzureRmSqlDatabaseFailoverGroup</span></span>
+- <span data-ttu-id="5fcdb-157">Der Parameter `Tag` wurde entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-157">`Tag` parameter has been removed</span></span>
+- <span data-ttu-id="5fcdb-158">Der Parameter `GracePeriodWithDataLossHour` wurde in `GracePeriodWithDataLossHours` umbenannt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-158">`GracePeriodWithDataLossHour` parameter has been renamed to `GracePeriodWithDataLossHours`</span></span>
 
 ```powershell
 # Old
@@ -214,9 +214,9 @@ New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -PartnerServerName server2 -FailoverPolicy Automatic -GracePeriodWithDataLossHours 1
 ```
 
-### <a name="set-azurermsqldatabasefailovergroup"></a>Set-AzureRmSqlDatabaseFailoverGroup
-- Der Parameter `Tag` wurde entfernt.
-- Der Parameter `GracePeriodWithDataLossHour` wurde in `GracePeriodWithDataLossHours` umbenannt.
+### <a name="set-azurermsqldatabasefailovergroup"></a><span data-ttu-id="5fcdb-159">Set-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="5fcdb-159">Set-AzureRmSqlDatabaseFailoverGroup</span></span>
+- <span data-ttu-id="5fcdb-160">Der Parameter `Tag` wurde entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-160">`Tag` parameter has been removed</span></span>
+- <span data-ttu-id="5fcdb-161">Der Parameter `GracePeriodWithDataLossHour` wurde in `GracePeriodWithDataLossHours` umbenannt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-161">`GracePeriodWithDataLossHour` parameter has been renamed to `GracePeriodWithDataLossHours`</span></span>
 
 ```powershell
 # Old
@@ -226,8 +226,8 @@ Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -FailoverPolicy Automatic -GracePeriodWithDataLossHours 1
 ```
 
-### <a name="add-azurermsqldatabasetofailovergroup"></a>Add-AzureRmSqlDatabaseToFailoverGroup
-- Der Parameter `Tag` wurde entfernt.
+### <a name="add-azurermsqldatabasetofailovergroup"></a><span data-ttu-id="5fcdb-162">Add-AzureRmSqlDatabaseToFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="5fcdb-162">Add-AzureRmSqlDatabaseToFailoverGroup</span></span>
+- <span data-ttu-id="5fcdb-163">Der Parameter `Tag` wurde entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-163">`Tag` parameter has been removed</span></span>
 
 ```powershell
 # Old
@@ -237,8 +237,8 @@ Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 
 Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -Database $db1
 ```
 
-###  <a name="remove-azurermsqldatabasefromfailovergroup"></a>Remove-AzureRmSqlDatabaseFromFailoverGroup
-- Der Parameter `Tag` wurde entfernt.
+###  <a name="remove-azurermsqldatabasefromfailovergroup"></a><span data-ttu-id="5fcdb-164">Remove-AzureRmSqlDatabaseFromFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="5fcdb-164">Remove-AzureRmSqlDatabaseFromFailoverGroup</span></span>
+- <span data-ttu-id="5fcdb-165">Der Parameter `Tag` wurde entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-165">`Tag` parameter has been removed</span></span>
 
 ```powershell
 # Old
@@ -248,9 +248,9 @@ Remove-AzureRmSqlDatabaseFromFailoverGroup -ResourceGroupName rg -ServerName ser
 Remove-AzureRmSqlDatabaseFromFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -Database $db1
 ```
 
-### <a name="remove-azurermsqldatabasefailovergroup"></a>Remove-AzureRmSqlDatabaseFailoverGroup
-- Der Parameter `PartnerResourceGroupName` wurde entfernt.
-- Der Parameter `PartnerServerName` wurde entfernt.
+### <a name="remove-azurermsqldatabasefailovergroup"></a><span data-ttu-id="5fcdb-166">Remove-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="5fcdb-166">Remove-AzureRmSqlDatabaseFailoverGroup</span></span>
+- <span data-ttu-id="5fcdb-167">Der Parameter `PartnerResourceGroupName` wurde entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-167">`PartnerResourceGroupName` parameter has been removed</span></span>
+- <span data-ttu-id="5fcdb-168">Der Parameter `PartnerServerName` wurde entfernt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-168">`PartnerServerName` parameter has been removed</span></span>
 
 ```powershell
 # Old
@@ -260,24 +260,24 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
 Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg
 ```
 
-### <a name="set-azurermsqldatabasethreatdetectionpolicy"></a>Set-AzureRmSqlDatabaseThreatDetectionPolicy
-- Der Wert `Usage_Anomaly` ist für den Parameter `ExcludedDetectionType` nicht mehr gültig.
+### <a name="set-azurermsqldatabasethreatdetectionpolicy"></a><span data-ttu-id="5fcdb-169">Set-AzureRmSqlDatabaseThreatDetectionPolicy</span><span class="sxs-lookup"><span data-stu-id="5fcdb-169">Set-AzureRmSqlDatabaseThreatDetectionPolicy</span></span>
+- <span data-ttu-id="5fcdb-170">Der Wert `Usage_Anomaly` ist für den Parameter `ExcludedDetectionType` nicht mehr gültig.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-170">The value `Usage_Anomaly` is no longer valid for the parameter `ExcludedDetectionType`</span></span>
 
-### <a name="set-azurermsqlserverthreatdetectionpolicy"></a>Set-AzureRmSqlServerThreatDetectionPolicy
-- Der Wert `Usage_Anomaly` ist für den Parameter `ExcludedDetectionType` nicht mehr gültig.
+### <a name="set-azurermsqlserverthreatdetectionpolicy"></a><span data-ttu-id="5fcdb-171">Set-AzureRmSqlServerThreatDetectionPolicy</span><span class="sxs-lookup"><span data-stu-id="5fcdb-171">Set-AzureRmSqlServerThreatDetectionPolicy</span></span>
+- <span data-ttu-id="5fcdb-172">Der Wert `Usage_Anomaly` ist für den Parameter `ExcludedDetectionType` nicht mehr gültig.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-172">The value `Usage_Anomaly` is no longer valid for the parameter `ExcludedDetectionType`</span></span>
 
-## <a name="breaking-changes-to-storage-cmdlets"></a>Grundlegende Änderungen für Storage-Cmdlets
+## <a name="breaking-changes-to-storage-cmdlets"></a><span data-ttu-id="5fcdb-173">Grundlegende Änderungen für Storage-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-173">Breaking changes to Storage cmdlets</span></span>
 
-Diese Version hat Auswirkungen auf folgende Ausgabetypeigenschaften:
+<span data-ttu-id="5fcdb-174">Diese Version hat Auswirkungen auf folgende Ausgabetypeigenschaften:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-174">The following output type properties were affected this release:</span></span>
 
-### <a name="azurestorageblobicloudblobserviceclient"></a>AzureStorageBlob.ICloudBlob.ServiceClient
-- Folgende Eigenschaften wurden aus diesem Typ entfernt. (_Hinweis:_ Sie stehen weiterhin in der Eigenschaft `DefaultRequestOptions` zur Verfügung.)
+### <a name="azurestorageblobicloudblobserviceclient"></a><span data-ttu-id="5fcdb-175">AzureStorageBlob.ICloudBlob.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="5fcdb-175">AzureStorageBlob.ICloudBlob.ServiceClient</span></span>
+- <span data-ttu-id="5fcdb-176">Folgende Eigenschaften wurden aus diesem Typ entfernt. (_Hinweis:_ Sie stehen weiterhin in der Eigenschaft `DefaultRequestOptions` zur Verfügung.)</span><span class="sxs-lookup"><span data-stu-id="5fcdb-176">The following properties were removed from this type (_note_: they can still be found in `DefaultRequestOptions` property):</span></span>
     - `LocationMode`
     - `MaximumExecutionTime`
     - `ServerTimeout`
     - `ParallelOperationThreadCount`
     - `SingleBlobUploadThresholdInBytes`
-- Diese Änderung wirkt sich auf folgende Cmdlets aus:
+- <span data-ttu-id="5fcdb-177">Diese Änderung wirkt sich auf folgende Cmdlets aus:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-177">This change affects the following cmdlets:</span></span>
     - `Get-AzureStorageBlob`
     - `Get-AzureStorageBlobContent`
     - `Get-AzureStorageBlobCopyState`
@@ -285,36 +285,36 @@ Diese Version hat Auswirkungen auf folgende Ausgabetypeigenschaften:
     - `Start-AzureStorageBlobCopy`
     - `Stop-AzureStorageBlobCopy`
     
-### <a name="azurestoragecontainercloudblobcontainerserviceclient"></a>AzureStorageContainer.CloudBlobContainer.ServiceClient
-- Folgende Eigenschaften wurden aus diesem Typ entfernt. (_Hinweis:_ Sie stehen weiterhin in der Eigenschaft `DefaultRequestOptions` zur Verfügung.)
+### <a name="azurestoragecontainercloudblobcontainerserviceclient"></a><span data-ttu-id="5fcdb-178">AzureStorageContainer.CloudBlobContainer.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="5fcdb-178">AzureStorageContainer.CloudBlobContainer.ServiceClient</span></span>
+- <span data-ttu-id="5fcdb-179">Folgende Eigenschaften wurden aus diesem Typ entfernt. (_Hinweis:_ Sie stehen weiterhin in der Eigenschaft `DefaultRequestOptions` zur Verfügung.)</span><span class="sxs-lookup"><span data-stu-id="5fcdb-179">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
     - `LocationMode`
     - `MaximumExecutionTime`
     - `ServerTimeout`
     - `ParallelOperationThreadCount`
     - `SingleBlobUploadThresholdInBytes`
-- Diese Änderung wirkt sich auf folgende Cmdlets aus:
+- <span data-ttu-id="5fcdb-180">Diese Änderung wirkt sich auf folgende Cmdlets aus:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-180">This change affects the following cmdlets:</span></span>
     - `Get-AzureStorageContainer`
     - `New-AzureStorageContainer`
     - `Set-AzureStorageContainerAcl`
     
-### <a name="azurestoragequeuecloudqueueserviceclient"></a>AzureStorageQueue.CloudQueue.ServiceClient
-- Folgende Eigenschaften wurden aus diesem Typ entfernt. (_Hinweis:_ Sie stehen weiterhin in der Eigenschaft `DefaultRequestOptions` zur Verfügung.)
+### <a name="azurestoragequeuecloudqueueserviceclient"></a><span data-ttu-id="5fcdb-181">AzureStorageQueue.CloudQueue.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="5fcdb-181">AzureStorageQueue.CloudQueue.ServiceClient</span></span>
+- <span data-ttu-id="5fcdb-182">Folgende Eigenschaften wurden aus diesem Typ entfernt. (_Hinweis:_ Sie stehen weiterhin in der Eigenschaft `DefaultRequestOptions` zur Verfügung.)</span><span class="sxs-lookup"><span data-stu-id="5fcdb-182">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
     - `LocationMode`
     - `MaximumExecutionTime`
     - `RetryPolicy`
     - `ServerTimeout`
-- Diese Änderung wirkt sich auf folgende Cmdlets aus:
+- <span data-ttu-id="5fcdb-183">Diese Änderung wirkt sich auf folgende Cmdlets aus:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-183">This change affects the following cmdlets:</span></span>
     - `Get-AzureStorageQueue`
     - `New-AzureStorageQueue`
     
-### <a name="azurestoragetablecloudtableserviceclient"></a>AzureStorageTable.CloudTable.ServiceClient
-- Folgende Eigenschaften wurden aus diesem Typ entfernt. (_Hinweis:_ Sie stehen weiterhin in der Eigenschaft `DefaultRequestOptions` zur Verfügung.)
+### <a name="azurestoragetablecloudtableserviceclient"></a><span data-ttu-id="5fcdb-184">AzureStorageTable.CloudTable.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="5fcdb-184">AzureStorageTable.CloudTable.ServiceClient</span></span>
+- <span data-ttu-id="5fcdb-185">Folgende Eigenschaften wurden aus diesem Typ entfernt. (_Hinweis:_ Sie stehen weiterhin in der Eigenschaft `DefaultRequestOptions` zur Verfügung.)</span><span class="sxs-lookup"><span data-stu-id="5fcdb-185">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
     - `LocationMode`
     - `MaximumExecutionTime`
     - `PayloadFormat`
     - `RetryPolicy`
     - `ServerTimeout`
-- Diese Änderung wirkt sich auf folgende Cmdlets aus:
+- <span data-ttu-id="5fcdb-186">Diese Änderung wirkt sich auf folgende Cmdlets aus:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-186">This change affects the following cmdlets:</span></span>
     - `Get-AzureStorageTable`
     - `New-AzureStorageTable`
     
@@ -332,13 +332,13 @@ $PayloadFormat = (Get-AzureStorageTable -Name $tablename).CloudTable.ServiceClie
 $RetryPolicy = (Get-AzureStorageQueue -Name $queuename).CloudQueue.ServiceClient.DefaultRequestOptions.RetryPolicy
 ```
 
-## <a name="breaking-changes-to-profile-cmdlets"></a>Grundlegende Änderungen für Profile-Cmdlets
+## <a name="breaking-changes-to-profile-cmdlets"></a><span data-ttu-id="5fcdb-187">Grundlegende Änderungen für Profile-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5fcdb-187">Breaking Changes to Profile Cmdlets</span></span>
 
-In dieser Version wurden folgende Cmdlets und Cmdlet-Ausgabetypen geändert:
+<span data-ttu-id="5fcdb-188">In dieser Version wurden folgende Cmdlets und Cmdlet-Ausgabetypen geändert:</span><span class="sxs-lookup"><span data-stu-id="5fcdb-188">The following cmdlets and cmdlet output types were changed in this release.</span></span>
 
-### <a name="add-azurermaccount-breaking-changes"></a>Grundlegende Änderungen für „Add-AzureRmAccount“
+### <a name="add-azurermaccount-breaking-changes"></a><span data-ttu-id="5fcdb-189">Grundlegende Änderungen für „Add-AzureRmAccount“</span><span class="sxs-lookup"><span data-stu-id="5fcdb-189">Add-AzureRmAccount breaking changes</span></span>
 
-- Der Parameter ```EnvironmentName``` wurde entfernt und durch ```Environment``` ersetzt. ```Environment``` akzeptiert nun eine Zeichenfolge anstelle eines Objekts vom Typ ```AzureEnvironment```.
+- <span data-ttu-id="5fcdb-190">Der Parameter ```EnvironmentName``` wurde entfernt und durch ```Environment``` ersetzt. ```Environment``` akzeptiert nun eine Zeichenfolge anstelle eines Objekts vom Typ ```AzureEnvironment```.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-190">```EnvironmentName``` parameter has been removed and replaced with ```Environment```, the ```Environment``` now takes a string and not an ```AzureEnvironment``` object</span></span>
 
 ```powershell
 # Old
@@ -348,9 +348,9 @@ Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 Add-AzureRmAccount -Environment AzureChinaCloud
 ```
 
-### <a name="select-azurermprofile-was-renamed-to-import-azurermcontext"></a>„Select-AzureRmProfile“ wurde in „Import-AzureRmContext“ umbenannt.
+### <a name="select-azurermprofile-was-renamed-to-import-azurermcontext"></a><span data-ttu-id="5fcdb-191">„Select-AzureRmProfile“ wurde in „Import-AzureRmContext“ umbenannt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-191">Select-AzureRmProfile was renamed to Import-AzureRmContext</span></span>
 
-```Select-AzureRmProfile``` wurde in ```Import-AzureRmContext``` umbenannt.
+<span data-ttu-id="5fcdb-192">```Select-AzureRmProfile``` wurde in ```Import-AzureRmContext``` umbenannt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-192">```Select-AzureRmProfile``` was renamed to ```Import-AzureRmContext```</span></span>
 
 ```powershell
 # Old
@@ -360,9 +360,9 @@ Select-AzureRmProfile -Path c:\mydir\myprofile.json
 Import-AzureRmContext -Path c:\mydir\myprofile.json
 ```
 
-### <a name="save-azurermprofile-was-renamed-to-save-azurermcontext"></a>„Save-AzureRmProfile“ wurde in „Save-AzureRmContext“ umbenannt.
+### <a name="save-azurermprofile-was-renamed-to-save-azurermcontext"></a><span data-ttu-id="5fcdb-193">„Save-AzureRmProfile“ wurde in „Save-AzureRmContext“ umbenannt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-193">Save-AzureRmProfile was renamed to Save-AzureRmContext</span></span>
 
-```Save-AzureRmProfile``` wurde in ```Save-AzureRmContext``` umbenannt.
+<span data-ttu-id="5fcdb-194">```Save-AzureRmProfile``` wurde in ```Save-AzureRmContext``` umbenannt.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-194">```Save-AzureRmProfile``` was renamed to ```Save-AzureRmContext```</span></span>
 
 ```powershell
 # Old
@@ -371,9 +371,9 @@ Save-AzureRmProfile -Path c:\mydir\myprofile.json
 # New
 Save-AzureRmContext -Path c:\mydir\myprofile.json
 ```
-### <a name="breaking-changes-to-output-psazurecontext-type"></a>Grundlegende Änderungen für den Ausgabetyp „PSAzureContext“
+### <a name="breaking-changes-to-output-psazurecontext-type"></a><span data-ttu-id="5fcdb-195">Grundlegende Änderungen für den Ausgabetyp „PSAzureContext“</span><span class="sxs-lookup"><span data-stu-id="5fcdb-195">Breaking Changes to output PSAzureContext Type</span></span>
 
-- Die Eigenschaft ```TokenCache``` wurde in einen Typ geändert, der ```IAzureTokenCache``` (anstelle von ```byte[]```) implementiert.
+- <span data-ttu-id="5fcdb-196">Die Eigenschaft ```TokenCache``` wurde in einen Typ geändert, der ```IAzureTokenCache``` (anstelle von ```byte[]```) implementiert.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-196">The ```TokenCache``` property changed to a type that implements ```IAzureTokenCache``` instead of a ```byte[]```</span></span>
 
 ```powershell
 # Old
@@ -387,9 +387,9 @@ $bytes = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).TokenCache.CacheDa
 $bytes = (Add-AzureRmAccount).Context.TokenCache.CacheData
 ```
 
-### <a name="breaking-changes-to-the-output-psazureaccount-type"></a>Grundlegende Änderungen für den Ausgabetyp „PSAzureAccount“
+### <a name="breaking-changes-to-the-output-psazureaccount-type"></a><span data-ttu-id="5fcdb-197">Grundlegende Änderungen für den Ausgabetyp „PSAzureAccount“</span><span class="sxs-lookup"><span data-stu-id="5fcdb-197">Breaking Changes to the output PSAzureAccount Type</span></span>
 
-- Die Eigenschaft ```AccountType``` wurde in ```Type``` geändert.
+- <span data-ttu-id="5fcdb-198">Die Eigenschaft ```AccountType``` wurde in ```Type``` geändert.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-198">The ```AccountType``` property was changed to ```Type```</span></span>
 
 ```powershell
 # Old
@@ -403,8 +403,8 @@ $type = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).Account.Type
 $type = (Add-AzureRmAccount).Context.Account.Type
 ```
 
-### <a name="breaking-changes-to-the-output-psazuresubscription-type"></a>Grundlegende Änderungen für den Ausgabetyp „PSAzureSubscription“
-- Die Eigenschaft ```SubscriptionId``` wurde in ```Id``` geändert.
+### <a name="breaking-changes-to-the-output-psazuresubscription-type"></a><span data-ttu-id="5fcdb-199">Grundlegende Änderungen für den Ausgabetyp „PSAzureSubscription“</span><span class="sxs-lookup"><span data-stu-id="5fcdb-199">Breaking Changes to the output PSAzureSubscription Type</span></span>
+- <span data-ttu-id="5fcdb-200">Die Eigenschaft ```SubscriptionId``` wurde in ```Id``` geändert.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-200">The ```SubscriptionId``` property was changed to ```Id```</span></span>
 
 ```powershell
 # Old
@@ -420,7 +420,7 @@ $id =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Id
 $id =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Id
 ```
 
-- Die Eigenschaft ```SubscriptionName``` wurde in ```Name``` geändert.
+- <span data-ttu-id="5fcdb-201">Die Eigenschaft ```SubscriptionName``` wurde in ```Name``` geändert.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-201">The ```SubscriptionName``` property was changed to ```Name```</span></span>
 
 ```powershell
 # Old
@@ -436,9 +436,9 @@ $name =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Nam
 $name =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Name
 ```
 
-### <a name="breaking-changes-to-the-output-psazuretenant-type"></a>Grundlegende Änderungen für den Ausgabetyp „PSAzureTenant“
+### <a name="breaking-changes-to-the-output-psazuretenant-type"></a><span data-ttu-id="5fcdb-202">Grundlegende Änderungen für den Ausgabetyp „PSAzureTenant“</span><span class="sxs-lookup"><span data-stu-id="5fcdb-202">Breaking Changes to the output PSAzureTenant Type</span></span>
 
-- Die Eigenschaft ```TenantId``` wurde in ```Id``` geändert.
+- <span data-ttu-id="5fcdb-203">Die Eigenschaft ```TenantId``` wurde in ```Id``` geändert.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-203">The ```TenantId``` property was changed to ```Id```</span></span>
 
 ```powershell
 # Old
@@ -454,7 +454,7 @@ $id =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Tenant.Id
 $id =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Tenant.Id
 ```
 
-- Die Eigenschaft ```Domain``` wurde in ```Directory``` geändert.
+- <span data-ttu-id="5fcdb-204">Die Eigenschaft ```Domain``` wurde in ```Directory``` geändert.</span><span class="sxs-lookup"><span data-stu-id="5fcdb-204">The ```Domain``` property was changed to ```Directory```</span></span>
 
 ```powershell
 # Old

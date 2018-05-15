@@ -12,7 +12,6 @@ ms.topic: conceptual
 ms.date: 09/06/2017
 ms.openlocfilehash: fd5263a327fa8e4b70418bf6fa7702d8c5383733
 ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
-ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/08/2018
 ---
