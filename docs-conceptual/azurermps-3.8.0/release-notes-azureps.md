@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell-Änderungsprotokoll | Microsoft-Dokumentation"
-description: "Hierbei handelt es sich um einen Verlauf der Änderungen, die in der neuesten Version an Azure PowerShell vorgenommen wurden."
+title: Azure PowerShell-Änderungsprotokoll | Microsoft-Dokumentation
+description: Hierbei handelt es sich um einen Verlauf der Änderungen, die in der neuesten Version an Azure PowerShell vorgenommen wurden.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 04f89e8d47d0825d46cb1b8817efbcc0cafa0acd
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Versionshinweise
 
@@ -48,7 +48,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   - *Veraltet*: „Select-AzureRmProfile“ wurde in „Import-AzureRmContext“ umbenannt. Es gibt einen Alias für den alten Cmdlet-Namen. Der Alias wird in der nächsten Version entfernt.
   - Die Ausgabetypen „PSAzureContext“ und „PSAzureProfile“ der Profil-Cmdlets werden in der nächsten Version geändert.
   - Das Cmdlet „Save-AzureRmContext“ enthält in der nächsten Version kein OutputType-Element.
-  - Korrektur eines Fehlers im allgemeinen Cmdlet-Code, damit ein FIPS-kompatibler Algorithmus für Datenhashes verwendet werden kann: https://github.com/Azure/azure-powershell/issues/3651
+  - Fehlerbehebung im allgemeinen Cmdlet-Code in Bezug auf die Verwendung eines FIPS-konformen Algorithmus für Datenhashes: https://github.com/Azure/azure-powershell/issues/3651
 * Sql
   - Fehlerbehebungen für Azure-Failovergruppen-Cmdlets
   - Korrektur für den Vorgangsabruf

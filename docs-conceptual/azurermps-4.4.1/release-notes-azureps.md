@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell-Änderungsprotokoll | Microsoft-Dokumentation"
-description: "Hierbei handelt es sich um einen Verlauf der Änderungen, die in der neuesten Version an Azure PowerShell vorgenommen wurden."
+title: Azure PowerShell-Änderungsprotokoll | Microsoft-Dokumentation
+description: Hierbei handelt es sich um einen Verlauf der Änderungen, die in der neuesten Version an Azure PowerShell vorgenommen wurden.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Versionshinweise
 
@@ -62,7 +62,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     - Get-AzureRmContainerGroup
     - Remove-AzureRmContainerGroup
     - Get-AzureRmContainerInstanceLog
-* Erkenntnisse
+* Einblicke
   * Neues Cmdlet: Disable-AzureRmActivityLogAlert
     - Ein neues Cmdlet zum Deaktivieren einer vorhandenen Aktivitätsprotokollwarnung.
     - Optional können mit diesem Cmdlet auch die Tags festgelegt werden.
@@ -143,7 +143,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     - „Set-AzureRmNetworkInterfaceIpConfig“ aktualisiert: Optionale Parameter „ApplicationSecurityGroup“ und „ApplicationSecurityGroupId“ hinzugefügt
     - „New-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
     - „Add-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
-    - „Set-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
+    - „New-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
   * Neue Befehle für VpnDeviceConfiguration-Skripts hinzugefügt
     - Get-AzureRmVirtualNetworkGatewaySupportedVpnDevices
     - Get-AzureRmVirtualNetworkGatewayConnectionVpnDeviceConfigScript
@@ -163,7 +163,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   * Verwalten von Kontextinformationen – Cmdlet-Änderungen
     - „Scope = (Process | CurrentUser)“ für alle Cmdlets hinzugefügt, die Anmeldeinformationen ändern
     - Get-AzureRmContext: ListAvailable-Parameter zum Auflisten aller gespeicherten Kontexte hinzugefügt
-* Ressourcen
+* angeben
   * PolicySetDefinition-Cmdlets hinzugefügt
     - Cmdlet „New-AzureRmPolicySetDefinition“ zum Erstellen einer Richtliniensatzdefinition
     - Cmdlet „Get-AzureRmPolicySetDefinition“ zum Auflisten aller Richtliniensatzdefinitionen oder zum Abrufen einer bestimmten Richtliniensatzdefinition
@@ -230,7 +230,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   * „MaintenanceRedeployStatus“ für die Ausgabe von „Get-AzureRmVM -Status“ verfügbar gemacht
   * Einschränkungen und Funktionen für das Tabellenformat von „Get-AzureRmComputeResourceSku“ verfügbar gemacht
 * DataLakeStore
-  * Behebung für das Problem: https://github.com/Azure/azure-powershell/issues/4323
+  * Behebung des Problems: https://github.com/Azure/azure-powershell/issues/4323
 * EventHub
   * ResourceGroup-Eigenschaft zu „NamespaceAttributes“ hinzugefügt
     - „ResourceGroup“ ruft den Namen der Ressourcengruppe ab, in der sich der Namespace befindet.
@@ -254,7 +254,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     * Die Datensammlung wurde standardmäßig aktiviert. Zur Verbesserung der Benutzerfreundlichkeit werden Nutzungsdaten von Microsoft gesammelt. Die Daten sind anonymisiert und enthalten keine Befehlszeilenargument-Werte.
       - Verwenden Sie das Cmdlet „Disable-AzureRmDataCollection“, um die Funktion zu deaktivieren.
       - Verwenden Sie das Cmdlet „Enable-AzureRmDataCollection“, um diese Funktion zu aktivieren.
-* Ressourcen
+* angeben
     * Unterstützung zum Überprüfen von Bereichen für die folgenden roledefinition- und roleassignment-Cmdlets vor dem Senden der Anforderung an ARM hinzugefügt
       - Get-AzureRMRoleAssignment
       - New-AzureRMRoleAssignment
@@ -307,7 +307,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
 * Profil
     - Problem mit der nicht interaktiven Benutzerauthentifizierung in RDFE behoben, Link: [https://github.com/Azure/azure-powershell/issues/4299]
 * ServiceManagement
-    - Problem mit der nicht interaktiven Benutzerauthentifizierung behoben, Link: [https://github.com/Azure/azure-powershell/issues/4299]
+    - Problem mit der nicht interaktiven Benutzerauthentifizierung behoben, Link :[https://github.com/Azure/azure-powershell/issues/4299]
 
 ## <a name="2017711---version-420"></a>2017.7.11 – Version 4.2.0
 * AnalysisServices
@@ -315,7 +315,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
         - Einführung einer API zum Abrufen des AS-Serverprotokolls, „Export-AzureAnalysisServicesInstanceLog“
 * Automation
     * Ordnungsgemäße Einstellung des TimeZone-Werts für wöchentliche und monatliche Zeitpläne für „New-AzureRmAutomationSchedule“
-        - Weitere Informationen finden Sie hier: https://github.com/Azure/azure-powershell/issues/3043
+        - Weitere Informationen finden Sie unter diesem Problem: https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - Neues Cmdlet „Get-AzureBatchJobPreparationAndReleaseTaskStatus“ hinzugefügt.
     - Start und Ende für den Bytebereich zu Get-AzureBatchNodeFileContent-Parametern hinzugefügt.
@@ -437,7 +437,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
         - Get-AzureRmVirtualNetworkUsageList
 * Profil
     * Fehler bei Verwendung von „Import-AzureRmContext“ oder „Save-AzureRmContext“ behoben
-        - Weitere Informationen finden Sie hier: https://github.com/Azure/azure-powershell/issues/3954
+        - Weitere Informationen finden Sie unter diesem Problem: https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * Neues Modul für Azure Site Recovery-Vorgänge eingeführt.
         - Alle Cmdlets beginnen mit „AzureRmRecoveryServicesAsr*“.
@@ -447,7 +447,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     * Cmdlets für ein Serverupgrade eingestellt, weil die alte Serverversion (2.0) nicht mehr vorhanden ist.
     * Neuer optionaler Parameter „AssignIdentity“ zu den Cmdlets „New-AzureRmSqlServer“ und „Set-AzureRmSqlServer“ hinzugefügt, um die Bereitstellung einer Ressourcenidentität für die SQL Server-Ressource zu unterstützen
     * Parameter „ResourceGroupName“ ist für Get-AzureRmSqlServer jetzt optional
-        - Weitere Informationen finden Sie hier: https://github.com/Azure/azure-powershell/issues/635
+        - Weitere Informationen finden Sie unter dem folgenden Problem: https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement für ExpressRoute:
     * Cmdlet „New-AzureBgpPeering“ aktualisiert, um folgende neue Optionen hinzuzufügen:
         - PeerAddressType: Werte „IPv4“ oder „IPv6“ ermöglichen das Erstellen eines BGP-Peerings mit dem entsprechenden Adressfamilientyp
@@ -554,7 +554,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   - Die duplizierten Eigenschaften „DataDiskNames“ und „NetworkInterfaceIDs“ wurden aus dem PowerShell-Objekt „VM“ entfernt.
   - Die Parameter „DataDiskNames“ und „NetworkInterfaceIDs“ wurden in „Remove-AzureRmVMDataDisk“ bzw. „Remove-AzureRmVMNetworkInterface“ in optional geändert.
   - Das Weiterleitungsproblem von „Get“-Cmdlets, wenn diese ein Listenobjekt zurückgeben, wurde behoben.
-  - Cmdlets, die in Konflikt mit RDFE-Cmdlets stehen, wurden umbenannt. Weitere Details zum Problem finden Sie unter „https://github.com/Azure/azure-powershell/issues/2917“
+  - Cmdlets, die in Konflikt mit RDFE-Cmdlets stehen, wurden umbenannt. Ausführlichere Informationen unter diesem Problem: https://github.com/Azure/azure-powershell/issues/2917
     + `New-AzureVMSqlServerAutoBackupConfig` wurde in `New-AzureRmVMSqlServerAutoBackupConfig` umbenannt.
     + `New-AzureVMSqlServerAutoPatchingConfig` wurde in `New-AzureRmVMSqlServerAutoPatchingConfig` umbenannt.
     + `New-AzureVMSqlServerKeyVaultCredentialConfig` wurde in `New-AzureRmVMSqlServerKeyVaultCredentialConfig` umbenannt.

@@ -18,7 +18,7 @@ ms.lasthandoff: 05/08/2018
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>Speichern von Benutzeranmeldungen zwischen PowerShell-Sitzungen
 
-In der Azure PowerShell-Version vom September 2017 wird für Azure Resource Manager-Cmdlets ein neues Feature eingeführt: die**automatische Speicherung des Azure-Kontexts**. Dieses Feature kann beispielsweise für folgende neue Benutzerszenarien verwendet werden:
+In der Azure PowerShell-Version vom September 2017 wird für Azure Resource Manager-Cmdlets ein neues Feature eingeführt: die **automatische Speicherung des Azure-Kontexts**. Dieses Feature kann beispielsweise für folgende neue Benutzerszenarien verwendet werden:
 
 - Speicherung von Anmeldeinformationen zur Wiederverwendung in neuen PowerShell-Sitzungen
 - Einfachere Verwendung von Hintergrundaufgaben für die Ausführung von Cmdlets mit langer Ausführungszeit
