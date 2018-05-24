@@ -1,20 +1,20 @@
 ---
 title: Übersicht über das Azure PowerShell-Dienstverwaltungsmodul | Microsoft-Dokumentation
 description: Eine Übersicht über Azure PowerShell mit Links zur Installation und Konfiguration.
-author: sdwheeler
+author: sptramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
-ms.author: sewhee
+ms.author: sttramer
 ms.manager: carmonm
-ms.openlocfilehash: d9a99d05eb2a1ca269f94cfbe6df4b64cec8a2f6
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: df3308239b377a9c3b29e056c291f26a7f9adbcc
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
-# <a name="overview-of-the-azure-powershell-service-management-module"></a><span data-ttu-id="bde21-103">Übersicht über das Azure PowerShell-Dienstverwaltungsmodul</span><span class="sxs-lookup"><span data-stu-id="bde21-103">Overview of the Azure PowerShell Service Management module</span></span>
+# <a name="overview-of-the-azure-powershell-service-management-module"></a><span data-ttu-id="68f84-103">Übersicht über das Azure PowerShell-Dienstverwaltungsmodul</span><span class="sxs-lookup"><span data-stu-id="68f84-103">Overview of the Azure PowerShell Service Management module</span></span>
 
-<span data-ttu-id="bde21-104">Bei der Azure-Dienstverwaltung handelt es sich um das klassische Bereitstellungsmodell.</span><span class="sxs-lookup"><span data-stu-id="bde21-104">Azure Service Management is the classic deployment model.</span></span> <span data-ttu-id="bde21-105">Mit diesem Modul können Sie mit Ihren klassischen Azure-Bereitstellungen arbeiten, die nicht zu Azure Resource Manager konvertiert wurden.</span><span class="sxs-lookup"><span data-stu-id="bde21-105">This module allows you to work with you classic Azure deployments that have not been converted to Azure Resource Manager.</span></span> <span data-ttu-id="bde21-106">Für neue Bereitstellungen sollten dagegen die Azure Resource Manager-Methoden verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="bde21-106">Any new deployments should use the Azure Resource Manager methods.</span></span> <span data-ttu-id="bde21-107">Wenn Sie die Cmdlets verwenden möchten, müssen Sie Azure PowerShell installieren und konfigurieren, um es mit Ihrem Konto zu verbinden.</span><span class="sxs-lookup"><span data-stu-id="bde21-107">To use the cmdlets, you need to install and configure Azure PowerShell to connect it to your account.</span></span> <span data-ttu-id="bde21-108">Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](install-azure-ps.md).</span><span class="sxs-lookup"><span data-stu-id="bde21-108">For more information, see [Install and configure Azure PowerShell](install-azure-ps.md).</span></span>
+<span data-ttu-id="68f84-104">Bei der Azure-Dienstverwaltung handelt es sich um das klassische Bereitstellungsmodell.</span><span class="sxs-lookup"><span data-stu-id="68f84-104">Azure Service Management is the classic deployment model.</span></span> <span data-ttu-id="68f84-105">Mit diesem Modul können Sie mit Ihren klassischen Azure-Bereitstellungen arbeiten, die nicht zu Azure Resource Manager konvertiert wurden.</span><span class="sxs-lookup"><span data-stu-id="68f84-105">This module allows you to work with you classic Azure deployments that have not been converted to Azure Resource Manager.</span></span> <span data-ttu-id="68f84-106">Für neue Bereitstellungen sollten dagegen die Azure Resource Manager-Methoden verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="68f84-106">Any new deployments should use the Azure Resource Manager methods.</span></span> <span data-ttu-id="68f84-107">Wenn Sie die Cmdlets verwenden möchten, müssen Sie Azure PowerShell installieren und konfigurieren, um es mit Ihrem Konto zu verbinden.</span><span class="sxs-lookup"><span data-stu-id="68f84-107">To use the cmdlets, you need to install and configure Azure PowerShell to connect it to your account.</span></span> <span data-ttu-id="68f84-108">Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](install-azure-ps.md).</span><span class="sxs-lookup"><span data-stu-id="68f84-108">For more information, see [Install and configure Azure PowerShell](install-azure-ps.md).</span></span>
