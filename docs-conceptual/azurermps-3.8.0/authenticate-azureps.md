@@ -5,40 +5,39 @@ services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 6dfdaaf7192ee63cef8c3718708f0a3c3c0eb8c6
-ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
+ms.openlocfilehash: 52a2ccba1886c2761d66aee52b27d66e8da4d630
+ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34821529"
 ---
-# <a name="log-in-with-azure-powershell"></a><span data-ttu-id="fa88c-103">Anmelden mit Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="fa88c-103">Log in with Azure PowerShell</span></span>
+# <a name="log-in-with-azure-powershell"></a><span data-ttu-id="efbaf-103">Anmelden mit Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="efbaf-103">Log in with Azure PowerShell</span></span>
 
-<span data-ttu-id="fa88c-104">Azure PowerShell unterstützt mehrere Anmeldemethoden.</span><span class="sxs-lookup"><span data-stu-id="fa88c-104">Azure PowerShell supports multiple login methods.</span></span> <span data-ttu-id="fa88c-105">Die einfachste Möglichkeit ist die interaktive Anmeldung über die Befehlszeile.</span><span class="sxs-lookup"><span data-stu-id="fa88c-105">The simplest way to get started is to log in interactively at the command line.</span></span>
+<span data-ttu-id="efbaf-104">Azure PowerShell unterstützt mehrere Anmeldemethoden.</span><span class="sxs-lookup"><span data-stu-id="efbaf-104">Azure PowerShell supports multiple login methods.</span></span> <span data-ttu-id="efbaf-105">Die einfachste Möglichkeit ist die interaktive Anmeldung über die Befehlszeile.</span><span class="sxs-lookup"><span data-stu-id="efbaf-105">The simplest way to get started is to log in interactively at the command line.</span></span>
 
-## <a name="interactive-log-in"></a><span data-ttu-id="fa88c-106">Interaktive Anmeldung</span><span class="sxs-lookup"><span data-stu-id="fa88c-106">Interactive log in</span></span>
+## <a name="interactive-log-in"></a><span data-ttu-id="efbaf-106">Interaktive Anmeldung</span><span class="sxs-lookup"><span data-stu-id="efbaf-106">Interactive log in</span></span>
 
-1. <span data-ttu-id="fa88c-107">Geben Sie `Login-AzureRmAccount`ein.</span><span class="sxs-lookup"><span data-stu-id="fa88c-107">Type `Login-AzureRmAccount`.</span></span> <span data-ttu-id="fa88c-108">Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert.</span><span class="sxs-lookup"><span data-stu-id="fa88c-108">You will get dialog box asking for your Azure credentials.</span></span>
+1. <span data-ttu-id="efbaf-107">Geben Sie `Login-AzureRmAccount`ein.</span><span class="sxs-lookup"><span data-stu-id="efbaf-107">Type `Login-AzureRmAccount`.</span></span> <span data-ttu-id="efbaf-108">Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert.</span><span class="sxs-lookup"><span data-stu-id="efbaf-108">You will get dialog box asking for your Azure credentials.</span></span>
 
-2. <span data-ttu-id="fa88c-109">Geben Sie die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein.</span><span class="sxs-lookup"><span data-stu-id="fa88c-109">Type the email address and password associated with your account.</span></span> <span data-ttu-id="fa88c-110">Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.</span><span class="sxs-lookup"><span data-stu-id="fa88c-110">Azure authenticates and saves the credential information, and then closes the window.</span></span>
+2. <span data-ttu-id="efbaf-109">Geben Sie die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein.</span><span class="sxs-lookup"><span data-stu-id="efbaf-109">Type the email address and password associated with your account.</span></span> <span data-ttu-id="efbaf-110">Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.</span><span class="sxs-lookup"><span data-stu-id="efbaf-110">Azure authenticates and saves the credential information, and then closes the window.</span></span>
 
-## <a name="log-in-with-a-service-principal"></a><span data-ttu-id="fa88c-111">Anmeldung mit einem Dienstprinzipal</span><span class="sxs-lookup"><span data-stu-id="fa88c-111">Log in with a service principal</span></span>
+## <a name="log-in-with-a-service-principal"></a><span data-ttu-id="efbaf-111">Anmeldung mit einem Dienstprinzipal</span><span class="sxs-lookup"><span data-stu-id="efbaf-111">Log in with a service principal</span></span>
 
-<span data-ttu-id="fa88c-112">Dienstprinzipale ermöglichen die Erstellung nicht interaktiver Konten für die Ressourcenbearbeitung.</span><span class="sxs-lookup"><span data-stu-id="fa88c-112">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="fa88c-113">Dienstprinzipale sind vergleichbar mit Benutzerkonten, auf die Sie mithilfe von Azure Active Directory Regeln anwenden können.</span><span class="sxs-lookup"><span data-stu-id="fa88c-113">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="fa88c-114">Indem Sie einem Dienstprinzipal nur die erforderlichen Mindestberechtigungen erteilen, können Sie Ihre Automatisierungsskripts noch sicherer machen.</span><span class="sxs-lookup"><span data-stu-id="fa88c-114">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
+<span data-ttu-id="efbaf-112">Dienstprinzipale ermöglichen die Erstellung nicht interaktiver Konten für die Ressourcenbearbeitung.</span><span class="sxs-lookup"><span data-stu-id="efbaf-112">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="efbaf-113">Dienstprinzipale sind vergleichbar mit Benutzerkonten, auf die Sie mithilfe von Azure Active Directory Regeln anwenden können.</span><span class="sxs-lookup"><span data-stu-id="efbaf-113">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="efbaf-114">Indem Sie einem Dienstprinzipal nur die erforderlichen Mindestberechtigungen erteilen, können Sie Ihre Automatisierungsskripts noch sicherer machen.</span><span class="sxs-lookup"><span data-stu-id="efbaf-114">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
 
-1. <span data-ttu-id="fa88c-115">Falls Sie noch nicht über einen Dienstprinzipal verfügen, [erstellen Sie einen](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="fa88c-115">If you don't already have a service principal, [create one](create-azure-service-principal-azureps.md).</span></span>
+1. <span data-ttu-id="efbaf-115">Falls Sie noch nicht über einen Dienstprinzipal verfügen, [erstellen Sie einen](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="efbaf-115">If you don't already have a service principal, [create one](create-azure-service-principal-azureps.md).</span></span>
 
-2. <span data-ttu-id="fa88c-116">Melden Sie sich mit dem Dienstprinzipal an.</span><span class="sxs-lookup"><span data-stu-id="fa88c-116">Log in with the service principal.</span></span>
+2. <span data-ttu-id="efbaf-116">Melden Sie sich mit dem Dienstprinzipal an.</span><span class="sxs-lookup"><span data-stu-id="efbaf-116">Log in with the service principal.</span></span>
 
     ```powershell
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
-    <span data-ttu-id="fa88c-117">Wenn Sie Ihre Mandanten-ID ermitteln möchten, melden Sie sich interaktiv an, und rufen Sie anschließend die Mandanten-ID aus Ihrem Abonnement ab.</span><span class="sxs-lookup"><span data-stu-id="fa88c-117">To get your TenantId, log in interactively and then get the TenantId from your subscription.</span></span>
+    <span data-ttu-id="efbaf-117">Wenn Sie Ihre Mandanten-ID ermitteln möchten, melden Sie sich interaktiv an, und rufen Sie anschließend die Mandanten-ID aus Ihrem Abonnement ab.</span><span class="sxs-lookup"><span data-stu-id="efbaf-117">To get your TenantId, log in interactively and then get the TenantId from your subscription.</span></span>
 
     ```powershell
     Get-AzureRmSubscription
@@ -53,21 +52,21 @@ ms.lasthandoff: 05/23/2018
     CurrentStorageAccount :
     ```
 
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a><span data-ttu-id="fa88c-118">Anmelden mit einer verwalteten Dienstidentität eines virtuellen Azure-Computers</span><span class="sxs-lookup"><span data-stu-id="fa88c-118">Log in using an Azure VM Managed Service Identity</span></span>
+### <a name="log-in-using-an-azure-vm-managed-service-identity"></a><span data-ttu-id="efbaf-118">Anmelden mit einer verwalteten Dienstidentität eines virtuellen Azure-Computers</span><span class="sxs-lookup"><span data-stu-id="efbaf-118">Log in using an Azure VM Managed Service Identity</span></span>
 
-<span data-ttu-id="fa88c-119">Die verwaltete Dienstidentität (Managed Service Identity, MSI) ist ein Vorschaufeature für Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="fa88c-119">Managed Service Identity (MSI) is a preview feature of Azure Active Directory.</span></span> <span data-ttu-id="fa88c-120">Sie können einen MSI-Dienstprinzipal für die Anmeldung verwenden und ein App-exklusives Zugriffstoken für den Zugriff auf andere Ressourcen beziehen.</span><span class="sxs-lookup"><span data-stu-id="fa88c-120">You can use an MSI service principal for sign-in, and acquire an app-only access token to access other resources.</span></span>
+<span data-ttu-id="efbaf-119">Die verwaltete Dienstidentität (Managed Service Identity, MSI) ist ein Vorschaufeature für Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="efbaf-119">Managed Service Identity (MSI) is a preview feature of Azure Active Directory.</span></span> <span data-ttu-id="efbaf-120">Sie können einen MSI-Dienstprinzipal für die Anmeldung verwenden und ein App-exklusives Zugriffstoken für den Zugriff auf andere Ressourcen beziehen.</span><span class="sxs-lookup"><span data-stu-id="efbaf-120">You can use an MSI service principal for sign-in, and acquire an app-only access token to access other resources.</span></span>
 
-<span data-ttu-id="fa88c-121">Weitere Informationen zu MSI finden Sie unter [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi) (Verwenden einer verwalteten Dienstidentität (Managed Service Identity, MSI) eines virtuellen Azure-Computers für Anmeldung und Tokenbezug).</span><span class="sxs-lookup"><span data-stu-id="fa88c-121">For more information about MSI, see [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi).</span></span>
+<span data-ttu-id="efbaf-121">Weitere Informationen zu MSI finden Sie unter [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi) (Verwenden einer verwalteten Dienstidentität (Managed Service Identity, MSI) eines virtuellen Azure-Computers für Anmeldung und Tokenbezug).</span><span class="sxs-lookup"><span data-stu-id="efbaf-121">For more information about MSI, see [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi).</span></span>
 
-## <a name="log-in-to-another-cloud"></a><span data-ttu-id="fa88c-122">Anmelden bei einer anderen Cloud</span><span class="sxs-lookup"><span data-stu-id="fa88c-122">Log in to another Cloud</span></span>
+## <a name="log-in-to-another-cloud"></a><span data-ttu-id="efbaf-122">Anmelden bei einer anderen Cloud</span><span class="sxs-lookup"><span data-stu-id="efbaf-122">Log in to another Cloud</span></span>
 
-<span data-ttu-id="fa88c-123">Azure-Clouddienste bieten unterschiedliche Umgebungen, die den Datenverarbeitungsvorschriften verschiedener Staaten entsprechen.</span><span class="sxs-lookup"><span data-stu-id="fa88c-123">Azure cloud services provide different environments that adhere to the data-handling regulations of various governments.</span></span> <span data-ttu-id="fa88c-124">Wenn Ihr Azure-Konto in einer dieser staatsspezifischen Clouds enthalten ist, müssen Sie die Umgebung angeben, wenn Sie sich anmelden.</span><span class="sxs-lookup"><span data-stu-id="fa88c-124">If your Azure account is in one the government clouds, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="fa88c-125">Wenn Ihr Konto beispielsweise in der Cloud für China enthalten ist, melden Sie sich mit dem folgenden Befehl an:</span><span class="sxs-lookup"><span data-stu-id="fa88c-125">For example, if you account is in the China cloud you sign on using the following command:</span></span>
+<span data-ttu-id="efbaf-123">Azure-Clouddienste bieten unterschiedliche Umgebungen, die den Datenverarbeitungsvorschriften verschiedener Staaten entsprechen.</span><span class="sxs-lookup"><span data-stu-id="efbaf-123">Azure cloud services provide different environments that adhere to the data-handling regulations of various governments.</span></span> <span data-ttu-id="efbaf-124">Wenn Ihr Azure-Konto in einer dieser staatsspezifischen Clouds enthalten ist, müssen Sie die Umgebung angeben, wenn Sie sich anmelden.</span><span class="sxs-lookup"><span data-stu-id="efbaf-124">If your Azure account is in one the government clouds, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="efbaf-125">Wenn Ihr Konto beispielsweise in der Cloud für China enthalten ist, melden Sie sich mit dem folgenden Befehl an:</span><span class="sxs-lookup"><span data-stu-id="efbaf-125">For example, if you account is in the China cloud you sign on using the following command:</span></span>
 
 ```powershell
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
-<span data-ttu-id="fa88c-126">Verwenden Sie den folgenden Befehl, um eine Liste der verfügbaren Umgebungen zu erhalten:</span><span class="sxs-lookup"><span data-stu-id="fa88c-126">Use the following command to get a list of available environments:</span></span>
+<span data-ttu-id="efbaf-126">Verwenden Sie den folgenden Befehl, um eine Liste der verfügbaren Umgebungen zu erhalten:</span><span class="sxs-lookup"><span data-stu-id="efbaf-126">Use the following command to get a list of available environments:</span></span>
 
 ```powershell
 Get-AzureRmEnvironment | Select-Object Name
@@ -82,16 +81,16 @@ AzureUSGovernment
 AzureGermanCloud
 ```
 
-## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="fa88c-127">Weitere Informationen zum Verwalten des rollenbasierten Zugriffs in Azure</span><span class="sxs-lookup"><span data-stu-id="fa88c-127">Learn more about managing Azure role-based access</span></span>
+## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="efbaf-127">Weitere Informationen zum Verwalten des rollenbasierten Zugriffs in Azure</span><span class="sxs-lookup"><span data-stu-id="efbaf-127">Learn more about managing Azure role-based access</span></span>
 
-<span data-ttu-id="fa88c-128">Weitere Informationen zur Authentifizierung und Abonnementverwaltung in Azure finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](/azure/active-directory/role-based-access-control-configure).</span><span class="sxs-lookup"><span data-stu-id="fa88c-128">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
+<span data-ttu-id="efbaf-128">Weitere Informationen zur Authentifizierung und Abonnementverwaltung in Azure finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](/azure/active-directory/role-based-access-control-configure).</span><span class="sxs-lookup"><span data-stu-id="efbaf-128">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
 
-<span data-ttu-id="fa88c-129">Azure PowerShell-Cmdlets für die Rollenverwaltung</span><span class="sxs-lookup"><span data-stu-id="fa88c-129">Azure PowerShell cmdlets for role management</span></span>
+<span data-ttu-id="efbaf-129">Azure PowerShell-Cmdlets für die Rollenverwaltung</span><span class="sxs-lookup"><span data-stu-id="efbaf-129">Azure PowerShell cmdlets for role management</span></span>
 
-* [<span data-ttu-id="fa88c-130">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="fa88c-130">Get-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
-* [<span data-ttu-id="fa88c-131">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="fa88c-131">Get-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
-* [<span data-ttu-id="fa88c-132">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="fa88c-132">New-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
-* [<span data-ttu-id="fa88c-133">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="fa88c-133">New-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
-* [<span data-ttu-id="fa88c-134">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="fa88c-134">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
-* [<span data-ttu-id="fa88c-135">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="fa88c-135">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [<span data-ttu-id="fa88c-136">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="fa88c-136">Set-AzureRmRoleDefinition</span></span>](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [<span data-ttu-id="efbaf-130">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="efbaf-130">Get-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
+* [<span data-ttu-id="efbaf-131">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="efbaf-131">Get-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
+* [<span data-ttu-id="efbaf-132">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="efbaf-132">New-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
+* [<span data-ttu-id="efbaf-133">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="efbaf-133">New-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
+* [<span data-ttu-id="efbaf-134">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="efbaf-134">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
+* [<span data-ttu-id="efbaf-135">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="efbaf-135">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
+* [<span data-ttu-id="efbaf-136">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="efbaf-136">Set-AzureRmRoleDefinition</span></span>](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
