@@ -13,7 +13,7 @@ ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821444"
+ms.locfileid: "34821648"
 ---
 # <a name="other-installation-methods"></a>Andere Installationsmethoden
 

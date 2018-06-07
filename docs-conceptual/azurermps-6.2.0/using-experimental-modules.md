@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 4eb94644bb87e69ef6edc79d36189b453e45ecd0
+ms.openlocfilehash: dea3bb24cd7416a3c459fc6e86dbe8c792a68348
 ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819965"
+ms.locfileid: "34821053"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Verwenden experimenteller Azure PowerShell-Module
 
@@ -31,11 +31,11 @@ Für die experimentellen Module wird folgende Benennungskonvention verwendet: `A
 
 Experimentelle Module werden genau wie vorhandene Azure PowerShell-Module im PowerShell-Katalog veröffentlicht. Führen Sie zum Anzeigen einer Liste der experimentellen Module den folgenden Befehl aus:
 
-```powershell
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -44,7 +44,7 @@ Version Name                         Repository Description
 
 Verwenden Sie zum Installieren des experimentellen Moduls die folgenden Befehle in einer PowerShell-Sitzung mit erhöhten Rechten:
 
-```powershell
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```

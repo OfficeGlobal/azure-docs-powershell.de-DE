@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 7ed9d53e905b5ac16432700b39a70fd07c4f16da
+ms.openlocfilehash: f7ed78f9908517661001cad7b3eeae8b732640cc
 ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822124"
+ms.locfileid: "34819761"
 ---
 # <a name="log-in-with-azure-powershell"></a>Anmelden mit Azure PowerShell
 
@@ -33,17 +33,17 @@ Dienstprinzipale ermöglichen die Erstellung nicht interaktiver Konten für die 
 
 2. Melden Sie sich mit dem Dienstprinzipal an.
 
-    ```powershell
+    ```azurepowershell-interactive
     Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     Wenn Sie Ihre Mandanten-ID ermitteln möchten, melden Sie sich interaktiv an, und rufen Sie anschließend die Mandanten-ID aus Ihrem Abonnement ab.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -62,17 +62,17 @@ Weitere Informationen zu MSI finden Sie unter [How to use an Azure VM Managed Se
 
 Azure-Clouddienste bieten unterschiedliche Umgebungen, die den Datenverarbeitungsvorschriften verschiedener Staaten entsprechen. Wenn Ihr Azure-Konto in einer dieser staatsspezifischen Clouds enthalten ist, müssen Sie die Umgebung angeben, wenn Sie sich anmelden. Wenn Ihr Konto beispielsweise in der Cloud für China enthalten ist, melden Sie sich mit dem folgenden Befehl an:
 
-```powershell
+```azurepowershell-interactive
 Connect-AzureRmAccount -Environment AzureChinaCloud
 ```
 
 Verwenden Sie den folgenden Befehl, um eine Liste der verfügbaren Umgebungen zu erhalten:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
 ```
 
-```
+```output
 Name
 ----
 AzureCloud

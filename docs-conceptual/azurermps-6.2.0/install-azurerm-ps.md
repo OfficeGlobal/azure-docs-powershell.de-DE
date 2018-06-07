@@ -8,21 +8,25 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 019be3aa9cb2ed788de176ea4acdda45a1f973b9
+ms.openlocfilehash: 9f737201f13c07565b95a20227c75794b624e99c
 ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821002"
+ms.locfileid: "34821971"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Installieren und Konfigurieren von Azure PowerShell
 
 Dieser Artikel beschreibt die Schritte zum Installieren der Azure PowerShell-Module in einer Windows-Umgebung.
 Wenn Sie Azure PowerShell unter macOS oder Linux verwenden möchten, lesen Sie den folgenden Artikel: [Installieren und Konfigurieren von Azure PowerShell unter macOS und Linux](install-azurermps-maclinux.md).
 
-Die Installation von Azure PowerShell aus dem PowerShell-Katalog ist die bevorzugte Installationsmethode.
+## <a name="system-requirements"></a>Systemanforderungen
+
+Für Azure PowerShell Version 6.0.0 ist Version 5.0 (oder höher) von PowerShell erforderlich. Für vorherige Versionen von Azure PowerShell war _mindestens_ Version 3.0 von PowerShell erforderlich, um Cmdlets ausführen zu können. Informationen zur Durchführung eines Upgrades auf PowerShell 5.0 finden Sie in [dieser Tabelle](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 ## <a name="step-1-install-powershellget"></a>Schritt 1: Installieren von PowerShellGet
+
+Die Installation von Azure PowerShell aus dem PowerShell-Katalog ist die bevorzugte Installationsmethode.
 
 Für die Installation von Komponenten aus dem PowerShell-Katalog ist das PowerShellGet-Modul erforderlich. Stellen Sie sicher, dass Sie über die entsprechende Version von PowerShellGet verfügen und alle anderen Systemanforderungen erfüllt sind. Führen Sie den folgenden Befehl aus, um zu ermitteln, ob PowerShellGet auf Ihrem System installiert ist.
 
@@ -103,11 +107,11 @@ Wenn mit dem Tool Fehler auftreten, legen Sie einen Eintrag im Bereich [Probleme
 
 ### <a name="how-to-get-powershellget"></a>Installieren von PowerShellGet
 
-|Betriebssystemversion|Installationsanleitung|
+|Szenario|Installationsanleitung|
 |---|---|
-|Ich besitze Windows 10 oder Windows Server 2016.|In Windows Management Framework (WMF) 5.0 integriert (im Betriebssystem enthalten)|
-|Ich möchte auf PowerShell 5 aktualisieren.|[Installieren Sie die aktuelle Version von WMF.](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
-|Ich nutze eine Windows-Version mit PowerShell 3 oder PowerShell 4.|[Laden Sie die PackageManagement-Module herunter.](http://go.microsoft.com/fwlink/?LinkID=746217)|
+|Windows 10<br/>Windows Server 2016|In Windows Management Framework (WMF) 5.0 integriert (im Betriebssystem enthalten)|
+|Ich möchte auf PowerShell 5 aktualisieren.|<ol><li>[Installieren Sie die aktuelle Version von WMF.](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Führen Sie den folgenden Befehl aus:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|Ich nutze eine Windows-Version mit PowerShell 3 oder PowerShell 4.|<ol><il>[Laden Sie die PackageManagement-Module herunter.](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Führen Sie den folgenden Befehl aus:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 <a id="helpmechoose"></a>
 ### <a name="checking-the-version-of-azure-powershell"></a>Überprüfen der Azure PowerShell-Version

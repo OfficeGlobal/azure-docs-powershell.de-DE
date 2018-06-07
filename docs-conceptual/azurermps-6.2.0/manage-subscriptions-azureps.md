@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: d28da700efbc2927cb3f73ae696759fb1e0c0cd6
+ms.openlocfilehash: 4f066118373c9ea7deffe7c6474552f1ce91cb56
 ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819948"
+ms.locfileid: "34820594"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Verwalten mehrerer Azure-Abonnements
 
@@ -21,11 +21,11 @@ Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur
 
 1. Rufen Sie eine Liste mit allen Abonnements in Ihrem Konto ab.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -50,17 +50,17 @@ Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur
 
 2. Legen Sie das Standardabonnement fest.
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. Überprüfen Sie die Änderung durch Ausführen des Cmdlets `Get-AzureRmContext`.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
