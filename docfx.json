@@ -135,9 +135,9 @@
                 "Azure"
             ],
             "breadcrumb_path": "/powershell/bread/toc.json",
-            "ms.devlang": "powershell",
-                 "ms.prod": "powershell",
+                           "ms.prod": "powershell",
      "ms.technology": "azure-powershell",
+            "ms.devlang": "powershell",  
             "feedback_system": "GitHub",
             "feedback_github_repo": "azure/azure-docs-powershell.de-de",
             "feedback_product_url": "https://github.com/Azure/azure-powershell/issues/new"
