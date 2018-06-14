@@ -1,19 +1,18 @@
 ---
-title: Verwalten von Azure-Abonnements mit Azure PowerShell | Microsoft-Dokumentation
+title: Verwalten von Azure-Abonnements mit Azure PowerShell
 description: Verwalten von Azure-Abonnements mit Azure PowerShell
-keywords: Azure PowerShell, Abonnement
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: d28da700efbc2927cb3f73ae696759fb1e0c0cd6
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821954"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323355"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Verwalten mehrerer Azure-Abonnements
 
@@ -21,11 +20,11 @@ Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur
 
 1. Rufen Sie eine Liste mit allen Abonnements in Ihrem Konto ab.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -50,17 +49,17 @@ Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur
 
 2. Legen Sie das Standardabonnement fest.
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. Überprüfen Sie die Änderung durch Ausführen des Cmdlets `Get-AzureRmContext`.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
