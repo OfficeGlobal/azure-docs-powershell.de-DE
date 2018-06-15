@@ -17,25 +17,25 @@
       items:
         - name: Erstellen eines Dienstprinzipals
           href: create-azure-service-principal-azureps.md
-        - name: Verwenden beständiger Anmeldeinformationen
+        - name: Beständige Anmeldeinformationen
           href: context-persistence.md
     - name: Abfragen
       href: queries-azureps.md
-    - name: Formatierung
+    - name: Formatieren der Ausgabe
       href: formatting-output.md
-    - name: Abonnements
+    - name: Verwalten von Abonnements
       href: manage-subscriptions-azureps.md
     - name: Bereitstellen
       items:
-        - name: Bereitstellen mithilfe von Resource Manager-Vorlagen
+        - name: Bereitstellen von Resource Manager-Vorlagen
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Exportieren von Resource Manager-Vorlagen
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Bereitstellen privater Resource Manager-Vorlagen mit SAS-Token
+        - name: Bereitstellen privater Resource Manager-Vorlagen
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Konzepte
       items:
-        - name: Verwenden experimenteller Module
+        - name: Experimentelle Module
           href: using-experimental-modules.md
     - name: Versionshinweise
       href: release-notes-azureps.md
