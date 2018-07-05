@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: a54af4b28642fe7b8623550fb05dff33e5c4a7f6
+ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091502"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37406301"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Installieren von Azure PowerShell unter macOS oder Linux
 
@@ -59,14 +59,14 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Antworten Sie mit `Yes` oder `Yes to All`, um die Installation fortzusetzen.
 
 ## <a name="sign-in"></a>Anmelden
 
-Damit Sie Azure PowerShell verwenden können, müssen Sie `AzureRM.Netcore` mit dem [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)-Cmdlet in Ihre PowerShell-Sitzung laden und sich dann mit Ihren Azure-Anmeldeinformationen anmelden. Für das Importieren eines Moduls sind __keine__ erhöhten Rechte erforderlich.
+Damit Sie Azure PowerShell verwenden können, müssen Sie `AzureRM.Netcore` mit dem Cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) in Ihre PowerShell-Sitzung laden und sich dann mit Ihren Azure-Anmeldeinformationen anmelden. Für das Importieren eines Moduls sind __keine__ erhöhten Rechte erforderlich.
 
 ```powershell
 # Import the module into the PowerShell session
@@ -80,11 +80,11 @@ Unter macOS und Linux müssen Sie zur Verwendung Ihres Profils die Umgebungsvari
 
 ## <a name="available-cmdlets"></a>Verfügbare Cmdlets
 
-Die Azure PowerShell-Module für .NET Core befinden sich noch in der Entwicklungsphase. Diese Module bieten nicht den vollständigen Satz der Cmdlets, die für die Windows-Version der Module verfügbar sind. Die folgenden Funktionen werden in AzureRM.Netcore-Module implementiert:
+Die Azure PowerShell-Module für .NET Core sind noch in der Entwicklungsphase. Diese Module bieten nicht den vollständigen Satz der Cmdlets, die für die Windows-Version der Module verfügbar sind. Die folgenden Funktionen werden in AzureRM.Netcore-Module implementiert:
 
 * Kontenverwaltung
-  - Anmelden mit einem Microsoft-Konto, Unternehmenskonto oder Dienstprinzipal über Microsoft Azure Active Directory
-  - Speichern der Anmeldeinformationen mit Save-AzureRmContext auf einem Datenträger und Laden von gespeicherten Anmeldeinformationen mit Import-AzureRmContext
+  - Melden Sie sich mit einem Microsoft-Konto, Unternehmenskonto oder Dienstprinzipal über Microsoft Azure Active Directory an.
+  - Speichern Sie die Anmeldeinformationen mit Save-AzureRmContext auf einem Datenträger, und laden Sie gespeicherte Anmeldeinformationen mit Import-AzureRmContext.
 * Environment
   - Abrufen der verschiedenen vorkonfigurierten Microsoft Azure-Umgebungen
   - Hinzufügen/Einrichten/Entfernen angepasster Umgebungen (z.B. Ihrer Azure Stack- oder Windows Azure Pack-Umgebungen)
