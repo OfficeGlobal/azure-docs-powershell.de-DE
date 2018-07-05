@@ -4,10 +4,14 @@
     - name: Installieren
       href: install-azurerm-ps.md
       items:
-        - name: Installieren unter macOS und Linux
+        - name: Installieren unter macOS oder Linux
           href: install-azurermps-maclinux.md
-        - name: Andere Installationsmethoden
+        - name: Installieren mit MSI oder Web PI
           href: other-install.md
+        - name: Ausführen in Docker
+          href: azurerm-ps-in-docker.md
+    - name: Deinstallieren
+      href: uninstall-azurerm-ps.md
     - name: Erste Schritte
       href: get-started-azureps.md
     - name: Cloud Shell
