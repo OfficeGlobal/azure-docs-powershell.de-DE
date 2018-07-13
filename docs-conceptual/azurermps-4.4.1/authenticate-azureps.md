@@ -1,90 +1,74 @@
 ---
 title: Anmelden mit Azure PowerShell
-description: Anmelden mit Azure PowerShell
+description: Hier finden Sie Informationen zur Anmeldung mit Azure PowerShell als Benutzer, mit einem Dienstprinzipal oder mit MSI.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: f2a9247d442229b7323e5a9195c7257e45d58e56
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 6525e41be54c3f6b97812504c436e0ff3f5edf8e
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853796"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100085"
 ---
-# <a name="log-in-with-azure-powershell"></a>Anmelden mit Azure PowerShell
+# <a name="sign-in-with-azure-powershell"></a>Anmelden mit Azure PowerShell
 
-Azure PowerShell unterstützt mehrere Anmeldemethoden. Die einfachste Möglichkeit ist die interaktive Anmeldung über die Befehlszeile.
+Azure PowerShell unterstützt mehrere Authentifizierungsmethoden. Die einfachste Möglichkeit ist die interaktive Anmeldung über die Befehlszeile.
 
-## <a name="interactive-log-in"></a>Interaktive Anmeldung
+## <a name="sign-in-interactively"></a>Interaktives Anmelden
 
-1. Geben Sie `Login-AzureRmAccount`ein. Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert.
+Verwenden Sie für die interaktive Anmeldung das Cmdlet [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
 
-2. Geben Sie die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
+```azurepowershell
+Connect-AzureRmAccount
+```
 
-## <a name="log-in-with-a-service-principal"></a>Anmeldung mit einem Dienstprinzipal
+Wenn Sie dieses Cmdlet ausführen, wird ein Dialogfeld angezeigt, in dem Sie zur Eingabe Ihrer E-Mail-Adresse und Ihres Kennworts für Ihr Azure-Konto aufgefordert werden. Wenn Sie sich authentifizieren, werden diese Angaben für die aktuelle PowerShell-Sitzung gespeichert, das Dialogfeld wird geschlossen, und Sie haben Zugriff auf alle Azure PowerShell-Cmdlets.
+
+> [!IMPORTANT]
+> Ab Azure PowerShell 6.3.0 werden Ihre Anmeldeinformationen in mehreren PowerShell-Sitzungen gemeinsam verwendet, solange Sie bei Windows angemeldet bleiben. Weitere Informationen finden Sie im Artikel zu [beständigen Anmeldeinformationen](context-persistence.md).
+
+## <a name="sign-in-with-a-service-principal"></a>Anmelden mit einem Dienstprinzipal
 
 Dienstprinzipale ermöglichen die Erstellung nicht interaktiver Konten für die Ressourcenbearbeitung. Dienstprinzipale sind vergleichbar mit Benutzerkonten, auf die Sie mithilfe von Azure Active Directory Regeln anwenden können. Indem Sie einem Dienstprinzipal nur die erforderlichen Mindestberechtigungen erteilen, können Sie Ihre Automatisierungsskripts noch sicherer machen.
 
-1. Falls Sie noch nicht über einen Dienstprinzipal verfügen, [erstellen Sie einen](create-azure-service-principal-azureps.md).
+Informationen zur Erstellung eines Dienstprinzipals für die Verwendung mit PowerShell finden Sie unter [Erstellen eines Azure-Dienstprinzipals mit Azure PowerShell](create-azure-service-principal-azureps.md).
 
-2. Melden Sie sich mit dem Dienstprinzipal an.
+Verwenden Sie für die Anmeldung mit einem Dienstprinzipal das Cmdlet `Connect-AzureRmAccount` mit dem Argument `-ServicePrincipal`. Sie benötigen auch die Anwendungs-ID und die Anmeldeinformationen des Dienstprinzipals sowie die dem Dienstprinzipal zugeordnete Mandanten-ID. Verwenden Sie das Cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential), um die Anmeldeinformationen des Dienstprinzipals als entsprechendes Objekt abzurufen. Dieses Cmdlet zeigt ein Dialogfeld für die Eingabe der Benutzer-ID und des Kennworts des Dienstprinzipals an.
 
-    ```powershell
-    Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
-    ```
+```azurepowershell-interactive
+$pscredential = Get-Credential
+Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
+```
 
-    Wenn Sie Ihre Mandanten-ID ermitteln möchten, melden Sie sich interaktiv an, und rufen Sie anschließend die Mandanten-ID aus Ihrem Abonnement ab.
+## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>Anmelden mit einer verwalteten Dienstidentität eines virtuellen Azure-Computers
 
-    ```powershell
-    Get-AzureRmSubscription
-    ```
-
-    ```
-    Environment           : AzureCloud
-    Account               : username@contoso.com
-    TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-    SubscriptionId        : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-    SubscriptionName      : My Production Subscription
-    CurrentStorageAccount :
-    ```
-
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>Anmelden mit einer verwalteten Dienstidentität eines virtuellen Azure-Computers
-
-Die verwaltete Dienstidentität (Managed Service Identity, MSI) ist ein Vorschaufeature für Azure Active Directory. Sie können einen MSI-Dienstprinzipal für die Anmeldung verwenden und ein App-exklusives Zugriffstoken für den Zugriff auf andere Ressourcen beziehen.
+Die verwaltete Dienstidentität (Managed Service Identity, MSI) ist ein Vorschaufeature für Azure Active Directory. Sie können einen MSI-Dienstprinzipal für die Anmeldung verwenden und ein App-exklusives Zugriffstoken für den Zugriff auf andere Ressourcen beziehen. MSI steht nur für virtuelle Computer zur Verfügung, die in einer Azure-Cloud ausgeführt werden.
 
 Weitere Informationen zu MSI finden Sie unter [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi) (Verwenden einer verwalteten Dienstidentität (Managed Service Identity, MSI) eines virtuellen Azure-Computers für Anmeldung und Tokenbezug).
 
-## <a name="log-in-to-another-cloud"></a>Anmelden bei einer anderen Cloud
+## <a name="sign-in-to-another-cloud"></a>Anmelden bei einer anderen Cloud
 
-Azure-Clouddienste bieten unterschiedliche Umgebungen, die den Datenverarbeitungsvorschriften verschiedener Staaten entsprechen. Wenn Ihr Azure-Konto in einer dieser staatsspezifischen Clouds enthalten ist, müssen Sie die Umgebung angeben, wenn Sie sich anmelden. Wenn Ihr Konto beispielsweise in der Cloud für China enthalten ist, melden Sie sich mit dem folgenden Befehl an:
+Azure-Clouddienste bieten unterschiedliche Umgebungen, die den Datenverarbeitungsvorschriften verschiedener Regionen entsprechen. Wenn sich Ihr Azure-Konto in einer Cloud befindet, die einer dieser Regionen zugeordnet ist, müssen Sie bei der Anmeldung die Umgebung angeben. Wenn Ihr Konto beispielsweise in der Cloud für China enthalten ist, melden Sie sich mit dem folgenden Befehl an:
 
-```powershell
+```azurepowershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 Verwenden Sie den folgenden Befehl, um eine Liste der verfügbaren Umgebungen zu erhalten:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
-```
-
-```
-Name
-----
-AzureCloud
-AzureChinaCloud
-AzureUSGovernment
-AzureGermanCloud
 ```
 
 ## <a name="learn-more-about-managing-azure-role-based-access"></a>Weitere Informationen zum Verwalten des rollenbasierten Zugriffs in Azure
 
 Weitere Informationen zur Authentifizierung und Abonnementverwaltung in Azure finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](/azure/active-directory/role-based-access-control-configure).
 
-Azure PowerShell-Cmdlets für die Rollenverwaltung
+Azure PowerShell-Cmdlets für die Rollenverwaltung:
 
 * [Get-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
 * [Get-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: dc5a1c59d23e37acf11aa7831ddc6e1edbd7f73e
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: c0bb020fc8cc77b96dc7fe6839911a4d80974d9e
+ms.sourcegitcommit: f08f501b75a97ceef59c21f42158bf135a354eaa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091417"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37926245"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Installieren von Azure PowerShell unter Windows mit PowerShellGet
 
@@ -22,7 +22,7 @@ Eine Anleitung zum Installieren von Azure PowerShell auf anderen Plattformen fin
 
 Das klassische Azure-Bereitstellungsmodell wird von dieser Version von Azure PowerShell nicht unterstützt. Befolgen Sie die Anleitung unter [Installieren des Azure PowerShell-Dienstverwaltungsmoduls](/powershell/azure/servicemanagement/install-azure-ps), um Unterstützung zu klassischen Bereitstellungen zu erhalten.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Für die Installation von Azure PowerShell benötigen Sie PowerShellGet Version 1.1.2.0 oder höher. Führen Sie den folgenden Befehl aus, um zu prüfen, ob diese Version unter Ihrem System verfügbar ist:
 
@@ -57,6 +57,9 @@ Befolgen Sie die Anleitung unten in der Tabelle, falls Sie PowerShellGet nicht i
 
 > [!NOTE]
 > Für die Verwendung von PowerShellGet ist eine Ausführungsrichtlinie erforderlich, die die Ausführung von Skripts ermöglicht. Weitere Informationen zur Ausführungsrichtlinie von PowerShell finden Sie unter [About Execution Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies) (Informationen zu Ausführungsrichtlinien).
+
+> [!IMPORTANT]
+> Das in diesem Dokument beschriebene Modul „AzureRM“ verwendet .NET Framework. Dadurch ist es nicht mit PowerShell 6.0 kompatibel, das .NET Core verwendet. Wenn Sie PowerShell 6.0 verwenden, befolgen Sie die [Installationsanweisungen für macOS und Linux](install-azurermps-maclinux.md). 
 
 ## <a name="install-the-azure-powershell-module"></a>Installieren des Azure PowerShell-Moduls
 

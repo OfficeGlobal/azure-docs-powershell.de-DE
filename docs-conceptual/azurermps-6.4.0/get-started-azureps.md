@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 102dfb7476a4964af541a29416b10bc880c53adb
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 5aa3b3fdeff20ea4c6f830f834e61f37d81da07d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406304"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100374"
 ---
 # <a name="get-started-with-azure-powershell"></a>Erste Schritte mit Azure PowerShell
 
@@ -48,7 +48,7 @@ Sie können Azure PowerShell auch installieren und lokal in einer PowerShell-Sit
 
 Melden Sie sich interaktiv an:
 
-1. Geben Sie `Connect-AzureRmAccount`ein. Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Die Option „-Environment“ ermöglicht eine Anmeldung in Azure China oder Azure Deutschland.
+1. Geben Sie `Connect-AzureRmAccount`ein. Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Die Option „-Environment“ ermöglicht eine Authentifizierung für Azure China oder Azure Deutschland.
 
    Beispiel: Connect-AzureRmAccount -Environment AzureChinaCloud
 

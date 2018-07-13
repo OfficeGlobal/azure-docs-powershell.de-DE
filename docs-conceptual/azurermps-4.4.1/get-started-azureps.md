@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 2f37df114b620566a663eb12c7e739975bc1f8bf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 0897e8fc3a50a58ac8945bd95722736526f63e19
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854578"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100153"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Erste Schritte mit Azure PowerShell
 
@@ -44,11 +44,11 @@ Vergewissern Sie sich zunächst, dass die neueste Version von Azure PowerShell i
 
 2. Führen Sie `Get-Module AzureRM -ListAvailable` über die Befehlszeile aus, um sich zu vergewissern, dass die Installation erfolgreich war.
 
-## <a name="log-in-to-azure"></a>Anmelden an Azure
+## <a name="sign-in-to-azure"></a>Anmelden bei Azure
 
 Melden Sie sich interaktiv an:
 
-1. Geben Sie `Login-AzureRmAccount`ein. Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Die Option „-EnvironmentName“ ermöglicht eine Anmeldung in Azure China oder Azure Deutschland.
+1. Geben Sie `Login-AzureRmAccount`ein. Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Die Option „-EnvironmentName“ ermöglicht eine Authentifizierung für Azure China oder Azure Deutschland.
 
    Beispiel: Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 

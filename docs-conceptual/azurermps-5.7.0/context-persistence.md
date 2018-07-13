@@ -1,22 +1,22 @@
 ---
-title: Speichern von Benutzeranmeldungen zwischen PowerShell-Sitzungen
-description: Dieser Artikel enthält Informationen zu neuen Features in Azure PowerShell, mit denen Sie Anmeldeinformationen und andere Benutzerinformationen zwischen mehreren PowerShell-Sitzungen wiederverwenden können.
+title: Speichern von Benutzeranmeldeinformationen zwischen PowerShell-Sitzungen
+description: Hier erfahren Sie, wie Sie Azure-Anmeldeinformationen und andere Informationen in mehreren PowerShell-Sitzungen wiederverwenden.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323117"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100255"
 ---
-# <a name="persisting-user-logins-across-powershell-sessions"></a>Speichern von Benutzeranmeldungen zwischen PowerShell-Sitzungen
+# <a name="persisting-user-credentials-across-powershell-sessions"></a>Speichern von Benutzeranmeldeinformationen zwischen PowerShell-Sitzungen
 
-In der Azure PowerShell-Version vom September 2017 wird für Azure Resource Manager-Cmdlets ein neues Feature eingeführt: die **automatische Speicherung des Azure-Kontexts**. Dieses Feature kann beispielsweise für folgende neue Benutzerszenarien verwendet werden:
+Azure PowerShell bietet ein Feature namens **Azure Context Autosave** mit den folgenden Funktionen:
 
 - Speicherung von Anmeldeinformationen zur Wiederverwendung in neuen PowerShell-Sitzungen
 - Einfachere Verwendung von Hintergrundaufgaben für die Ausführung von Cmdlets mit langer Ausführungszeit
@@ -36,7 +36,7 @@ Bei einem *Azure-Kontext* handelt es sich um einen Satz von Informationen, die d
 
 In früheren Versionen musste der Azure-Kontext bei jedem Öffnen einer neuen PowerShell-Sitzung erstellt werden. Ab Azure PowerShell 4.4.0 können Sie die automatische Speicherung und Wiederverwendung von Azure-Kontexten beim Öffnen einer neuen PowerShell-Sitzung aktivieren.
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>Automatisches Speichern des Kontexts für die nächste Anmeldung
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Automatisches Speichern des Kontexts für die nächste Anmeldung
 
 Standardmäßig verwirft Azure PowerShell Ihre Kontextinformationen, sobald Sie die PowerShell-Sitzung beenden.
 
@@ -49,7 +49,7 @@ Die Cmdlets zum Verwalten von Azure-Kontexten ermöglichen eine präzise Steueru
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Ausführen von Azure PowerShell-Cmdlets als Hintergrundaufträge
 
-Dank der **automatischen Speicherung des Azure-Kontexts** können Sie Ihren Kontext auch für PowerShell-Hintergrundaufträge freigeben. Mit PowerShell können Sie Aufgaben mit langer Ausführungszeit als Hintergrundaufträge starten und überwachen, ohne auf den Abschluss der Aufgaben warten zu müssen. Sie können Anmeldeinformationen auf zwei Arten an Hintergrundaufträge weitergeben:
+Dank der**automatischen Speicherung des Azure-Kontexts** können Sie Ihren Kontext auch für PowerShell-Hintergrundaufträge freigeben. Mit PowerShell können Sie Aufgaben mit langer Ausführungszeit als Hintergrundaufträge starten und überwachen, ohne auf den Abschluss der Aufgaben warten zu müssen. Sie können Anmeldeinformationen auf zwei Arten an Hintergrundaufträge weitergeben:
 
 - Übergeben des Kontexts als Argument
 
@@ -61,7 +61,7 @@ Dank der **automatischen Speicherung des Azure-Kontexts** können Sie Ihren Kont
 
 - Verwenden des Standardkontexts bei aktivierter automatischer Speicherung
 
-  Wenn Sie die **automatische Speicherung des Kontexts** aktiviert haben, wird von Hintergrundaufträgen automatisch der gespeicherte Standardkontext verwendet.
+  Wenn Sie die **automatische Speicherung des Kontexts**aktiviert haben, wird von Hintergrundaufträgen automatisch der gespeicherte Standardkontext verwendet.
 
   ```powershell
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
@@ -140,7 +140,7 @@ Neue Cmdlets für die Kontextverwaltung
 Änderungen an vorhandenen Profil-Cmdlets
 
 - [Add-AzureRmAccount][login]: Ermöglicht es, den Gültigkeitsbereich der Anmeldung auf den Prozess oder auf den aktuellen Benutzer festzulegen.
-  Ermöglicht die Benennung des Standardkontexts nach der Anmeldung.
+  Ermöglicht die Benennung des Standardkontexts nach der Authentifizierung.
 - [Import-AzureRmContext][import]: Ermöglicht es, den Gültigkeitsbereich der Anmeldung auf den Prozess oder auf den aktuellen Benutzer festzulegen.
 - [Set-AzureRmContext][set-context]: Ermöglicht die Wahl vorhandener benannter Kontexte sowie die Festlegung, ob Änderungen auf den Prozess oder auf den aktuellen Benutzer angewendet werden sollen.
 

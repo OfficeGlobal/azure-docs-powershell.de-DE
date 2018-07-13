@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 5/1/2018
-ms.openlocfilehash: 830afb067ea22999c09c1b894b72097bb8ebfa3b
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406263"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100204"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Grundlegende Änderungen für Microsoft Azure PowerShell 6.0.0
 
@@ -47,7 +47,7 @@ Bisher war _mindestens_ Version 3.0 von PowerShell erforderlich, um Cmdlets ausf
 
 Bei der automatischen Kontextspeicherung geht es um die Speicherung von Azure-Anmeldeinformationen, die für neue und unterschiedliche PowerShell-Sitzungen verwendet werden können. Weitere Informationen zur automatischen Kontextspeicherung finden Sie in [diesem Dokument](https://docs.microsoft.com/en-us/powershell/azure/context-persistence).
 
-Bisher war die automatische Kontextspeicherung standardmäßig deaktiviert. Die Azure-Anmeldeinformationen eines Benutzers wurden zwischen Sitzungen erst gespeichert, wenn er das `Enable-AzureRmContextAutosave`-Cmdlet ausgeführt hat, um die Kontextbeibehaltung zu aktivieren. Ab jetzt ist die automatische Kontextspeicherung standardmäßig aktiviert. Dies bedeutet, dass für Benutzer _ohne gespeicherte Einstellungen für die automatische Kontextspeicherung_ der Kontext bei der nächsten Anmeldung gespeichert wird. Benutzer können sich gegen die Nutzung dieser Funktionalität entscheiden, indem sie das `Disable-AzureRmContextAutosave`-Cmdlet verwenden.
+Bisher war die automatische Kontextspeicherung standardmäßig deaktiviert. Die Azure-Authentifizierungsinformationen eines Benutzers wurden zwischen Sitzungen erst gespeichert, wenn er das `Enable-AzureRmContextAutosave`-Cmdlet ausgeführt hat, um die Kontextbeibehaltung zu aktivieren. Ab jetzt ist die automatische Kontextspeicherung standardmäßig aktiviert. Dies bedeutet, dass für Benutzer _ohne gespeicherte Einstellungen für die automatische Kontextspeicherung_ der Kontext bei der nächsten Anmeldung gespeichert wird. Benutzer können sich gegen die Nutzung dieser Funktionalität entscheiden, indem sie das `Disable-AzureRmContextAutosave`-Cmdlet verwenden.
 
 _Hinweis_: Benutzer, die die automatische Kontextspeicherung bisher deaktiviert bzw. aktiviert hatten, und vorhandene Kontexte sind von dieser Änderung nicht betroffen.
 
@@ -249,7 +249,7 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 ## <a name="breaking-changes-to-azurermkeyvault-cmdlets"></a>Grundlegende Änderungen an AzureRM.KeyVault-Cmdlets
 
 **Add-AzureKeyVaultCertificate**
-- Der Parameter `Certificate` ist jetzt obligatorisch.
+- Der Parameter `CertificatePolicy` ist jetzt obligatorisch.
 
 **Set-AzureKeyVaultManagedStorageSasDefinition**
 - Das Cmdlet akzeptiert keine einzelnen Parameter mehr, aus denen das Zugriffstoken besteht. Stattdessen ersetzt das Cmdlet explizite Tokenparameter, z.B. `Service` oder `Permissions`, durch den generischen Parameter `TemplateUri`, der einem an anderer Stelle definierten Beispielzugriffstoken entspricht (meist über Storage PowerShell-Cmdlets oder per manueller Zusammenstellung gemäß Storage-Dokumentation). Das Cmdlet behält den Parameter `ValidityPeriod` bei.

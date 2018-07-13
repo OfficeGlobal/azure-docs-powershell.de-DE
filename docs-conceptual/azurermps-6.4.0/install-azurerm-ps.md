@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 0d8019a7acaf2ba3baaa0772a76285ec497c991c
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 99c102340e430dbca94538f3bd0e810c79266cd9
+ms.sourcegitcommit: f08f501b75a97ceef59c21f42158bf135a354eaa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406565"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37926160"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Installieren von Azure PowerShell unter Windows mit PowerShellGet
 
@@ -24,13 +24,16 @@ Das klassische Azure-Bereitstellungsmodell wird von dieser Version von Azure Pow
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-Ab Version 6.0 ist für Azure PowerShell Version 5.0 oder höher unter Windows erforderlich. Führen Sie den folgenden Befehl aus, um die Version von PowerShell zu prüfen, die auf Ihrem Computer ausgeführt wird:
+Ab Version 6.0 erfordert Azure PowerShell die PowerShell-Version 5.0. Führen Sie den folgenden Befehl aus, um die Version von PowerShell zu prüfen, die auf Ihrem Computer ausgeführt wird:
 
 ```powershell
 $PSVersionTable.PSVersion
 ```
 
 Falls Sie über eine veraltete Version verfügen, helfen Ihnen die Informationen unter [Aktualisieren einer vorhandenen Windows PowerShell](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) weiter.
+
+> [!IMPORTANT]
+> Das in diesem Dokument beschriebene Modul „AzureRM“ verwendet .NET Framework. Dadurch ist es nicht mit PowerShell 6.0 kompatibel, das .NET Core verwendet. Wenn Sie PowerShell 6.0 verwenden, befolgen Sie die [Installationsanweisungen für macOS und Linux](install-azurermps-maclinux.md). 
 
 ## <a name="install-the-azure-powershell-module"></a>Installieren des Azure PowerShell-Moduls
 
@@ -70,7 +73,7 @@ Import-Module AzureRM
 Connect-AzureRmAccount
 ```
 
-Sie müssen diese Schritte für jede neue gestartete PowerShell-Sitzung wiederholen. Für den automatischen Import des `AzureRM`-Moduls muss ein PowerShell-Profil eingerichtet werden. Informationen hierzu finden Sie unter [About Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) (Informationen zu Profilen).
+Sie müssen diese Schritte für jede neue PowerShell-Sitzung wiederholen, die Sie starten. Für den automatischen Import des Moduls `AzureRM` muss ein PowerShell-Profil eingerichtet werden. Informationen hierzu finden Sie unter [About Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) (Informationen zu Profilen).
 Informationen zum sitzungsübergreifenden Speichern der Azure-Anmeldung finden Sie unter [Persisting user credentials across PowerShell sessions](context-persistence.md) (Speichern von Benutzeranmeldeinformationen zwischen PowerShell-Sitzungen).
 
 ## <a name="update-the-azure-powershell-module"></a>Aktualisieren des Azure PowerShell-Moduls

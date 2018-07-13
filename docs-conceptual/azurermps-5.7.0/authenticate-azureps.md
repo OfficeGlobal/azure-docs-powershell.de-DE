@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323338"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100272"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Anmelden mit Azure PowerShell
 
-Azure PowerShell unterstützt mehrere Anmeldemethoden. Die einfachste Möglichkeit ist die interaktive Anmeldung über die Befehlszeile.
+Azure PowerShell unterstützt mehrere Authentifizierungsmethoden. Die einfachste Möglichkeit ist die interaktive Anmeldung über die Befehlszeile.
 
 ## <a name="sign-in-interactively"></a>Interaktives Anmelden
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 Wenn Sie dieses Cmdlet ausführen, wird ein Dialogfeld angezeigt, in dem Sie zur Eingabe Ihrer E-Mail-Adresse und Ihres Kennworts für Ihr Azure-Konto aufgefordert werden. Wenn Sie sich authentifizieren, werden diese Angaben für die aktuelle PowerShell-Sitzung gespeichert, das Dialogfeld wird geschlossen, und Sie haben Zugriff auf alle Azure PowerShell-Cmdlets.
 
 > [!IMPORTANT]
-> Diese Anmeldung gilt _nur_ für die aktuelle PowerShell-Sitzung. Informationen zur sitzungsübergreifenden Speicherung der Anmeldung finden Sie im [Artikel zu beständigen Anmeldeinformationen](context-persistence.md).
+> Diese Anmeldung gilt _nur_ für die aktuelle PowerShell-Sitzung. Informationen zur sitzungsübergreifenden Speicherung der Authentifizierung finden Sie im Artikel zu [beständigen Anmeldeinformationen](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Anmelden mit einem Dienstprinzipal
 
