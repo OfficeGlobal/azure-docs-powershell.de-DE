@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 21b61a2f91b4f6211fbeec8ba234782355b9a4b3
+ms.openlocfilehash: df616a5fc1b7da3d29a3769aa24a8ef9e1760c74
 ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024765"
+ms.locfileid: "39024952"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Installieren des Azure PowerShell-Dienstverwaltungsmoduls
 
@@ -84,8 +84,7 @@ Allgemeine Informationen zum Installieren, Kennenlernen, Verwenden und Anpassen 
 |Ich möchte auf PowerShell 5 aktualisieren.|[Installieren Sie die aktuelle Version von WMF.](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |Ich nutze eine Windows-Version mit PowerShell 3 oder PowerShell 4.|[Laden Sie die PackageManagement-Module herunter.](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<div id="helpmechoose"/>
-### Überprüfen der Azure PowerShell-Version
+### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose">Überprüfen der Azure PowerShell-Version
 
 Obwohl empfohlen wird, möglichst bald ein Upgrade auf die neueste Version auszuführen, werden verschiedene Azure PowerShell-Versionen unterstützt. Führen Sie zum Ermitteln der installierten Azure PowerShell-Version `Get-Module AzureRM` in der Befehlszeile aus:
 

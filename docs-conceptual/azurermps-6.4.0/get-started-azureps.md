@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 0228db32c313626029d1a54b8d5c2c8ddbfae7a8
+ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
 ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025037"
+ms.locfileid: "39025411"
 ---
 # <a name="get-started-with-azure-powershell"></a>Erste Schritte mit Azure PowerShell
 
@@ -48,13 +48,13 @@ Sie können Azure PowerShell auch installieren und lokal in einer PowerShell-Sit
 
 Melden Sie sich interaktiv an:
 
-1. Geben Sie `Connect-AzureRmAccount`ein. Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Die Option „-Environment“ ermöglicht eine Anmeldung in Azure China oder Azure Deutschland.
+1. Geben Sie `Connect-AzureRmAccount`ein. Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Die Option „-Environment“ ermöglicht eine Authentifizierung für Azure China oder Azure Deutschland.
 
    Beispiel: Connect-AzureRmAccount -Environment AzureChinaCloud
 
 2. Geben Sie die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
 
-Nach der Anmeldung bei einem Azure-Konto können Sie mithilfe der Azure PowerShell-Cmdlets auf die Ressourcen in Ihrem Abonnement zugreifen und sie verwalten.
+Nach der Anmeldung an einem Azure-Konto können Sie mithilfe der Azure PowerShell-Cmdlets auf die Ressourcen in Ihrem Abonnement zugreifen und sie verwalten.
 
 ## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a>Erstellen eines virtuellen Windows-Computers mithilfe einfacher Standardeinstellungen
 
