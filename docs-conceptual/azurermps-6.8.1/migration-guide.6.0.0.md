@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 5/1/2018
-ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 05/01/2018
+ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250326"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383939"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Grundlegende Änderungen für Microsoft Azure PowerShell 6.0.0
 
@@ -22,7 +22,7 @@ Dieses Dokument informiert über grundlegende Änderungen und fungiert als Migra
 
 - [Allgemeine grundlegende Änderungen](#general-breaking-changes)
     - [Festlegung der erforderlichen PowerShell-Mindestversion auf 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Standardmäßige Aktivierung der automatischen Kontextspeicherung](#context-autosaved-enabled-by-default)
+    - [Standardmäßige Aktivierung der automatischen Kontextspeicherung](#context-autosave-enabled-by-default)
     - [Entfernung des Tags-Alias](#removal-of-tags-alias)
 - [Grundlegende Änderungen an AzureRM.Compute-Cmdlets](#breaking-changes-to-azurermcompute-cmdlets)
 - [Grundlegende Änderungen an AzureRM.DataLakeStore-Cmdlets](#breaking-changes-to-azurermdatalakestore-cmdlets)
