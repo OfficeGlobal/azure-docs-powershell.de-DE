@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250319"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383837"
 ---
 # <a name="release-notes"></a>Versionshinweise
 
 Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an Azure PowerShell vorgenommen wurden.
 
 ---
+## <a name="681---august-2018"></a>6.8.1: August 2018
+#### <a name="general"></a>Allgemein
+* Das Problem, dass Standardressourcengruppen nicht festgelegt wurden, wurde behoben.
+* Allgemeine Laufzeitassemblys aktualisiert
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* Das Problem, dass Standardressourcengruppen nicht festgelegt wurden, wurde behoben.
+* Problem https://github.com/Azure/azure-powershell/issues/6603 behoben
+    - Die Cmdlets „Import-AzureRmApiManagementApi“ und „*-AzureRmApiManagementCertificate“ können jetzt relative Pfade verarbeiten.
+* Problem https://github.com/Azure/azure-powershell/issues/6879 behoben
+    - „CertificateInformation“ ist eine festlegbare Eigenschaft, die die ordnungsgemäße Funktionsweise des Cmdlets „Set-AzureRmApiManagement“ ermöglicht. Behoben durch Upgrade auf NuGet-Paket „4.0.4-preview“
+* Problem https://github.com/Azure/azure-powershell/issues/6853 behoben
+    - OData-Filter für die Suche anhand des Namens korrigiert (Produkt)
+* Problem https://github.com/Azure/azure-powershell/issues/6814 behoben
+    - OData-Filter für die Suche anhand des Namens korrigiert (API)
+* Unterstützung für AzureMonitor-Protokollierung hinzugefügt
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* Problem des fehlenden Ziels in der Fehlerausgabe behoben
+* Problem mit dem Speicherkontotyp für den virtuellen Computer mit verwaltetem Datenträgern behoben
+* Das Problem, dass Standardressourcengruppen nicht festgelegt wurden, wurde behoben.
+* AEM-Erweiterungs-Cmdlets für andere Umgebungen (etwa Azure China) korrigiert
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* Standarddarstellung der Cmdlet-Ausgabe in Tabellenansicht geändert
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* Fehler in „Update-AzureRmPowerBIEmbeddedCapacity“ beim Skalieren der angehaltenen Kapazität behoben
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* Problem beim Erstellen verwalteter Anwendungen über Marketplace behoben
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* Behobene Probleme
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* Unterstützung für Routingmethode „MultiValue“ hinzugefügt
+    - Neuer Parameter „MaxReturn“ für Routingtyp „MultiValue“
+* Unterstützung für Subnetzroutingmethode hinzugefügt
+    - Unterstützung für IP-Adressbereiche (Subnetze) in Endpunkten
+* Unterstützung für benutzerdefinierte Header in Profilen hinzugefügt
+* Unterstützung für erwartete Statuscodebereiche in Profilen hinzugefügt
+* Unterstützung für benutzerdefinierte Header in Endpunkten hinzugefügt
+
 ## <a name="680---august-2018"></a>6.8.0: August 2018
 #### <a name="general"></a>Allgemein
 * Das Problem, dass Standardressourcengruppen nicht festgelegt wurden, wurde behoben.
