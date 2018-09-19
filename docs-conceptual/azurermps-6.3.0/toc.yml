@@ -5,10 +5,14 @@ items:
   - name: Installieren
     href: install-azurerm-ps.md
     items:
-    - name: Installieren unter macOS und Linux
+    - name: Installieren unter macOS oder Linux
       href: install-azurermps-maclinux.md
-    - name: Andere Installationsmethoden
+    - name: Installieren per MSI
       href: other-install.md
+    - name: Ausführen in Docker
+      href: azurerm-ps-in-docker.md
+  - name: Deinstallieren
+    href: uninstall-azurerm-ps.md
   - name: Erste Schritte
     href: get-started-azureps.md
   - name: Cloud Shell
@@ -38,11 +42,17 @@ items:
     items:
     - name: Experimentelle Module
       href: using-experimental-modules.md
+    - name: PowerShell-Aufträge
+      href: using-psjobs.md
   - name: Versionshinweise
     href: release-notes-azureps.md
     items:
-    - name: Grundlegende Änderungen für Azure PowerShell 4.x
-      href: migration-guide.4.0.0.md
+    - name: Grundlegende Änderungen für Azure PowerShell 6.x
+      href: migration-guide.6.0.0.md
+- name: Tutorials
+  items:
+  - name: Erstellen von virtuellen Computern
+    href: azureps-vm-tutorial.yml
 - name: Beispielskripts
   items:
   - name: Virtuelle Linux-Computer
@@ -55,9 +65,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: Cosmos DB
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: 1ae97591983a4a2fc1f576f25ec2b76e23a7be66
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 7ee88786f8bc1f7f14ea20795e60ff9221cfcfd9
+ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38099984"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37091298"
