@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/31/2017
-ms.openlocfilehash: 9496ad0face2fbf4ecd685a6ee8e810a419b55aa
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/09/2018
+ms.openlocfilehash: 9867efc991f4a9efe880c0f449d9d2be1cddf8ef
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384211"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300628"
 ---
-# <a name="persisting-user-credentials-across-powershell-sessions"></a>Speichern von Benutzeranmeldeinformationen zwischen PowerShell-Sitzungen
+# <a name="persist-user-credentials-across-powershell-sessions"></a>Speichern von Benutzeranmeldeinformationen zwischen PowerShell-Sitzungen
 
 Azure PowerShell bietet ein Feature namens **Azure Context Autosave** mit den folgenden Funktionen:
 
@@ -32,16 +32,16 @@ Bei einem *Azure-Kontext* handelt es sich um einen Satz von Informationen, die d
 - Ein *Mandant*: Der Azure Active Directory-Mandant mit Ihrem Abonnement. Mandanten sind eher für die Dienstprinzipalauthentifizierung relevant.
 - Eine *Umgebung*: Die spezielle Azure-Cloud, die als Ziel fungiert (in der Regel die globale Azure-Cloud).
   Über die Umgebungseinstellung können Sie jedoch auch nationale Clouds, Government Clouds und lokale Clouds (Azure Stack) als Ziel festlegen.
-- *Anmeldeinformationen*: Die Informationen, die von Azure verwendet werden, um Ihre Identität zu überprüfen und die Autorisierung des Zugriffs auf Ressourcen in Azure zu gewährleisten.
+- *Anmeldeinformationen*: Die Informationen, die von Azure verwendet werden, um Ihre Identität zu überprüfen und die Autorisierung des Zugriffs auf Ressourcen in Azure zu bestätigen.
 
-In früheren Versionen musste der Azure-Kontext bei jedem Öffnen einer neuen PowerShell-Sitzung erstellt werden. Ab Azure PowerShell 4.4.0 können Sie die automatische Speicherung und Wiederverwendung von Azure-Kontexten beim Öffnen einer neuen PowerShell-Sitzung aktivieren.
+In früheren Versionen musste bei jedem Öffnen einer neuen PowerShell-Sitzung ein Azure-Kontext erstellt werden. Ab Azure PowerShell 4.4.0 können Azure-Kontexte jeweils automatisch gespeichert werden, wenn eine neue PowerShell-Sitzung geöffnet wird.
 
-## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Automatisches Speichern des Kontexts für die nächste Anmeldung
+## <a name="automatically-save-the-context-for-the-next-sign-in"></a>Automatisches Speichern des Kontexts für die nächste Anmeldung
 
-Ab Version 6.3.0 behält Azure PowerShell Ihre Kontextinformationen zwischen Sitzungen automatisch bei. Wenn PowerShell den Kontext und die Anmeldeinformationen verwerfen soll, verwenden Sie `Disable-AzureRmContextAutoSave`. Daraufhin müssen Sie sich jedes Mal anmelden, wenn Sie eine PowerShell-Sitzung öffnen.
+In den Versionen 6.3.0 und höher behält Azure PowerShell Ihre Kontextinformationen zwischen Sitzungen automatisch bei. Wenn PowerShell den Kontext und die Anmeldeinformationen verwerfen soll, verwenden Sie `Disable-AzureRmContextAutoSave`. Sie müssen sich jedes Mal an Azure anmelden, wenn Sie eine PowerShell-Sitzung öffnen.
 
 Mit `Enable-AzureRmContextAutosave` können Sie es Azure PowerShell ermöglichen, den Kontext über das Sitzungsende hinaus zu speichern. Kontext und Anmeldeinformationen werden automatisch in einem speziellen ausgeblendeten Ordner in Ihrem Benutzerverzeichnis (`%AppData%\Roaming\Windows Azure PowerShell`) gespeichert.
-Anschließend verwendet jede neue PowerShell-Sitzung den Kontext aus Ihrer letzten Sitzung als Ziel.
+Jede neue PowerShell-Sitzung verwendet den Kontext aus Ihrer letzten Sitzung als Ziel.
 
 Die Cmdlets zum Verwalten von Azure-Kontexten ermöglichen eine präzise Steuerung. So können Sie festlegen, ob Änderungen nur für die aktuelle PowerShell-Sitzung (`Process`-Bereich) oder für jede PowerShell-Sitzung (`CurrentUser`-Bereich) gelten sollen. Ausführlichere Informationen zu diesen Optionen finden Sie unter [Verwenden von Kontextbereichen](#Using-Context-Scopes).
 
@@ -69,7 +69,7 @@ Falls Sie das Ergebnis des Hintergrundauftrags ermitteln möchten, können Sie m
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Erstellen, Auswählen, Umbenennen und Entfernen von Kontexten
 
-Für die Kontexterstellung müssen Sie bei Azure angemeldet sein. Das Cmdlet `Connect-AzureRmAccount` (oder dessen Alias `Login-AzureRmAccount`) legt den von nachfolgenden Azure PowerShell-Cmdlets verwendeten Standardkontext fest und ermöglicht den Zugriff auf beliebige Mandanten oder Abonnements, die im Rahmen Ihrer Anmeldeinformationen zulässig sind.
+Für die Kontexterstellung müssen Sie bei Azure angemeldet sein. Das Cmdlet `Connect-AzureRmAccount` (oder dessen Alias `Login-AzureRmAccount`) legt den von Azure PowerShell-Cmdlets verwendeten Standardkontext fest und ermöglicht den Zugriff auf beliebige Mandanten oder Abonnements, die im Rahmen Ihrer Anmeldeinformationen zulässig sind.
 
 Verwenden Sie `Set-AzureRmContext` (oder dessen Alias `Select-AzureRmSubscription`), um nach der Anmeldung einen neuen Kontext hinzuzufügen.
 
@@ -93,7 +93,7 @@ Zum Entfernen eines Kontexts steht das Cmdlet `Remove-AzureRmContext` zur Verfü
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
-Verwirft den Kontext namens „Contoso2“. Er kann anschließend mit `Set-AzureRmContext` erneut erstellt werden.
+Verwirft den Kontext namens „Contoso2“. Sie können diesen Kontext neu erstellen, indem Sie `Set-AzureRmContext` verwenden.
 
 ## <a name="removing-credentials"></a>Entfernen von Anmeldeinformationen
 
@@ -130,7 +130,7 @@ Neue Cmdlets für die Kontextverwaltung
 - [Enable-AzureRmContextAutosave][enable]: Ermöglicht das Speichern des Kontexts zwischen PowerShell-Sitzungen.
   Änderungen wirken sich auf den globalen Kontext aus.
 - [Disable-AzureRmContextAutosave][disable]: Deaktiviert die automatische Speicherung des Kontexts. Bei jeder neuen PowerShell-Sitzung ist eine erneute Anmeldung erforderlich.
-- [Select-AzureRmContext][select]: Ermöglicht das Auswählen eines Standardkontexts. Alle nachfolgenden Cmdlets verwenden die Anmeldeinformationen aus diesem Kontext für die Authentifizierung.
+- [Select-AzureRmContext][select]: Ermöglicht das Auswählen eines Standardkontexts. Alle Cmdlets verwenden die Anmeldeinformationen aus diesem Kontext für die Authentifizierung.
 - [Disconnect-AzureRmAccount][remove-cred]: Dient zum Entfernen aller einem Konto zugeordneten Anmeldeinformationen und Kontexte.
 - [Remove-AzureRmContext][remove-context]: Dient zum Entfernen eines benannten Kontexts.
 - [Rename-AzureRmContext][rename]: Dient zum Umbenennen eines vorhandenen Kontexts.

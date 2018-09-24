@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: e1606ddb02adf1de2cb5496917d61755ac3dad23
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 3f1c1bab5f9903ee7df813bf1ef043c7107ebe79
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384143"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300934"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Verwalten mehrerer Azure-Abonnements
 
@@ -68,4 +68,4 @@ Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur
     CurrentStorageAccount :
     ```
 
-Nachdem Sie Ihr Standardabonnement festgelegt haben, werden alle weiteren Azure PowerShell-Befehle für dieses Abonnement ausgeführt.
+Nachdem Sie Ihr Standardabonnement festgelegt haben, werden alle Azure PowerShell-Befehle für dieses Abonnement ausgeführt.

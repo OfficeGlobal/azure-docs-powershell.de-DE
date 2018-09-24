@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 11/15/2017
-ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 9150089860f0934cb7344cac2cef38546cac28ad
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384089"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300815"
 ---
 # <a name="get-started-with-azure-powershell"></a>Erste Schritte mit Azure PowerShell
 
@@ -48,7 +48,7 @@ Sie können Azure PowerShell auch installieren und lokal in einer PowerShell-Sit
 
 Melden Sie sich interaktiv an:
 
-1. Geben Sie `Connect-AzureRmAccount`ein. Im daraufhin erscheinenden Dialogfeld werden Sie zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Die Option „-Environment“ ermöglicht eine Authentifizierung für Azure China oder Azure Deutschland.
+1. Geben Sie `Connect-AzureRmAccount`ein. Im daraufhin angezeigten Dialogfeld werden Sie zum Eingeben Ihrer Azure-Anmeldeinformationen aufgefordert. Die Option „-Environment“ ermöglicht eine Authentifizierung für Azure China oder Azure Deutschland.
 
    Beispiel: Connect-AzureRmAccount -Environment AzureChinaCloud
 
@@ -95,7 +95,7 @@ StorageProfile           : {ImageReference, OsDisk, DataDisks}
 FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 ```
 
-Das war einfach. Sie fragen sich jedoch vielleicht, welche anderen Elemente erstellt werden und wie der virtuelle Computer konfiguriert wird. Zunächst sehen wir uns unsere Ressourcengruppen an.
+Sie werden sich vielleicht fragen, welche anderen Elemente erstellt werden und wie der virtuelle Computer konfiguriert wird. Zunächst sehen wir uns unsere Ressourcengruppen an.
 
 ```azurepowershell-interactive
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
@@ -233,7 +233,7 @@ Jetzt können wir den virtuellen Computer mit dem VM-Konfigurationsobjekt erstel
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-Nach Erstellung des virtuellen Computers können Sie sich bei Ihrem neuen virtuellen Linux-Computer anmelden. Verwenden Sie dazu SSH und die öffentliche IP-Adresse des virtuellen Computers, die Sie erstellt haben:
+Nach der Erstellung des virtuellen Computers können Sie sich an Ihrem neuen virtuellen Linux-Computer anmelden. Verwenden Sie hierfür SSH und die öffentliche IP-Adresse des virtuellen Computers, den Sie erstellt haben:
 
 ```bash
 ssh xx.xxx.xxx.xxx
@@ -303,7 +303,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 ## <a name="listing-deployed-resources"></a>Auflisten der bereitgestellten Ressourcen
 
-Mit dem Cmdlet `Get-AzureRmResource` können Sie die in Azure ausgeführten Ressourcen auflisten. Das folgende Beispiel zeigt die Ressourcen, die wir gerade eben in der neuen Ressourcengruppe erstellt haben.
+Mit dem Cmdlet `Get-AzureRmResource` können Sie die in Azure ausgeführten Ressourcen auflisten. Das folgende Beispiel zeigt die Ressourcen, die wir in der neuen Ressourcengruppe erstellt haben.
 
 ```azurepowershell-interactive
 Get-AzureRmResource |
@@ -346,7 +346,8 @@ Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-Sie können auch mehrere Ressourcen gleichzeitig löschen. Der folgende Befehl löscht beispielsweise die gesamte Ressourcengruppe „MyResourceGroup“, die wir in den Beispielen dieses Tutorials verwendet haben. Dadurch werden die Ressourcengruppe und sämtliche darin enthaltene Ressourcen entfernt.
+Sie können auch eine größere Zahl von Ressourcen gleichzeitig löschen. Mit dem folgenden Befehl wird beispielsweise die Ressourcengruppe „MyResourceGroup“ gelöscht, die wir bisher für alle Beispiele dieses Tutorials verwendet haben.
+Es werden auch alle Ressourcen der Gruppe gelöscht.
 
 ```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
@@ -358,7 +359,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-Das kann einige Minuten dauern.
+Der Vorgang kann je nach Anzahl und Typ der Ressourcen mehrere Minuten dauern.
 
 ## <a name="get-samples"></a>Herunterladen von Beispielen
 

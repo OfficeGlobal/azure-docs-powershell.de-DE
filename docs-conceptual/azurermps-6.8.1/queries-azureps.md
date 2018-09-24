@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/08/2018
-ms.openlocfilehash: daa39ada5b4e969264b6e8596dc7b090bb196fd5
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: da8c8f37d8c60e9555b4627a7b5c3d1d6e7888fa
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383735"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300560"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Abfragen der Ausgabe von Azure PowerShell-Cmdlets
 
@@ -52,7 +52,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 
 ## <a name="select-complex-nested-properties"></a>Auswählen komplexer geschachtelter Eigenschaften
 
-Wenn sich die Eigenschaft, die Sie auswählen möchten, tief in der Struktur der JSON-Ausgabe befindet, müssen Sie den vollständigen Pfad zu dieser geschachtelten Eigenschaft angeben. Das folgende Beispiel zeigt, wie Sie den VM-Namen und den Betriebssystemtyp auf der Grundlage des Cmdlets `Get-AzureRmVM` auswählen.
+Wenn die gewünschte Eigenschaft in der JSON-Ausgabe verschachtelt ist, müssen Sie den vollständigen Pfad zur Eigenschaft angeben. Das folgende Beispiel zeigt, wie Sie den VM-Namen und den Betriebssystemtyp auf der Grundlage des Cmdlets `Get-AzureRmVM` auswählen.
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select Name,@{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}}

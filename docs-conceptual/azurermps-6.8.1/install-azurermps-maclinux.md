@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/06/2018
-ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 8347502df3c9cd6237a44293cfa3e5c051066940
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384041"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300662"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Installieren von Azure PowerShell unter macOS oder Linux
 
@@ -80,7 +80,7 @@ Unter macOS und Linux müssen Sie zur Verwendung Ihres Profils die Umgebungsvari
 
 ## <a name="available-cmdlets"></a>Verfügbare Cmdlets
 
-Die Azure PowerShell-Module für .NET Core befinden sich noch in der Entwicklungsphase. Diese Module bieten nicht den vollständigen Satz der Cmdlets, die für die Windows-Version der Module verfügbar sind. Die folgenden Funktionen werden in AzureRM.Netcore-Module implementiert:
+Die Azure PowerShell-Module für .NET Core befinden sich noch in der Entwicklungsphase. Diese Module weisen nicht den vollständigen Satz der Cmdlets auf, die für die Windows-Version der Module verfügbar sind. Die folgenden Funktionen werden in AzureRM.Netcore-Module implementiert:
 
 * Kontenverwaltung
   * Anmelden mit einem Microsoft-Konto, Unternehmenskonto oder Dienstprinzipal über Microsoft Azure Active Directory
@@ -88,7 +88,7 @@ Die Azure PowerShell-Module für .NET Core befinden sich noch in der Entwicklung
 * Environment
   * Abrufen der verschiedenen vorkonfigurierten Microsoft Azure-Umgebungen
   * Hinzufügen/Einrichten/Entfernen angepasster Umgebungen (z.B. Ihrer Azure Stack- oder Windows Azure Pack-Umgebungen)
-* Cmdlets auf Verwaltungsebene für Azure-Dienste, die Resource Manager- und Service Management-Schnittstellen nutzen.
+* Cmdlets auf Verwaltungsebene für Azure-Dienste, die das Resource Manager-Bereitstellungsmodell und das klassische Bereitstellungsmodell nutzen.
   * Virtual Machine
   * App Service (Websites)
   * SQL-Datenbank

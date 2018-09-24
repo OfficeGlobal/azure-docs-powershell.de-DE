@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: ac571363d79c83b268b5c25f65b14f16d4b86e71
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: cb1c49682ea1bfd5fa43baafe4cb0f7fc0c46020
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383769"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300798"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Verwenden experimenteller Azure PowerShell-Module
+# <a name="use-experimental-azure-powershell-modules"></a>Verwenden von experimentellen Azure PowerShell-Modulen
 
 Das Azure PowerShell-Team experimentiert mit zahlreichen Verbesserungen für Azure-PowerShell und konzentriert sich dabei auf Azure-Entwicklertools (insbesondere Befehlszeilenschnittstellen).
 
@@ -89,8 +89,8 @@ Die experimentellen Verbesserungen stellen eine wesentliche Änderung dar, die d
 
 Im Szenario „Web-App erstellen“ sind beispielsweise Schalter wie `-Git` oder `-AddRemote` denkbar, durch die einem vorhandenen Git-Repository automatisch eine Azure-Remotefunktion hinzugefügt wird.
 
-- Festlegbare Standardwerte: Benutzer sollten die Möglichkeit haben, bestimmte allgemeine Parameter wie `-ResourceGroupName` und `-Location` auf Standardwerte festzulegen.
+- Festlegbare Standardwerte: Benutzer sollten die Möglichkeit haben, allgemeine Parameter wie `-ResourceGroupName` und `-Location` auf Standardwerte festzulegen.
 
-- Standardgrößen: Ressourcengrößen können für Benutzer verwirrend sein, da viele Ressourcenanbieter unterschiedliche Namen verwenden (etwa „Standard\_DS1\_v2“ oder „S1“). Die meisten Benutzer machen sich jedoch eher Gedanken über die Kosten. Daher ist es sinnvoll, auf der Grundlage eines Preisplans universelle Größen zu definieren. Benutzer können sich für eine bestimmte Größe entscheiden oder Azure PowerShell die Wahl der _besten Option_ für die Ressource und das Budget überlassen.
+- Standardgrößen: Ressourcengrößen können für Benutzer verwirrend sein, da viele Ressourcenanbieter unterschiedliche Namen verwenden (etwa „Standard\_DS1\_v2“ oder „S1“). Die meisten Benutzer machen sich jedoch eher Gedanken über die Kosten. Daher ist es sinnvoll, auf Grundlage eines Preisplans universelle Größen zu definieren. Benutzer können sich für eine bestimmte Größe entscheiden oder Azure PowerShell die Wahl der _besten Option_ für die Ressource und das Budget überlassen.
 
 - Ausgabeformat: Azure PowerShell gibt derzeit `PSObject`-Objekte zurück und nur wenig über die Konsole aus. Azure PowerShell muss dem Benutzer ggf. Informationen zu den verwendeten intelligenten Standardwerten anzeigen.

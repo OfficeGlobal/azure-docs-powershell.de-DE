@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/20/2018
-ms.openlocfilehash: 27ac176d8bd0b142b7740b2ba6793edb500a8af3
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/09/2018
+ms.openlocfilehash: 0ed8f50abbcb2aa00192196f19004446dc696b5d
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383565"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304011"
 ---
 # <a name="run-azure-powershell-in-a-docker-container"></a>Ausführen von Azure PowerShell in einem Docker-Container
 
-Microsoft veröffentlicht Docker-Images mit vorinstallierter Azure PowerShell-Umgebung, um die Ausführung von Azure PowerShell in portablen Umgebungen zu erleichtern. Diese Images bieten einen Linux-Gast unter PowerShell Core oder einen Windows-Gast mit PowerShell Core oder PowerShell 5.
+Microsoft veröffentlicht Docker-Images, für die Azure PowerShell vorinstalliert ist. Diese Images können für das Experimentieren mit Azure PowerShell oder das Ausführen in einer isolierten Umgebung verwendet werden. Es sind auch Images mit PowerShell Core und PowerShell 5 vorhanden. 
 
 | Environment | Docker-Image |
 |-------------|--------------|
@@ -24,7 +24,7 @@ Microsoft veröffentlicht Docker-Images mit vorinstallierter Azure PowerShell-Um
 | PowerShell Core unter Windows | [azuresdk/azure-powershell-core:nanoserver](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 | PowerShell Core unter Linux | [azuresdk/azure-powershell-core:latest](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 
-Wenn Sie einen dieser Container ausführen möchten, verwenden Sie `docker run -it $ImageName`, um ein interaktives Terminal zu erhalten. Verwenden Sie also beispielsweise Folgendes, wenn Sie den Container „PowerShell Core unter Linux“ ausführen möchten:
+Verwenden Sie `docker run -it $ImageName`, um ein interaktives Terminal zu erhalten, wenn Sie einen dieser Container ausführen möchten. Beispiel für die Ausführung eines Linux-Containers mit PowerShell Core:
 
 ```powershell
 docker run -it azuresdk/azure-powershell-core:latest
