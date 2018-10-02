@@ -1,6 +1,6 @@
 ---
-title: Übersicht über Azure Stack PowerShell mit Administratorrechten | Microsoft-Dokumentation
-description: Enthält eine Übersicht über Azure Stack PowerShell mit Administratorrechten und eine Anleitung zur Installation und Konfiguration.
+title: Übersicht über Azure Stack PowerShell | Microsoft-Dokumentation
+description: Enthält eine Übersicht über Azure Stack PowerShell und eine Anleitung zur Installation und Konfiguration.
 author: bganapa
 ms.author: bganapa
 manager: knithinc
@@ -8,47 +8,53 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.openlocfilehash: d514e43d82bcb51f65831dc506e58e8747db0381
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179138"
+ms.locfileid: "47178458"
 ---
-# <a name="azure-stack-module-130"></a>Azure Stack-Modul 1.3.0
+# <a name="azurerm-module-230"></a>AzureRM-Modul 2.3.0
 
 ## <a name="requirements"></a>Anforderungen:
-Die niedrigste unterstützte Azure Stack-Version ist 1804.
+Die niedrigste unterstützte Azure Stack-Version ist 1808.
 
 Hinweis: Falls Sie eine niedrigere Version verwenden, installieren Sie die Version 1.2.11.
 
-## <a name="known-issues"></a>Bekannte Probleme:
-
-- Zum Schließen einer Warnung wird die Azure Stack-Version 1803 benötigt.
-- Bei einigen Storage-Cmdlets wird die Azure Stack-Version 1804 vorausgesetzt.
-- Mit „New-AzsOffer“ können keine öffentlichen Angebote erstellt werden. Das Cmdlet „Set-AzsOffer“ muss hinterher aufgerufen werden, um den Zustand zu ändern.
-- Ein IP-Pool kann nicht ohne erneute Bereitstellung entfernt werden.
-
-## <a name="breaking-changes"></a>Wichtige Änderungen
-Alle Breaking Changes, die aus der Version 1.2.11 migriert werden, sind hier dokumentiert: https://aka.ms/azspowershellmigration
 
 ## <a name="install"></a>Installieren
-```
-# Remove previous Versions
-Uninstall-Module AzureRM.AzureStackAdmin -Force
-Uninstall-Module AzureRM.AzureStackStorage -Force
+```powershell
+# Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
+Uninstall-Module -Name AzureRM -Force 
+Uninstall-Module AzureRM.AzureStackAdmin -Force -ErrorAction Continue
+Uninstall-Module AzureRM.AzureStackStorage -Force -ErrorAction Continue
+Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
+Get-Module Azure.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
-# Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.3.0
 ```
+
+##<a name="release-notes"></a>Versionsinformationen
+* Das Release 2.3.0 verfügt über eine Liste mit Breaking Changes. Für das Upgrade von Version 1.2.11 haben wir unter https://aka.ms/azspowershellmigration einen Migrationsleitfaden erstellt.
+* Dieses Release entspricht dem Azure Stack-spezifischen API-Profil 2018-03-01-hybrid
+* Alle Module sind mindestens vom AzureRm.Profile-Modul abhängig.
+* Die von den einzelnen Modulen unterstützten API-Versionen werden aktualisiert. 
+    * Compute – 2017-03-30
+    * Netzwerk – 2017-10-01
+    * Storage – 2016-01-01
+    * Ressourcen – 2018-02-01
+    * Key Vault – 2016-10-01
+    * DNS – 2016-04-01
+* Die vollständige Zuordnung aller API-Versionen für die einzelnen Ressourcentypen finden Sie unter https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json.
+
 ## <a name="content"></a>Inhalt:
 ### <a name="azure-bridge"></a>Azure-Bridge
 Vorschauversion des AzureBridge-Administratormoduls von Azure Stack, mit dem Sie Images aus Azure syndizieren können.
@@ -63,7 +69,7 @@ Vorschauversion des Backup-Administratormoduls, das Administratoren Folgendes er
 Vorschauversion des Commerce-Administratormoduls von Azure Stack, mit dem die aggregierte Datennutzung für das gesamte Azure Stack-System angezeigt werden kann.
 
 ### <a name="compute"></a>Compute
-Vorschauversion des Compute-Administratormoduls von Azure Stack mit Funktionen zur Verwaltung von Computekontingenten, Plattformimages und VM-Erweiterungen.
+Vorschauversion des Compute-Administratormoduls von Azure Stack mit Funktionen zur Verwaltung von Computekontingenten, Plattformimages, verwalteten Datenträgern und VM-Erweiterungen.
 
 ### <a name="fabric"></a>Fabric
 Vorschauversion des Fabric-Administratormoduls von Azure Stack, mit dem Administratoren Infrastrukturkomponenten anzeigen und verwalten können:

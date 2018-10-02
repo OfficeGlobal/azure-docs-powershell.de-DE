@@ -1,3 +1,20 @@
+---
+title: Übersicht über Azure Stack PowerShell mit Administratorrechten | Microsoft-Dokumentation
+description: Enthält eine Übersicht über Azure Stack PowerShell mit Administratorrechten und eine Anleitung zur Installation und Konfiguration.
+author: bganapa
+ms.author: bganapa
+manager: knithinc
+ms.devlang: powershell
+ms.topic: conceptual
+ms.manager: knithinc
+ms.date: 09/21/2018
+ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
+ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47178798"
+---
 # <a name="azure-stack-module-140"></a>Azure Stack-Modul 1.4.0
 
 ## <a name="requirements"></a>Anforderungen:
