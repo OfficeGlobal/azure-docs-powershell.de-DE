@@ -9,11 +9,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 4c1bf93d69e186699f434bb979af56fcb1d20e8a
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178917"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47425124"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Erstellen eines Azure-Dienstprinzipals mit Azure PowerShell
 
