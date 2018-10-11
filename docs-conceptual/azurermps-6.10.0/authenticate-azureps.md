@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: c3131d3516e50123c48b13dc9e04c0b507a63a58
+ms.date: 09/09/2018
+ms.openlocfilehash: 2a118e1aa8b6755ef5769f44429427d22532780d
 ms.sourcegitcommit: a749eb729f583c9d0dd86141bbd04984d77ae9ab
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/11/2018
-ms.locfileid: "48881958"
+ms.locfileid: "48882155"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Anmelden mit Azure PowerShell
 
@@ -26,14 +26,14 @@ Verwenden Sie für die interaktive Anmeldung das Cmdlet [Connect-AzureRmAccount]
 Connect-AzureRmAccount
 ```
 
-Wenn Sie dieses Cmdlet ausführen, wird ein Dialogfeld angezeigt, in dem Sie zur Eingabe Ihrer E-Mail-Adresse und Ihres Kennworts für Ihr Azure-Konto aufgefordert werden. Wenn Sie sich authentifizieren, werden diese Angaben für die aktuelle PowerShell-Sitzung gespeichert, das Dialogfeld wird geschlossen, und Sie haben Zugriff auf alle Azure PowerShell-Cmdlets.
+Wenn Sie dieses Cmdlet ausführen, wird ein Dialogfeld angezeigt, in dem Sie zur Eingabe Ihrer E-Mail-Adresse und Ihres Kennworts für Ihr Azure-Konto aufgefordert werden. Diese Authentifizierung gilt jeweils für die aktuelle PowerShell-Sitzung.
 
 > [!IMPORTANT]
 > Ab Azure PowerShell 6.3.0 werden Ihre Anmeldeinformationen in mehreren PowerShell-Sitzungen gemeinsam verwendet, solange Sie bei Windows angemeldet bleiben. Weitere Informationen finden Sie im Artikel zu [beständigen Anmeldeinformationen](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Anmelden mit einem Dienstprinzipal
 
-Dienstprinzipale ermöglichen die Erstellung nicht interaktiver Konten für die Ressourcenbearbeitung. Dienstprinzipale sind vergleichbar mit Benutzerkonten, auf die Sie mithilfe von Azure Active Directory Regeln anwenden können. Indem Sie einem Dienstprinzipal nur die erforderlichen Mindestberechtigungen erteilen, können Sie Ihre Automatisierungsskripts noch sicherer machen.
+Dienstprinzipale sind nicht interaktive Azure-Konten. Wie bei anderen Benutzerkonten auch, werden die Berechtigungen mit Azure Active Directory verwaltet. Indem für einen Dienstprinzipal nur die benötigten Berechtigungen gewährt werden, bleibt die Sicherheit Ihrer Automatisierungsskripts gewahrt.
 
 Informationen zur Erstellung eines Dienstprinzipals für die Verwendung mit PowerShell finden Sie unter [Erstellen eines Azure-Dienstprinzipals mit Azure PowerShell](create-azure-service-principal-azureps.md).
 
@@ -44,7 +44,7 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-managed-identities-for-azure-resources"></a>Anmelden mit verwalteten Identitäten für Azure-Ressourcen
+## <a name="sign-in-using-an-azure-managed-service-identity"></a>Anmelden mit einer verwalteten Azure-Dienstidentität
 
 Verwaltete Identitäten für Azure-Ressourcen ist eine Funktion von Azure Active Directory. Sie können den Dienstprinzipal einer verwalteten Identität für die Anmeldung verwenden und ein App-exklusives Zugriffstoken für den Zugriff auf andere Ressourcen beziehen. Verwaltete Identitäten stehen nur für virtuelle Computer zur Verfügung, die in einer Azure-Cloud ausgeführt werden.
 
@@ -52,13 +52,15 @@ Weitere Informationen zu verwalteten Identitäten für Azure-Ressourcen finden S
 
 ## <a name="sign-in-to-another-cloud"></a>Anmelden bei einer anderen Cloud
 
-Azure-Clouddienste bieten unterschiedliche Umgebungen, die den Datenverarbeitungsvorschriften verschiedener Regionen entsprechen. Wenn sich Ihr Azure-Konto in einer Cloud befindet, die einer dieser Regionen zugeordnet ist, müssen Sie bei der Anmeldung die Umgebung angeben. Wenn Ihr Konto beispielsweise in der Cloud für China enthalten ist, melden Sie sich mit dem folgenden Befehl an:
+Azure-Clouddienste verfügen über Umgebungen, die jeweils mit den regionalen Bestimmungen zum Umgang mit Daten konform sind.
+Legen Sie die Umgebung für Konten in einer regionalen Cloud fest, wenn Sie sich mit dem Argument `-Environment` anmelden.
+Beispiel für den Fall, dass sich Ihr Konto in der Cloud in China befindet:
 
 ```azurepowershell-interactive
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+Connect-AzureRmAccount -Environment AzureChinaCloud
 ```
 
-Verwenden Sie den folgenden Befehl, um eine Liste der verfügbaren Umgebungen zu erhalten:
+Mit dem folgenden Befehl wird eine Liste mit den verfügbaren Umgebungen abgerufen:
 
 ```azurepowershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
@@ -76,4 +78,4 @@ Azure PowerShell-Cmdlets für die Rollenverwaltung:
 * [New-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
 * [Remove-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
 * [Remove-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [Set-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Set-AzureRmRoleDefinition)
