@@ -7,17 +7,17 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: abf6aad6a04ffcf15b8fc38b47477caa1a04e015
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 0d6129fae45d16c414668be68ed377c9241f5330
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025224"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49398820"
 ---
 # <a name="other-installation-methods"></a>Andere Installationsmethoden
 
-Für Azure PowerShell stehen unterschiedliche Installationsmethoden zur Verfügung. Bevorzugt wird die Kombination aus „PowerShellGet“ und PowerShell-Katalog. Azure PowerShell kann mithilfe des Webplattform-Installers (WebPI) oder unter Verwendung der bei GitHub verfügbaren MSI-Datei unter Windows installiert werden. Azure PowerShell kann auch in einem Docker-Container installiert werden.
-
+Für Azure PowerShell stehen unterschiedliche Installationsmethoden zur Verfügung. Bevorzugt wird die Kombination aus „PowerShellGet“ und PowerShell-Katalog. Azure PowerShell kann mithilfe des Webplattform-Installers (WebPI) oder unter Verwendung der bei GitHub verfügbaren MSI-Datei unter Windows installiert werden.
+ 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Installieren unter Windows mit dem Webplattform-Installer
 
 Die Vorgehensweise zum Installieren der neuesten Azure PowerShell-Version über WebPI hat sich im Vergleich zu früheren Versionen nicht geändert.
@@ -28,7 +28,7 @@ Laden Sie das [Azure PowerShell-WebPI-Paket](http://aka.ms/webpi-azps) herunter,
 >
 > PowerShell-Katalogmodule werden unter `$env:ProgramFiles\WindowsPowerShell\Modules` installiert. Der WebPI-Installer installiert Azure-Module dagegen unter `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.
 >
-> Im Falle eines Installationsfehlers können Sie die Azure*-Ordner aus dem Ordner `$env:ProgramFiles\WindowsPowerShell\Modules` entfernen und die Installation wiederholen.
+> Im Falle eines Installationsfehlers können Sie die Azure\*-Ordner aus dem Ordner `$env:ProgramFiles\WindowsPowerShell\Modules` entfernen und die Installation wiederholen.
 
 Nach Abschluss der Installation sollte Ihre `$env:PSModulePath` -Einstellung die Verzeichnisse mit den Azure PowerShell-Cmdlets enthalten. Mit dem folgenden Befehl können Sie überprüfen, ob Azure PowerShell ordnungsgemäß installiert wurde.
 
@@ -64,28 +64,3 @@ Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.ps
 
 Azure PowerShell kann mithilfe der bei [GitHub](https://github.com/Azure/azure-powershell/releases/latest) verfügbaren MSI-Datei installiert werden. Ältere installierte Versionen von Azure-Modulen werden vom Installationsprogramm automatisch entfernt. Das MSI-Paket installiert Module unter `$env:ProgramFiles\WindowsPowerShell\Modules`, erstellt aber keine versionsspezifischen Ordner.
 
-## <a name="install-in-a-docker-container"></a>Installieren in einem Docker-Container
-
-Wir behalten ein mit Azure PowerShell vorkonfiguriertes Docker-Image bei.
-
-Führen Sie den Container mit `docker run` aus.
-
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-Darüber hinaus behalten wir eine Teilmenge der Cmdlets als PowerShell Core-Container bei.
-
-Verwenden Sie für Mac/Linux das `latest`-Image.
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-Verwenden Sie für Windows das `nanoserver`-Image.
-
-```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
-```
-
-Azure PowerShell wurde über `Install-Module` aus dem [PowerShell-Katalog](https://www.powershellgallery.com/) installiert.
