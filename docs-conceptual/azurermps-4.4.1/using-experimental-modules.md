@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: f3fcfb84a4c0e775653fb65dc33e30d84cca5646
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854663"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211909"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Verwenden experimenteller Azure PowerShell-Module
 
@@ -30,7 +30,7 @@ Für die experimentellen Module wird folgende Benennungskonvention verwendet: `A
 
 Experimentelle Module werden genau wie vorhandene Azure PowerShell-Module im PowerShell-Katalog veröffentlicht. Führen Sie zum Anzeigen einer Liste der experimentellen Module den folgenden Befehl aus:
 
-```powershell
+```powershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
@@ -43,7 +43,7 @@ Version Name                         Repository Description
 
 Verwenden Sie zum Installieren des experimentellen Moduls die folgenden Befehle in einer PowerShell-Sitzung mit erhöhten Rechten:
 
-```powershell
+```powershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -69,7 +69,7 @@ Die zentralen Verbesserungen gelten als naheliegend, und zur Implementierung die
 
 - Intelligente Standardwerte: Erstellen Sie intelligente Standardwerte zum Ausfüllen erforderlicher Informationen. Beispiel: 
   - Ressourcengruppe
-  - Speicherort
+  - Standort
   - Abhängige Ressourcen
 
 ### <a name="experimental-improvements"></a>Experimentelle Verbesserungen

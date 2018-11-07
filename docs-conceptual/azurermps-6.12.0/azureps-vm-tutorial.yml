@@ -16,12 +16,12 @@ metadata:
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 44fc35219e108b47cfa1fac35b1444e20d0cc1a3
-  ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+  ms.openlocfilehash: aa674d7dabce15dd59a011947852cd4054d0600a
+  ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 11/06/2018
-  ms.locfileid: "50971651"
+  ms.lasthandoff: 11/07/2018
+  ms.locfileid: "51212702"
 items:
 - durationInMinutes: 1
   content: >-
@@ -38,7 +38,7 @@ items:
     Wenn Sie eine lokale Installation von Azure PowerShell verwenden, müssen Sie sich anmelden, bevor Sie weitere Schritte ausführen.
 
 
-    ```powershell
+    ```powershell-interactive
 
     Connect-AzureRmAccount
 
@@ -54,7 +54,7 @@ items:
     Im Rahmen dieses Tutorials werden alle erstellten Ressourcen in einer Gruppe namens `TutorialResources` zusammengefasst.
 
 
-    ```powershell
+    ```powershell-interactive
 
     New-AzureRmResourceGroup -Name TutorialResources -Location eastus
 
@@ -80,7 +80,7 @@ items:
     Bevor Sie einen neuen virtuellen Computer erstellen können, müssen Sie ein Anmeldeinformationsobjekt mit dem Benutzernamen und Kennwort für das Administratorkonto des virtuellen Windows-Computers erstellen.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 
@@ -110,7 +110,7 @@ items:
     Erstellen Sie einen neuen virtuellen Computer unter Windows.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vmParams = @{
       ResourceGroupName = 'TutorialResources'
@@ -143,7 +143,7 @@ items:
     Sobald der virtuelle Computer bereit ist, können wir die Ergebnisse im Azure-Portal oder durch Überprüfen der Variablen „\$newVM1“ anzeigen.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1
 
@@ -186,7 +186,7 @@ items:
     Wir rufen nun ausführlichere Informationen zum soeben erstellten virtuellen Computer ab. In diesem Beispiel überprüfen wir den Namen des virtuellen Computers und des Administratorkontos, den bzw. das wir erstellt haben.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
 
@@ -207,7 +207,7 @@ items:
     Wir können andere Azure PowerShell-Befehle verwenden, um spezifische Informationen zur Netzwerkkonfiguration abzurufen.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1 | Get-AzureRmNetworkInterface |
       Select-Object -ExpandProperty IpConfigurations |
@@ -232,7 +232,7 @@ items:
     Um zu überprüfen, ob der virtuelle Computer ausgeführt wird, müssen wir eine Verbindung über Remotedesktop herstellen. Dazu müssen wir die öffentliche IP-Adresse kennen.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
 
@@ -259,7 +259,7 @@ items:
     Auf Ihrem lokalen Computer können Sie den folgenden Befehl ausführen, um über Remotedesktop eine Verbindung mit dem virtuellen Computer herzustellen.
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v <PUBLIC_IP_ADDRESS>
 
@@ -273,7 +273,7 @@ items:
     Der zweite virtuelle Computer verwendet das vorhandene Subnetz.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vm2Params = @{
       ResourceGroupName = 'TutorialResources'
@@ -328,7 +328,7 @@ items:
     Sie können einige Schritte überspringen, um die öffentliche IP-Adresse des neuen virtuellen Computers abzurufen, da sie in der Eigenschaft „FullyQualifiedDomainName“ des Objekts „\$newVM2“ zurückgegeben wird. Stellen Sie mit dem folgenden Befehl eine Verbindung über Remotedesktop her:
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v $newVM2.FullyQualifiedDomainName
 
@@ -339,7 +339,7 @@ items:
     Das Tutorial ist abgeschlossen, und Sie sollten nun die erstellten Ressourcen bereinigen. Sie können mit dem Befehl `Remove-AzureRmResource` einzelne Ressourcen löschen. Die sicherste Methode zum Entfernen aller Ressourcen in einer Ressourcengruppe ist jedoch das Löschen der Gruppe mithilfe des Befehls `Remove-AzureRmResourceGroup`.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
 
@@ -363,7 +363,7 @@ items:
     Mit diesem Befehl werden die während des Tutorials erstellten Ressourcen gelöscht, und ihre Zuordnung wird garantiert in der richtigen Reihenfolge aufgehoben. Der Parameter `-AsJob` verhindert eine Blockierung durch PowerShell, während der Löschvorgang ausgeführt wird. Verwenden Sie den folgenden Befehl, um zu warten, bis der Löschvorgang abgeschlossen ist:
 
 
-    ```powershell
+    ```powershell-interactive
 
     Wait-Job -Id $job.Id
 

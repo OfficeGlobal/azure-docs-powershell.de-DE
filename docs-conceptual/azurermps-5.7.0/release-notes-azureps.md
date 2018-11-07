@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: f69a0b79ac17c3a6502abfa9bbc5370693ad508e
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854272"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211943"
 ---
 # <a name="release-notes"></a>Versionshinweise
 
@@ -29,13 +29,13 @@ Katalog-Modul für ARM-Cmdlets: [Link](https://www.powershellgallery.com/package
 
 Führen Sie zum Installieren von `AzureRM` aus dem PowerShell-Katalog den folgenden Befehl aus:
 
-```powershell
+```powershell-interactive
 Install-Module -Name AzureRM -Repository PSGallery -Force
 ```
 
 Führen Sie zum Aktualisieren von einer älteren Version von `AzureRM` den folgenden Befehl aus:
 
-```powershell
+```powershell-interactive
 Update-Module -Name AzureRM
 ```
 
@@ -673,7 +673,7 @@ Update-Module -Name AzureRM
 * RecoveryServices.Backup
   - Ein Fehler wurde behoben – Get-AzureRmRecoveryServicesBackupItem muss einen Vergleich für den Containernamenfilter ausführen, bei dem die Groß- und Kleinschreibung nicht beachtet wird.
   - Ein Fehler wurde behoben  – AzureVmItem verfügt jetzt über eine Eigenschaft, die anzeigt, wann das letzte Mal ein Sicherungsvorgang ausgeführt wurde: LastBackupTime.
-* angeben
+* Ressourcen
   - Ein Fehler wurde behoben, bei dem Get-AzureRMRoleAssignment zu einer Zuweisung ohne einen Rollendefinitionsnamen für benutzerdefinierte Rollen führt.
     - Benutzer können jetzt Get-AzureRMRoleAssignment mit Zuweisungen mit Rollendefinitionsnamen verwenden, unabhängig vom Typ der Rolle.
   - Ein Fehler wurde behoben, bei dem Set-AzureRMRoleRoleDefinition einen Fehler ausgegeben hat (RD nicht gefunden), wenn assignablescopes einen neuen Bereich enthielt.
