@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 09/11/2018
-ms.openlocfilehash: 32decf653a956d0b0b202b38a238f42fa831ecae
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: bdd8e69a2ea9df8b4fff100e1f3cc4c82d2d9d9d
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212667"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274975"
 ---
 # <a name="overview-of-azure-powershell"></a>Übersicht über Azure PowerShell
 
@@ -28,8 +28,7 @@ In den folgenden Beispielen werden gängige Szenarien mit Azure PowerShell veran
 * [Web-Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [SQL-Datenbanken](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-> [!NOTE]
-> Bei nicht konvertierbaren Bereitstellungen mit dem klassischen Bereitstellungsmodell können Sie die Dienstverwaltungsversion von Azure PowerShell installieren. Weitere Informationen finden Sie unter [Installing the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps) (Installieren des Azure PowerShell-Dienstverwaltungsmoduls).
+[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
 ## <a name="learn-powershell-basics"></a>PowerShell-Grundlagen erlernen
 
