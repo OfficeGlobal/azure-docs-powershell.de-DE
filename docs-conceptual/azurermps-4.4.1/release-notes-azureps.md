@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100490"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274924"
 ---
 # <a name="release-notes"></a>Versionshinweise
 
@@ -161,7 +161,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   * Verwalten von Kontextinformationen – Cmdlet-Änderungen
     - „Scope = (Process | CurrentUser)“ für alle Cmdlets hinzugefügt, die Anmeldeinformationen ändern
     - Get-AzureRmContext: ListAvailable-Parameter zum Auflisten aller gespeicherten Kontexte hinzugefügt
-* angeben
+* Ressourcen
   * PolicySetDefinition-Cmdlets hinzugefügt
     - Cmdlet „New-AzureRmPolicySetDefinition“ zum Erstellen einer Richtliniensatzdefinition
     - Cmdlet „Get-AzureRmPolicySetDefinition“ zum Auflisten aller Richtliniensatzdefinitionen oder zum Abrufen einer bestimmten Richtliniensatzdefinition
@@ -252,7 +252,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     * Die Datensammlung wurde standardmäßig aktiviert. Zur Verbesserung der Benutzerfreundlichkeit werden Nutzungsdaten von Microsoft gesammelt. Die Daten sind anonymisiert und enthalten keine Befehlszeilenargument-Werte.
       - Verwenden Sie das Cmdlet „Disable-AzureRmDataCollection“, um die Funktion zu deaktivieren.
       - Verwenden Sie das Cmdlet „Enable-AzureRmDataCollection“, um diese Funktion zu aktivieren.
-* angeben
+* Ressourcen
     * Unterstützung zum Überprüfen von Bereichen für die folgenden roledefinition- und roleassignment-Cmdlets vor dem Senden der Anforderung an ARM hinzugefügt
       - Get-AzureRMRoleAssignment
       - New-AzureRMRoleAssignment
@@ -262,14 +262,15 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * Es wurden die folgenden neuen Cmdlets für AuthorizationRules für „NameSpace“, „Queue“ und „Topic“ hinzugefügt. Die Autorisierungsregelvorgänge werden gemäß dem Parametersatz ausgeführt.
-     - New-AzureRmServiceBusAuthorizationRule: Fügt eine neue AuthorizationRule zum vorhandenen ServiceBus-Attribut „NameSpace“, „Queue“ oder „Topic“ hinzu.
-     - Get-AzureRmServiceBusAuthorizationRule: Ruft die AuthorizationRule bzw. eine Liste von AuthorizationRules für das vorhandene ServiceBus-Attribut „NameSpace“, „Queue“ oder „Topic“ ab.
-     - Set-AzureRmServiceBusAuthorizationRule: Aktualisiert die Eigenschaften einer vorhandenen AuthorizationRule der ServiceBus-Attribute „NameSpace“, „Queue“ oder „Topic“.
-     - New-AzureRmServiceBusKey: Generiert einen neuen primären/sekundären Schlüssel für die AuthorizationRule des vorhandenen ServiceBus-Attributs „NameSpace“, „Queue“ oder „Topic“.
-     - Get-AzureRmServiceBusKey: Ruft den primären/sekundären Schlüssel für die AuthorizationRule des vorhandenen ServiceBus-Attributs „NameSpace“, „Queue“ oder „Topic“ ab.
-     - Remove-AzureRmServiceBusNamespaceAuthorizationRule: Löscht die vorhandene AuthorizationRule des ServiceBus-Attributs „NameSpace“, „Queue“ oder „Topic“.
-    * ResourceGroup-Eigenschaft zu „NamespaceAttributes“ hinzugefügt
+  * Es wurden die folgenden neuen Cmdlets für AuthorizationRules für „NameSpace“, „Queue“ und „Topic“ hinzugefügt. Die Autorisierungsregelvorgänge werden gemäß dem Parametersatz ausgeführt.
+    - New-AzureRmServiceBusAuthorizationRule: Fügt eine neue AuthorizationRule zum vorhandenen ServiceBus-Attribut „NameSpace“, „Queue“ oder „Topic“ hinzu.
+    - Get-AzureRmServiceBusAuthorizationRule: Ruft die AuthorizationRule bzw. eine Liste von AuthorizationRules für das vorhandene ServiceBus-Attribut „NameSpace“, „Queue“ oder „Topic“ ab.
+    - Set-AzureRmServiceBusAuthorizationRule: Aktualisiert die Eigenschaften einer vorhandenen AuthorizationRule der ServiceBus-Attribute „NameSpace“, „Queue“ oder „Topic“.
+    - New-AzureRmServiceBusKey: Generiert einen neuen primären/sekundären Schlüssel für die AuthorizationRule des vorhandenen ServiceBus-Attributs „NameSpace“, „Queue“ oder „Topic“.
+    - Get-AzureRmServiceBusKey: Ruft den primären/sekundären Schlüssel für die AuthorizationRule des vorhandenen ServiceBus-Attributs „NameSpace“, „Queue“ oder „Topic“ ab.
+    - Remove-AzureRmServiceBusNamespaceAuthorizationRule: Löscht die vorhandene AuthorizationRule des ServiceBus-Attributs „NameSpace“, „Queue“ oder „Topic“.
+  * ResourceGroup-Eigenschaft zu „NamespaceAttributes“ hinzugefügt
+
 * Sql
     * „Set-AzureRmSqlServerTransparentDataEncryptionProtector“ aktualisiert, um Warnung anzuzeigen und die Bestätigung anzufordern, ob der Verschlüsselungsschutztyp auf „AzureKeyVault“ festgelegt werden soll
     * Neue aktualisierte Cmdlets für Überwachungseinstellungen hinzugefügt
@@ -297,15 +298,16 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
 
 ## <a name="20170717---version-421"></a>2017.07.17 – Version 4.2.1
 * Compute
-    - Problem mit den Cmdlets zum Erstellen und Aktualisieren von VM-Datenträgern und VM-Datenträgermomentaufnahmen behoben, Link: [https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - Problem mit den Cmdlets zum Erstellen und Aktualisieren von VM-Datenträgern und VM-Datenträgermomentaufnahmen behoben, Link: [<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * Profil
-    - Problem mit der nicht interaktiven Benutzerauthentifizierung in RDFE behoben, Link: [https://github.com/Azure/azure-powershell/issues/4299]
+  - Problem mit der nicht interaktiven Benutzerauthentifizierung in RDFE behoben, Link: [<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - Problem mit der nicht interaktiven Benutzerauthentifizierung behoben, Link :[https://github.com/Azure/azure-powershell/issues/4299]
+  - Problem mit der nicht interaktiven Benutzerauthentifizierung behoben, Link :[<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>2017.7.11 – Version 4.2.0
 * AnalysisServices
@@ -660,7 +662,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
 * ServiceBus
 
   - Fehlerbehebung: Eigenschaftswerte des ServiceBus-Warteschlangenobjekts wurden auf NULL festgelegt. Das Objekt wird als Eingabeparameter im Cmdlet „AzureRmServiceBusQueue“ verwendet, um die Warteschlange zu aktualisieren.
-   - Betroffene Eigenschaften: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount und MessageCount
+    - Betroffene Eigenschaften: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount und MessageCount
 * ServiceFabric
 
   - Cmdlets für Service Fabric hinzugefügt
