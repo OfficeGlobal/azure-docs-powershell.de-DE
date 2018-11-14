@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 245d69d3bcee3c502babe82395341efad2bc96d0
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51213018"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274516"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Verwenden von experimentellen Azure PowerShell-Modulen
 
@@ -63,7 +63,7 @@ Die Azure CLI 2.0 verwendet einige intelligente Standardwerte, die Endbenutzern 
 
 Die zentralen Verbesserungen gelten als naheliegend, und zur Implementierung dieser Updates sind nicht viele Experimente erforderlich.
 
-- Szenariobasierte Cmdlets: *Alle* Cmdlets sollten für Szenarien und nicht für den Azure REST-Dienst entwickelt werden.
+- Szenariobasierte Cmdlets: <em>Alle</em> Cmdlets sollten für Szenarien und nicht für den Azure REST-Dienst entwickelt werden.
 
 - Kürzere Namen: Gilt für die Namen von Cmdlets (beispielsweise `New-AzureRmVM` => `New-AzVm`) und Parametern (beispielsweise `-ResourceGroupName` => `-Rg`). Verwenden Sie Aliase, um die Kompatibilität mit älteren Cmdlets zu gewährleisten. Geben Sie _abwärtskompatible_ Parametersätze an.
 
