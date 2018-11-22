@@ -1,19 +1,18 @@
 ---
-title: Verwalten von Azure-Abonnements mit Azure PowerShell | Microsoft-Dokumentation
+title: Verwalten von Azure-Abonnements mit Azure PowerShell
 description: Verwalten von Azure-Abonnements mit Azure PowerShell
-keywords: Azure PowerShell, Abonnement
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
+ms.date: 09/11/2018
+ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52257957"
+ms.locfileid: "52259816"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Verwalten mehrerer Azure-Abonnements
 
@@ -21,7 +20,7 @@ Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur
 
 1. Rufen Sie eine Liste mit allen Abonnements in Ihrem Konto ab.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur
 
 2. Legen Sie das Standardabonnement fest.
 
-    ```powershell-interactive
-    Select-AzureRmSubscription -SubscriptionName "My Demos"
+    ```azurepowershell-interactive
+    Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
 3. Überprüfen Sie die Änderung durch Ausführen des Cmdlets `Get-AzureRmContext`.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
@@ -69,4 +68,4 @@ Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur
     CurrentStorageAccount :
     ```
 
-Nachdem Sie Ihr Standardabonnement festgelegt haben, werden alle weiteren Azure PowerShell-Befehle für dieses Abonnement ausgeführt.
+Nachdem Sie Ihr Standardabonnement festgelegt haben, werden alle Azure PowerShell-Befehle für dieses Abonnement ausgeführt.
