@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/07/2018
-ms.openlocfilehash: 0c73e7ac1d47a2a97b6136fa481d0adce8de33db
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.openlocfilehash: 720387ec1b23f10ddf2b153cf0705b2b6d1b7b82
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259637"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52587702"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>Migrieren von AzureRM zum Az-Modul von Azure PowerShell
 
@@ -21,7 +21,7 @@ Für die AzureRM-Cmdlets geschriebene Skripts funktionieren nicht automatisch au
 
 ## <a name="ensure-your-existing-scripts-work-with-the-latest-azurerm-release"></a>Vergewissern, dass Ihre vorhandenen Skripts mit der neuesten AzureRM-Version funktionieren
 
-Das ist der wichtigste Schritt überhaupt. Führen Sie Ihre vorhandenen Skripts aus, und vergewissern Sie sich, dass sie mit der _neuesten_ Version von AzureRM (__6.12.0__) funktionieren. Sollten Ihre Skripts nicht funktionieren, lesen Sie das [AzureRM-Migrationshandbuch](migration-guide.6.0.0.md).
+Das ist der wichtigste Schritt überhaupt. Führen Sie Ihre vorhandenen Skripts aus, und vergewissern Sie sich, dass sie mit der _neuesten_ Version von AzureRM (__6.13.0__) funktionieren. Sollten Ihre Skripts nicht funktionieren, lesen Sie das [AzureRM-Migrationshandbuch](migration-guide.6.0.0.md).
 
 ## <a name="install-the-azure-powershell-az-module"></a>Installieren des Az-Moduls von Azure PowerShell
 
