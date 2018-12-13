@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
 ms.openlocfilehash: 47611281f67d68c9fc2686e0c6156b060a225158
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828245"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217523"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Installieren von Azure PowerShell unter macOS oder Linux
 
@@ -92,7 +92,7 @@ Die Azure PowerShell-Module für .NET Core befinden sich noch in der Entwicklung
   * Virtual Machine
   * App Service (Websites)
   * SQL-Datenbank
-  * Speicher
+  * Storage
   * Netzwerk
 
 ## <a name="next-steps"></a>Nächste Schritte
