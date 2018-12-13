@@ -9,17 +9,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52827478"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217183"
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="de3fa-104">Verwalten mehrerer Azure-Abonnements</span><span class="sxs-lookup"><span data-stu-id="de3fa-104">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="70d13-104">Verwalten mehrerer Azure-Abonnements</span><span class="sxs-lookup"><span data-stu-id="70d13-104">Manage multiple Azure subscriptions</span></span>
 
-<span data-ttu-id="de3fa-105">Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur über ein einzelnes Abonnement.</span><span class="sxs-lookup"><span data-stu-id="de3fa-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="de3fa-106">Wenn Sie Azure hingegen schon eine Weile verwenden, haben Sie möglicherweise bereits mehrere Azure-Abonnements erstellt.</span><span class="sxs-lookup"><span data-stu-id="de3fa-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="de3fa-107">Sie können Azure PowerShell so konfigurieren, dass Befehle für ein bestimmtes Abonnement ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="de3fa-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="70d13-105">Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur über ein einzelnes Abonnement.</span><span class="sxs-lookup"><span data-stu-id="70d13-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="70d13-106">Wenn Sie Azure hingegen schon eine Weile verwenden, haben Sie möglicherweise bereits mehrere Azure-Abonnements erstellt.</span><span class="sxs-lookup"><span data-stu-id="70d13-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="70d13-107">Sie können Azure PowerShell so konfigurieren, dass Befehle für ein bestimmtes Abonnement ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="70d13-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
-1. <span data-ttu-id="de3fa-108">Rufen Sie eine Liste mit allen Abonnements in Ihrem Konto ab.</span><span class="sxs-lookup"><span data-stu-id="de3fa-108">Get a list of all subscriptions in your account.</span></span>
+1. <span data-ttu-id="70d13-108">Rufen Sie eine Liste mit allen Abonnements in Ihrem Konto ab.</span><span class="sxs-lookup"><span data-stu-id="70d13-108">Get a list of all subscriptions in your account.</span></span>
 
     ```powershell-interactive
     Get-AzureRmSubscription
@@ -48,13 +48,13 @@ ms.locfileid: "52827478"
     CurrentStorageAccount :
     ```
 
-2. <span data-ttu-id="de3fa-109">Legen Sie das Standardabonnement fest.</span><span class="sxs-lookup"><span data-stu-id="de3fa-109">Set the default.</span></span>
+2. <span data-ttu-id="70d13-109">Legen Sie das Standardabonnement fest.</span><span class="sxs-lookup"><span data-stu-id="70d13-109">Set the default.</span></span>
 
     ```powershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
-3. <span data-ttu-id="de3fa-110">Überprüfen Sie die Änderung durch Ausführen des Cmdlets `Get-AzureRmContext`.</span><span class="sxs-lookup"><span data-stu-id="de3fa-110">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
+3. <span data-ttu-id="70d13-110">Überprüfen Sie die Änderung durch Ausführen des Cmdlets `Get-AzureRmContext`.</span><span class="sxs-lookup"><span data-stu-id="70d13-110">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
 
     ```powershell-interactive
     Get-AzureRmContext
@@ -69,4 +69,4 @@ ms.locfileid: "52827478"
     CurrentStorageAccount :
     ```
 
-<span data-ttu-id="de3fa-111">Nachdem Sie Ihr Standardabonnement festgelegt haben, werden alle weiteren Azure PowerShell-Befehle für dieses Abonnement ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="de3fa-111">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
+<span data-ttu-id="70d13-111">Nachdem Sie Ihr Standardabonnement festgelegt haben, werden alle weiteren Azure PowerShell-Befehle für dieses Abonnement ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="70d13-111">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
