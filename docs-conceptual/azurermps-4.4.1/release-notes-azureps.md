@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52827138"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217302"
 ---
 # <a name="release-notes"></a>Versionshinweise
 
@@ -53,7 +53,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     - Neues Cmdlet: „Set-AzureRmVmssDiskEncryptionExtension“ aktiviert die Datenträgerverschlüsselung in der VM-Skalierungsgruppe.
     - Neues Cmdlet: „Disable-AzureRmVmssDiskEncryption“ deaktiviert die Datenträgerverschlüsselung in der VM-Skalierungsgruppe.
     - Neues Cmdlet: „Get-AzureRmVmssDiskEncryptionStatus“ zeigt den Status der Datenträgerverschlüsselung einer VM-Skalierungsgruppe an.
-    - Neues Cmdlet: „Get-AzureRmVmssVMDiskEncryptionStatus“ zeigt den Status der Datenträgerverschlüsselung von virtuellen Computern in einer VM-Skalierungsgruppe an.
+    - Neues Cmdlet: „Get-AzureRmVmssVMDiskEncryptionStatus“ zeigt den Status der Datenträgerverschlüsselung virtueller Computer in einer VM-Skalierungsgruppe an.
 * ContainerInstance
   * PowerShell-Cmdlets für Azure-Containerinstanz hinzugefügt
     - New-AzureRmContainerGroup
@@ -94,9 +94,9 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     * Undo-AzureKeyVaultCertificateRemoval
 * Netzwerk
   * Unterstützung für Endpunktdienste zu Subnetzen in virtuellen Netzwerken hinzugefügt
-    - „Add-AzureRmVirtualSubnetConfig“ aktualisiert: Optionalen Parameter „-ServiceEndpoint“ hinzugefügt
-    - „New-AzureRmVirtualSubnetConfig“ aktualisiert: Optionalen Parameter „-ServiceEndpoint“ hinzugefügt
-    - „Set-AzureRmVirtualSubnetConfig“ aktualisiert: Optionalen Parameter „-ServiceEndpoint“ hinzugefügt
+    - „Add-AzureRmVirtualSubnetConfig“ aktualisiert: Zusätzlicher optionaler Parameter: -ServiceEndpoint
+    - „New-AzureRmVirtualSubnetConfig“ aktualisiert: Zusätzlicher optionaler Parameter: -ServiceEndpoint
+    - „Set-AzureRmVirtualSubnetConfig“ aktualisiert: Zusätzlicher optionaler Parameter: -ServiceEndpoint
   * Cmdlet zum Auflisten der am Standort verfügbaren Endpunktdienste hinzugefügt
     - Get-AzureRmVirtualNetworkAvailableEndpointService
   * Möglichkeit zum Konfigurieren der externen Radius-basierten P2S-Authentifizierung zu folgenden Cmdlets hinzugefügt:
@@ -107,30 +107,30 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     - New-AzureRmVpnClientConfiguration
     - Get-AzureRmVpnClientConfiguration
   * Unterstützung für SKU-Parameter zu öffentlichen IP-Adressen und Lastenausgleichsmodulen hinzugefügt
-    - „New-AzureRMLoadBalancer“ aktualisiert: Optionalen Parameter „-Sku“ hinzugefügt
-    - „New-AzureRMPublicIpAddress“ aktualisiert: Optionalen Parameter „-Sku“ hinzugefügt
+    - „New-AzureRMLoadBalancer“ aktualisiert: Optionaler Parameter hinzugefügt: -Sku
+    - „New-AzureRMPublicIpAddress“ aktualisiert: Optionaler Parameter hinzugefügt: -Sku
   * Unterstützung für „DisableOutboundSNAT“ zu Lastenausgleichsregeln hinzugefügt
-    - „New-AzureRMLoadBalancerRuleConfig“ aktualisiert: Optionalen Parameter „DisableOutboundSNAT“ hinzugefügt
-    - „Add-AzureRMLoadBalancerRuleConfig“ aktualisiert: Optionalen Parameter „DisableOutboundSNAT“ hinzugefügt
-    - „Set-AzureRMLoadBalancerRuleConfig“ aktualisiert: Optionalen Parameter „DisableOutboundSNAT“ hinzugefügt
+    - „New-AzureRMLoadBalancerRuleConfig“ aktualisiert: Optionaler Parameter hinzugefügt: DisableOutboundSNAT
+    - „Add-AzureRMLoadBalancerRuleConfig“ aktualisiert: Optionaler Parameter hinzugefügt: DisableOutboundSNAT
+    - „Set-AzureRMLoadBalancerRuleConfig“ aktualisiert: Optionaler Parameter hinzugefügt: DisableOutboundSNAT
   * Unterstützung für IkeV2-P2S hinzugefügt
-    - „New-AzureRmVirtualNetworkGateway“ aktualisiert: Optionalen Parameter „-VpnClientProtocol“ hinzugefügt. Standardwert: [ "SSTP", "IkeV2" ]
-    - „Set-AzureRmVirtualNetworkGateway“ aktualisiert: Optionalen Parameter „-VpnClientProtocol“ hinzugefügt
+    - „New-AzureRmVirtualNetworkGateway“ aktualisiert: Optionaler Parameter hinzugefügt: -VpnClientProtocol. Standardwert: [ "SSTP", "IkeV2" ]
+    - „Set-AzureRmVirtualNetworkGateway“ aktualisiert: Optionaler Parameter hinzugefügt: -VpnClientProtocol
   * Unterstützung für MultiValued-Regeln in Netzwerksicherheitsregeln und effektiven Netzwerksicherheitsregeln hinzugefügt
-    - „Add-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Parameter „SourcePortRange“, „DestinationPortRange“ und „SourceAddressPrefix“ aktualisiert, sodass sie eine Liste mit Zeichenfolgen akzeptieren
+    - „Add-AzureRmNetworkSecurityRuleConfig“ hinzugefügt: Parameter „SourcePortRange“, „DestinationPortRange“ und „SourceAddressPrefix“ aktualisiert, sodass sie eine Liste mit Zeichenfolgen akzeptieren
     - „New-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Parameter „SourcePortRange“, „DestinationPortRange“ und „SourceAddressPrefix“ aktualisiert, sodass sie eine Liste mit Zeichenfolgen akzeptieren
     - „Set-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Parameter „SourcePortRange“, „DestinationPortRange“ und „SourceAddressPrefix“ aktualisiert, sodass sie eine Liste mit Zeichenfolgen akzeptieren
-    - „Add-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Parameter „SourcePortRange“, „DestinationPortRange“ und „SourceAddressPrefix“ aktualisiert, sodass sie eine Liste mit Zeichenfolgen akzeptieren
+    - „Add-AzureRmNetworkSecurityRuleConfig“ hinzugefügt: Parameter „SourcePortRange“, „DestinationPortRange“ und „SourceAddressPrefix“ aktualisiert, sodass sie eine Liste mit Zeichenfolgen akzeptieren
     - „New-AzureRmNetworkSecurityGroup“ aktualisiert: SecurityRules-Parameter aktualisiert, sodass er die Parameter „SourcePortRange“, „DestinationPortRange“ und „SourceAddressPrefix“ akzeptiert, bei denen es sich um eine Liste mit Zeichenfolgen im PSSecurityRule-Objekt handelt
-    - „Get-AzureRmEffectiveNetworkSecurityGroup“ aktualisiert: TagMap-Parameter hinzugefügt
+    - „Get-AzureRmEffectiveNetworkSecurityGroup“ aktualisiert: Parameter „TagMap“ hinzugefügt
     - „Get-AzureRmEffectiveNetworkSecurityGroup“ aktualisiert: Zurückgegebenes PSEffectiveSecurityRule-Objekt mit den Parametern „SourcePortRange“, „DestinationPortRange“ und „SourceAddressPrefix“ aktualisiert, bei denen es sich um eine Liste mit Zeichenfolgen handelt
   * Unterstützung für DDoS-Schutz für virtuelle Netzwerke hinzugefügt
-    - „New-AzureRmVirtualNetwork“ aktualisiert: Wechselparameter „EnableDDoSProtection“ und „EnableVmProtection“ hinzugefügt
+    - „New-AzureRmVirtualNetwork“ aktualisiert: Switch-Parameter „EnableDDoSProtection“ und „EnableVmProtection“ hinzugefügt
     - Eigenschaften „EnableDDoSProtection“ und „EnableVmProtection“ im PSVirtualNetwork-Objekt hinzugefügt
   * Unterstützung für hoch verfügbaren internen Lastenausgleich hinzugefügt
-    - „Add-AzureRmLoadBalancerRuleConfig“ aktualisiert: „All“ als zulässigen Wert für den Protocol-Parameter hinzugefügt
-    - „New-AzureRmLoadBalancerRuleConfig“ aktualisiert: „All“ als zulässigen Wert für den Protocol-Parameter hinzugefügt
-    - „Set-AzureRmLoadBalancerRuleConfig“ aktualisiert: „All“ als zulässigen Wert für den Protocol-Parameter hinzugefügt
+    - „Add-AzureRmLoadBalancerRuleConfig“ aktualisiert: „All“ als zulässiger Wert für Parameter „Protocol“ hinzugefügt
+    - „New-AzureRmLoadBalancerRuleConfig“ aktualisiert: „All“ als zulässiger Wert für Parameter „Protocol“ hinzugefügt
+    - „Set-AzureRmLoadBalancerRuleConfig“ aktualisiert: „All“ als zulässiger Wert für Parameter „Protocol“ hinzugefügt
   * Unterstützung für Anwendungssicherheitsgruppen hinzugefügt
     - „New-AzureRmApplicationSecurityGroup“ hinzugefügt
     - „Get-AzureRmApplicationSecurityGroup“ hinzugefügt
@@ -140,8 +140,8 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     - „Add-AzureRmNetworkInterfaceIpConfig“ aktualisiert: Optionale Parameter „ApplicationSecurityGroup“ und „ApplicationSecurityGroupId“ hinzugefügt
     - „Set-AzureRmNetworkInterfaceIpConfig“ aktualisiert: Optionale Parameter „ApplicationSecurityGroup“ und „ApplicationSecurityGroupId“ hinzugefügt
     - „New-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
-    - „Add-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
-    - „New-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
+    - „Add-AzureRmNetworkSecurityRuleConfig“ hinzugefügt: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
+    - „Set-AzureRmNetworkSecurityRuleConfig“ aktualisiert: Optionale Parameter „SourceApplicationSecurityGroup“, „SourceApplicationSecurityGroupId“, „DestinationApplicationSecurityGroup“ und „DestinationApplicationSecurityGroupId“ hinzugefügt
   * Neue Befehle für VpnDeviceConfiguration-Skripts hinzugefügt
     - Get-AzureRmVirtualNetworkGatewaySupportedVpnDevices
     - Get-AzureRmVirtualNetworkGatewayConnectionVpnDeviceConfigScript
@@ -220,7 +220,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   * Fehlerbehebungen für vorhandene Probleme – Korrektur des Problems mit Alias #3775 und runOn-Alias, Unterstützung für Hybrid Worker.
 * Compute
   * Set-AzureRmVMAEMExtension: Unterstützung für neue Premium-Datenträgergrößen hinzugefügt
-  * Set-AzureRmVMAEMExtension: Unterstützung für die M-Serie hinzugefügt
+  * Set-AzureRmVMAEMExtension: Unterstützung für M-Serie hinzugefügt
   * ForceUpdateTag-Parameter zu „Add-AzureRmVmssExtension“ hinzugefügt
   * Primary-Parameter zu „New-AzureRmVmssIpConfig“ hinzugefügt
   * „EnableAcceleratedNetworking-Parameter“ zu „Add-AzureRmVmssNetworkInterfaceConfig“ hinzugefügt
@@ -242,8 +242,8 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
 * Netzwerk
     * Unterstützung für IPv6 und neuer optionale Parameter „-PeerAddressType“
       * New-AzureRmExpressRouteCircuitPeeringConfig:
-      * Set-AzureRmExpressRouteCircuitPeeringConfig: Unterstützung für IPv6 hinzugefügt. Neuer optionaler Parameter hinzugefügt
-      * Remove-AzureRmExpressRouteCircuitPeeringConfig: Unterstützung für IPv6 hinzugefügt. Neuer optionaler Parameter hinzugefügt
+      * Set-AzureRmExpressRouteCircuitPeeringConfig: IPv6-Unterstützung hinzugefügt. Neuer optionaler Parameter hinzugefügt
+      * Remove-AzureRmExpressRouteCircuitPeeringConfig: IPv6-Unterstützung hinzugefügt. Neuer optionaler Parameter hinzugefügt
     * Parameter „-ProbeEnabled“ als veraltet markiert
       - Add-AzureRmApplicationGatewayBackendHttpSettings
       - New-AzureRmApplicationGatewayBackendHttpSettings
@@ -287,7 +287,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
       - Remove-AzureRmSqlDatabaseAuditing
       - Remove-AzureRmSqlServerAuditing
     * Bei der Analyse von Schemadateien für „Update-AzureRmSqlSyncGroup“ gilt nun die Groß-/Kleinschreibung.
-* Speicher
+* Storage
     * Unterstützung für „NeworkRule“ zu Cmdlets für Speicherkonten mit Ressourcenmodus hinzugefügt
       - New-AzureRmStorageAccount
       - Set-AzureRmStorageAccount
@@ -391,7 +391,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     * Entfernt die E-Mail-Adresse aus der Verzeichnisabfrage, wenn für die Cmdlets „Set-AzureRMKeyVaultAccessPolicy“ und „Remove-AzureRMKeyVaultAccessPolicy“ der Parameter „UserPrincipalName“ angegeben wird.
       - Beide Cmdlets verfügen jetzt über einen Parameter „-EmailAddress“, der anstelle von „-UserPrincipalName“ verwendet werden kann, wenn eine E-Mail-Abfrage geeignet ist.  Wenn mehr als eine übereinstimmende E-Mail-Adresse vorhanden ist, kommt es bei dem Cmdlet zu einem Fehler.
 * Netzwerk
-    * New-AzureRmIpsecPolicy: „SALifeTimeSeconds“ und „SADataSizeKilobytes“ nicht länger als erforderliche Parameter festgelegt
+    * New-AzureRmIpsecPolicy: „SALifeTimeSeconds“ und „SADataSizeKilobytes“ sind nicht länger erforderliche Parameter.
         - Standardwert für „SALifeTimeSeconds“: 27000 Sekunden
         - Standardwert für „SADataSizeKilobytes“: 102400000 KB
     * Unterstützung für die Konfiguration benutzerdefinierter Verschlüsselungssammlungen über die SSL-Richtlinie und für das Auflisten aller SSL-Optionen-APIs in Application Gateway
@@ -452,7 +452,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     * Cmdlet „New-AzureBgpPeering“ aktualisiert, um folgende neue Optionen hinzuzufügen:
         - PeerAddressType: Werte „IPv4“ oder „IPv6“ ermöglichen das Erstellen eines BGP-Peerings mit dem entsprechenden Adressfamilientyp
     * Cmdlet „Set-AzureBgpPeering“ aktualisiert, um folgende neue Optionen hinzuzufügen:
-        - PeerAddressType: Werte „IPv4“ oder „IPv6“ ermöglichen die Aktualisierung des BGP-Peerings mit dem entsprechenden Adressfamilientyp
+        - PeerAddressType: Werte „IPv4“ oder „IPv6“ ermöglichen das Aktualisieren eines BGP-Peerings mit dem entsprechenden Adressfamilientyp
     * Cmdlet „Remove-AzureBgpPeering“ aktualisiert, um folgende neue Optionen hinzuzufügen:
         - PeerAddressType: Werte „IPv4“, „IPv6“ oder „All“ ermöglichen eine Entfernung des BGP-Peerings mit dem entsprechenden Adressfamilientyp oder aller BGP-Peerings
 
@@ -469,10 +469,10 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     * Stop-AzureRmVM: Dokumentation für den Parameter „STayProvisioned“ klarer formuliert
     * New-AzureRmDiskUpdateConfig
       * Eingestellte Parameter: CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId
-    * Set-AzureRmDiskUpdateImageReference: Cmdlet eingestellt
+    * Set-AzureRmDiskUpdateImageReference: Veraltetes Cmdlet
     * New-AzureRmSnapshotUpdateConfig
       * Eingestellte Parameter: CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId
-    * Set-AzureRmSnapshotUpdateImageReference: Cmdlet eingestellt
+    * Set-AzureRmSnapshotUpdateImageReference: Veraltetes Cmdlet
 * DataLakeStore
     * Enable-AzureRmDataLakeStoreKeyVault (Enable-AdlStoreKeyVault)
       * Verwaltete KeyVault-Verschlüsselung für DataLake Store aktiviert
@@ -510,7 +510,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
         * Benutzer können jetzt „Get-AzureRMRoleAssignment“ selbst dann verwenden, wenn mehr als 1000 Zuweisungen zurückgegeben werden müssen
 * Sql
     * Restore-AzureRmSqlDatabase: Dokumentationsbeispiel aktualisiert
-* Speicher
+* Storage
     * Unterstützung für Einstellung „AssignIdentity“ zu Cmdlets für Speicherkonten mit Ressourcenmodus hinzugefügt
         * New-AzureRmStorageAccount
         * Set-AzureRmStorageAccount
@@ -661,7 +661,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     + Benutzer können jetzt geschachtelte Bereitstellungen verwenden, um verschiedene Ressourcengruppen bereitzustellen.
 * ServiceBus
 
-  - Fehlerbehebung: Eigenschaftswerte des ServiceBus-Warteschlangenobjekts wurden auf NULL festgelegt. Das Objekt wird als Eingabeparameter im Cmdlet „AzureRmServiceBusQueue“ verwendet, um die Warteschlange zu aktualisieren.
+  - Fehlerbehebung: Eigenschaftswerte des ServiceBus-Warteschlangenobjekts wurden auf NULL festgelegt. Das Objekt wird als Eingabeparameter im Cmdlet „Set-AzureRmServiceBusQueue“ verwendet, um die Warteschlange zu aktualisieren.
     - Betroffene Eigenschaften: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount und MessageCount
 * ServiceFabric
 

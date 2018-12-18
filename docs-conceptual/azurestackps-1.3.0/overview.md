@@ -8,19 +8,19 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: 3add10651334a9c8a1e4ebfd5c8b9cfbf0cc7981
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828891"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218016"
 ---
 # <a name="azure-stack-module-130"></a>Azure Stack-Modul 1.3.0
 
 ## <a name="requirements"></a>Anforderungen:
 Die niedrigste unterstützte Azure Stack-Version ist 1804.
 
-Hinweis: Falls Sie eine niedrigere Version verwenden, installieren Sie die Version 1.2.11.
+Hinweis: Falls Sie eine niedrigere Version verwenden, sollten Sie Version 1.2.11 installieren.
 
 ## <a name="known-issues"></a>Bekannte Probleme:
 
@@ -92,7 +92,7 @@ Vorschauversion des Network-Administratormoduls, das Folgendes ermöglicht:
 - Anzeigen zugeordneter Netzwerkressourcen (beispielsweise öffentliche IP-Adressen, virtuelle Netzwerke oder Lastenausgleichsmodule)
 - Stellt ein Cmdlet zum Anzeigen einer Administratorübersicht bereit.
 
-### <a name="storage"></a>Speicher
+### <a name="storage"></a>Storage
 Vorschauversion des Storage-Administratormoduls von Azure Stack.  Dieses Release bietet Funktionen für Folgendes:
 - Verwalten von Speicherkontingenten
 - Durchführen der Garbage Collection für gelöschte Speicherressourcen

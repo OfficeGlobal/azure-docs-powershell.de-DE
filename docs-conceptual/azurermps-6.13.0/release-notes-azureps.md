@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
 ms.openlocfilehash: 7f517f0b3768a2075557b131158ee1264ea9ab3f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826730"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218220"
 ---
 # <a name="release-notes"></a>Versionshinweise
 
@@ -166,10 +166,10 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Unterstützung für Regeln für virtuelle Netzwerke hinzugefügt
-    - Get-AzureRmDataLakeStoreVirtualNetworkRule: Ruft Regel für virtuelles Azure Data Lake Store-Netzwerk ab oder listet sie auf.
+    - Get-AzureRmDataLakeStoreVirtualNetworkRule: Dient zum Abrufen oder Auflisten der Azure Data Lake Store-Regel für das virtuelle Netzwerk.
     - Add-AzureRmDataLakeStoreVirtualNetworkRule: Fügt dem angegebenen Data Lake Store-Konto eine Regel für das virtuelle Netzwerk hinzu.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Ändert die angegebene Regel für das virtuelle Netzwerk im angegebenen Data Lake Store-Konto.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Löscht eine Regel für das virtuelle Azure Data Lake Store-Netzwerk.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Ändert die angegebene Regel für das virtuelle Netzwerk in das angegebene Data Lake Store-Konto.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Dient zum Löschen der Azure Data Lake Store-Regel für das virtuelle Netzwerk.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Cmdlet „Test-AzureRmNetworkWatcherConnectivity“ aktualisiert, Protokollwert wird jetzt an Back-End übergeben.
@@ -271,7 +271,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * Neue HostedWorkloads-Eigenschaft für PSNetworkInterface hinzugefügt
-* Neue Cmdlets für Feature: Azure Firewall über ARM
+* Neue Cmdlets für Funktion hinzugefügt: Azure Firewall über ARM
   - Get-AzureRmFirewall hinzugefügt
   - Set-AzureRmFirewall hinzugefügt
   - New-AzureRmFirewall hinzugefügt
@@ -323,9 +323,9 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
   - New-AzureRmLoadBalancerFrontendIpConfig
   - New-AzureRmNetworkInterface
 * Cmdlets für die Subnetzdelegierung hinzufügen.
-  - New-AzureRmDelegation: Erstellt eine neue Delegierung, die einem Subnetz hinzugefügt werden kann
-  - Remove-AzureRmDelegation: Nutzt ein Subnetz und entfernt den bereitgestellten Delegierungsnamen aus diesem Subnetz
-  - Add-AzureRmDelegation: Nutzt ein Subnetz und fügt den angegebenen Dienstnamen diesem Subnetz als Delegierung hinzu
+  - New-AzureRmDelegation: Erstellt eine neue Delegierung, die einem Subnetz hinzugefügt werden kann.
+  - Remove-AzureRmDelegation: Nutzt ein Subnetz und entfernt den bereitgestellten Delegierungsnamen aus diesem Subnetz.
+  - Add-AzureRmDelegation: Nutzt ein Subnetz und fügt diesem Subnetz den angegebenen Dienstnamen als Delegierung hinzu
   - Get-AzureRmDelegation
   - Get-AzureRmAvailableServiceDelegations
 
@@ -364,7 +364,7 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     - Lock-AzureRmStorageContainerImmutabilityPolicy
 
 #### <a name="azurermwebsites"></a>AzureRM.Websites
-* Zwei neue Cmdlets hinzugefügt: Get-AzureRmDeletedWebApp und Restore-AzureRmDeletedWebApp
+* Zwei neue Cmdlets wurden hinzugefügt: Get-AzureRmDeletedWebApp und Restore-AzureRmDeletedWebApp.
 * New-AzureRmAppServicePlan -HyperV-Switch für „App Service-Plan erstellen“ mit Windows-Container hinzugefügt
 * New-AzureRmWebApp/New-AzureRmWebAppSlot/Set-AzureRmWebApp/Set-AzureRmWebAppSlot: Neue Parameter (–ContainerRegistryUser string -ContainerRegistryPassword secureString -EnableContainerContinuousDeployment) für die Erstellung und Verwaltung der Windows-Container-App hinzugefügt
 
