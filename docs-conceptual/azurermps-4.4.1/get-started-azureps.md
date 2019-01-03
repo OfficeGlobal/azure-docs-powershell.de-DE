@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: 838a50627e1d51221724515dfacd58ab9469b005
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: d45ef549eaf33359d2e91e85e135e365c1737deb
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217608"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982959"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Erste Schritte mit Azure PowerShell
 
@@ -42,7 +42,7 @@ Vergewissern Sie sich zunächst, dass die neueste Version von Azure PowerShell i
 
 1. [Installieren Sie Azure PowerShell](install-azurerm-ps.md).
 
-2. Führen Sie `Get-Module AzureRM -ListAvailable` über die Befehlszeile aus, um sich zu vergewissern, dass die Installation erfolgreich war.
+2. Führen Sie `Get-InstalledModule AzureRM -AllVersions` über die Befehlszeile aus, um sich zu vergewissern, dass die Installation erfolgreich war.
 
 ## <a name="sign-in-to-azure"></a>Anmelden bei Azure
 
