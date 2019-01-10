@@ -1,21 +1,20 @@
 ---
 author: sptramer
 ms.author: sttramer
-ms.date: 10/22/2018
+ms.date: 12/20/2018
 ms.topic: include
-ms.openlocfilehash: 02a7969c5a52f47de2024485e642ed03834fe8e9
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: a19417fcab60d92edc1867901fe8c4fffdaefd30
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53218237"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736890"
 ---
 > [!NOTE]
 > 
-> Nach November 2018 werden für das `AzureRM`-Modul keine neuen Features oder Cmdlets mehr hinzugefügt. Support und Fehlerbehebungen werden für `AzureRM` allerdings weiterhin bereitgestellt. Neue Features werden im `Az`-Modul bereitgestellt, das zur gleichen Zeit die Version 1.0 erreicht. `Az` verfügt über einen Abwärtskompatibilitätsmodus für `AzureRM`, und der Umstieg gestaltet sich einfach. Weitere Informationen zu diesem neuen Modul sowie zum Upgraden finden Sie in den folgenden Artikeln:
+> Ab Dezember 2018 werden dem AzureRM-Modul keine neuen Features mehr hinzugefügt. Support und Fehlerbehebungen werden für AzureRM allerdings weiterhin bereitgestellt. Die neuen Features sind im Az-Modul von Azure PowerShell enthalten. Weitere Informationen zum Az-Modul, z.B. zum Upgrade von AzureRM, finden Sie in der [Hauptdokumentation zu Azure PowerShell](/powershell/azure).
 >
-> * [Einführung in das Az-Modul von Azure PowerShell](/powershell/azure/new-azureps-module-az)
-> * [Installieren von Azure PowerShell mit PowerShellGet](/powershell/azure/install-az-ps)
-> * [Migrieren von AzureRM zum Az-Modul von Azure PowerShell](/powershell/azure/migrate-from-azurerm-to-az)
+> Azure Stack-Benutzer sollten vorerst weiterhin AzureRM verwenden. Die aktuelle Version von AzureRM, die Azure Stack unterstützt, ist [AzureRM 2.3.0](/powershell/azure/azurerm?view=azurermps-2.3.0).
 >
-> Bei nicht konvertierbaren Bereitstellungen mit dem klassischen Bereitstellungsmodell können Sie die Dienstverwaltungsversion von Azure PowerShell installieren. Weitere Informationen finden Sie unter [Installing the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps) (Installieren des Azure PowerShell-Dienstverwaltungsmoduls).
+> Installieren Sie bei Verwendung des klassischen Bereitstellungsmodells die Dienstverwaltungsversion von Azure PowerShell.
+> Weitere Informationen finden Sie unter [Installing the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps) (Installieren des Azure PowerShell-Dienstverwaltungsmoduls).
