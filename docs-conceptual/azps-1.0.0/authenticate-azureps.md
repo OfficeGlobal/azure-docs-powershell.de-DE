@@ -7,16 +7,23 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/29/2018
-ms.openlocfilehash: 8b085720aeabe26c1293ece193e050b31f99a693
-ms.sourcegitcommit: ae81b08a45d8729fc8d40156422e3eb2e94de8c7
+ms.openlocfilehash: 80c59a10666c6e3a01e6c33716fce40094fb14be
+ms.sourcegitcommit: b5635e291cdc324e66c936aa16c5772507fc78e8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53786678"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54055675"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Anmelden mit Azure PowerShell
 
-Azure PowerShell unterstützt mehrere Authentifizierungsmethoden. Die einfachste Möglichkeit ist die interaktive Anmeldung über die Befehlszeile.
+Azure PowerShell unterstützt mehrere Authentifizierungsmethoden. Den einfachsten Einstieg ermöglicht der [Azure Cloud Shell](/azure/cloud-shell/overview)-Dienst, der Sie automatisch anmeldet. Bei einer lokalen Installation können Sie sich interaktiv über Ihren Browser anmelden. Beim Schreiben von Skripts für die Automatisierung besteht der empfohlene Ansatz darin, einen [Dienstprinzipal](create-azure-service-principal-azureps.md) mit den erforderlichen Berechtigungen zu verwenden. Indem Sie die Anmeldeberechtigungen für Ihren Anwendungsfall so weit wie möglich einschränken, tragen Sie zur Sicherheit Ihrer Azure-Ressourcen bei.
+
+Nach der Anmeldung werden Befehle für Ihr Standardabonnement ausgeführt. Verwenden Sie das Cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext), um Ihr aktives Abonnement für eine Sitzung zu ändern. Verwenden Sie [Set-AzDefault](/powershell/module/az.accounts/set-azdefault), um das Standardabonnement zu ändern, das beim Anmelden mit Azure PowerShell verwendet wird.
+
+> [!IMPORTANT]
+>
+> Ihre Anmeldeinformationen werden in mehreren PowerShell-Sitzungen gemeinsam verwendet, solange Sie angemeldet bleiben.
+> Weitere Informationen finden Sie im Artikel zu [beständigen Anmeldeinformationen](context-persistence.md).
 
 ## <a name="sign-in-interactively"></a>Interaktives Anmelden
 
@@ -26,12 +33,20 @@ Verwenden Sie für die interaktive Anmeldung das Cmdlet [Connect-AzAccount](/pow
 Connect-AzAccount
 ```
 
-Bei der Ausführung wird von diesem Cmdlet eine Tokenzeichenfolge bereitgestellt. Kopieren Sie diese Zeichenfolge, und fügen Sie sie in einem Browser unter https://microsoft.com/devicelogin ein. Ihre PowerShell-Sitzung wird dann für die Verbindungsherstellung mit Azure authentifiziert. Diese Authentifizierung gilt jeweils für die aktuelle PowerShell-Sitzung.
+Bei der Ausführung wird von diesem Cmdlet eine Tokenzeichenfolge bereitgestellt. Kopieren Sie diese Zeichenfolge, und fügen Sie sie in einem Browser unter https://microsoft.com/devicelogin ein, um sich anzumelden. Ihre PowerShell-Sitzung wird für die Verbindungsherstellung mit Azure authentifiziert.
 
-> [!IMPORTANT]
->
-> Ihre Anmeldeinformationen werden in mehreren PowerShell-Sitzungen gemeinsam verwendet, solange Sie angemeldet bleiben.
-> Weitere Informationen finden Sie im Artikel zu [beständigen Anmeldeinformationen](context-persistence.md).
+## <a name="sign-in-with-credentials"></a>Anmelden mit Anmeldeinformationen
+
+Sie können sich auch mit einem `PSCredential`-Objekt anmelden, das für die Verbindungsherstellung mit Azure autorisiert ist.
+Die einfachste Möglichkeit zum Abrufen eines Objekts mit Anmeldeinformationen ist die Verwendung des Cmdlets [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential). Beim Ausführen werden Sie bei diesem Cmdlet zum Eingeben eines Benutzername/Kennwort-Paars als Anmeldeinformationen aufgefordert.
+
+> [!Note]
+> Dieser Ansatz funktioniert nicht für Microsoft-Konten oder Konten, für die die Authentifizierung in zwei Schritten aktiviert ist.
+
+```azurepowershell-interactive
+$creds = Get-Credential
+Connect-AzAccount -Credential $creds
+```
 
 ## <a name="sign-in-with-a-service-principal"></a>Anmelden mit einem Dienstprinzipal
 
@@ -46,15 +61,17 @@ $pscredential = Get-Credential
 Connect-AzAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-managed-service-identity"></a>Anmelden mit einer verwalteten Azure-Dienstidentität
+## <a name="sign-in-using-a-managed-identity"></a>Anmelden mit einer verwalteten Identität 
 
-Verwaltete Identitäten für Azure-Ressourcen ist eine Funktion von Azure Active Directory. Sie können den Dienstprinzipal einer verwalteten Identität für die Anmeldung verwenden und ein App-exklusives Zugriffstoken für den Zugriff auf andere Ressourcen beziehen. Verwaltete Identitäten stehen nur für virtuelle Computer zur Verfügung, die in einer Azure-Cloud ausgeführt werden.
+Verwaltete Identitäten sind ein Feature von Azure Active Directory. Bei verwalteten Identitäten handelt es sich um Dienstprinzipale, die den in Azure ausgeführten Ressourcen zugewiesen sind. Sie können den Dienstprinzipal einer verwalteten Identität für die Anmeldung verwenden und ein App-exklusives Zugriffstoken für den Zugriff auf andere Ressourcen beziehen. Verwaltete Identitäten stehen nur für Ressourcen zur Verfügung, die in einer Azure-Cloud ausgeführt werden.
 
 Weitere Informationen zu verwalteten Identitäten für Azure-Ressourcen finden Sie unter [Verwenden von verwalteten Identitäten für Azure-Ressourcen auf einem virtuellen Azure-Computer zum Abrufen eines Zugriffstokens](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
-## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Anmelden als Cloud Solution Provider (CSP)
+## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Anmelden mit einem anderen Mandanten als dem Standardmandanten oder als Cloudlösungsanbieter (Cloud Solution Provider, CSP)
 
-Eine Anmeldung als [(Cloud Solution Provider, CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) erfordert die Verwendung von `-TenantId`. In der Regel kann dieser Parameter entweder als Mandanten-ID oder als Domänenname angegeben werden. Für die CSP-Anmeldung muss jedoch eine **Mandanten-ID** bereitgestellt werden.
+Wenn Ihr Konto mehr als einem Mandanten zugeordnet ist, muss bei der Verbindungsherstellung für die Anmeldung der Parameter `-TenantId` verwendet werden. Dieser Parameter funktioniert auch mit jedem anderen Anmeldeverfahren. Beim Anmelden kann dieser Parameterwert entweder die Azure-Objekt-ID des Mandanten (Mandanten-ID) oder der vollqualifizierte Domänenname des Mandanten sein.
+
+Wenn Sie ein [Cloudlösungsanbieter (Cloud Solution Provider, CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) sind, **muss** der Wert `-TenantId` eine Mandanten-ID sein.
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
@@ -62,7 +79,7 @@ Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
 
 ## <a name="sign-in-to-another-cloud"></a>Anmelden bei einer anderen Cloud
 
-Azure-Clouddienste verfügen über Umgebungen, die jeweils mit den regionalen Bestimmungen zum Umgang mit Daten konform sind.
+Azure-Clouddienste verfügen über Umgebungen, die jeweils mit den regionalen Gesetzen zum Umgang mit Daten konform sind.
 Legen Sie die Umgebung für Konten in einer regionalen Cloud fest, wenn Sie sich mit dem Argument `-Environment` anmelden.
 Beispiel für den Fall, dass sich Ihr Konto in der Cloud in China befindet:
 
@@ -75,17 +92,3 @@ Mit dem folgenden Befehl wird eine Liste mit den verfügbaren Umgebungen abgeruf
 ```azurepowershell-interactive
 Get-AzEnvironment | Select-Object Name
 ```
-
-## <a name="learn-more-about-managing-azure-role-based-access"></a>Weitere Informationen zum Verwalten des rollenbasierten Zugriffs in Azure
-
-Weitere Informationen zur Authentifizierung und Abonnementverwaltung in Azure finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](/azure/active-directory/role-based-access-control-configure).
-
-Azure PowerShell-Cmdlets für die Rollenverwaltung:
-
-* [Get-AzRoleAssignment](/powershell/module/az.Resources/Get-azRoleAssignment)
-* [Get-AzRoleDefinition](/powershell/module/az.Resources/Get-azRoleDefinition)
-* [New-AzRoleAssignment](/powershell/module/az.Resources/New-azRoleAssignment)
-* [New-AzRoleDefinition](/powershell/module/az.Resources/New-azRoleDefinition)
-* [Remove-AzRoleAssignment](/powershell/module/az.Resources/Remove-azRoleAssignment)
-* [Remove-AzRoleDefinition](/powershell/module/az.Resources/Remove-azRoleDefinition)
-* [Set-AzRoleDefinition](/powershell/module/az.Resources/Set-azRoleDefinition)
