@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 36a689dcfbd311871fe8638a0e56b037f6d0292a
-ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53983027"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56144736"
 ---
 # <a name="get-started-with-azure-powershell"></a>Erste Schritte mit Azure PowerShell
 

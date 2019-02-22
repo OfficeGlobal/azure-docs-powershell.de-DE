@@ -2,15 +2,12 @@ items:
 - name: Azure PowerShell
   href: overview.md
   items:
+  - name: Einführung in das neue Az-Modul
+    href: new-azureps-module-az.md
   - name: Installieren
-    href: install-azurerm-ps.md
-    items:
-    - name: Installieren unter macOS oder Linux
-      href: install-azurermps-maclinux.md
-    - name: Installieren per MSI
-      href: other-install.md
+    href: install-az-ps.md
   - name: Deinstallieren
-    href: uninstall-azurerm-ps.md
+    href: uninstall-az-ps.md
   - name: Erste Schritte
     href: get-started-azureps.md
   - name: Cloud Shell
@@ -22,6 +19,8 @@ items:
       href: create-azure-service-principal-azureps.md
     - name: Beständige Anmeldeinformationen
       href: context-persistence.md
+  - name: Migrieren aus AzureRM
+    href: migrate-from-azurerm-to-az.md
   - name: Abfragen
     href: queries-azureps.md
   - name: Formatieren der Ausgabe
@@ -45,8 +44,8 @@ items:
   - name: Versionshinweise
     href: release-notes-azureps.md
     items:
-    - name: Grundlegende Änderungen für Azure PowerShell 6.x
-      href: migration-guide.6.0.0.md
+    - name: Grundlegende Änderungen für Az 1.0.0
+      href: migrate-az-1.0.0.md
 - name: Lernprogramme
   items:
   - name: Erstellen von virtuellen Computern
@@ -63,9 +62,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: Cosmos DB
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: 44b6c7eaf75dfd1119ba6a0cc4888834a1fc698a
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156211"
+ms.locfileid: "56144254"
