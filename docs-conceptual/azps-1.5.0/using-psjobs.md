@@ -7,28 +7,28 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 65d3a1d206d7318173a87a4e53c579155a85426c
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 58aa777ca599c2a6181f0ecc5c20f6db7a89b75f
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882275"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192904"
 ---
-# <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a><span data-ttu-id="2d75b-103">Paralleles Ausführen von Cmdlets mithilfe von PowerShell-Aufträgen</span><span class="sxs-lookup"><span data-stu-id="2d75b-103">Running cmdlets in parallel using PowerShell jobs</span></span>
+# <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a><span data-ttu-id="57b02-103">Paralleles Ausführen von Cmdlets mithilfe von PowerShell-Aufträgen</span><span class="sxs-lookup"><span data-stu-id="57b02-103">Running cmdlets in parallel using PowerShell jobs</span></span>
 
-<span data-ttu-id="2d75b-104">PowerShell unterstützt asynchrone Aktionen mit [PowerShell-Aufträgen](/powershell/module/microsoft.powershell.core/about/about_jobs).</span><span class="sxs-lookup"><span data-stu-id="2d75b-104">PowerShell supports asynchronous action with [PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
-<span data-ttu-id="2d75b-105">Azure PowerShell muss häufig Netzwerkaufrufe an Azure senden und anschließend warten.</span><span class="sxs-lookup"><span data-stu-id="2d75b-105">Azure PowerShell is heavily dependent on making, and waiting for, network calls to Azure.</span></span> <span data-ttu-id="2d75b-106">Es kann häufig vorkommen, dass Sie nicht blockierende Aufrufe durchführen müssen.</span><span class="sxs-lookup"><span data-stu-id="2d75b-106">You may often find yourself needing to make non-blocking calls.</span></span> <span data-ttu-id="2d75b-107">Azure PowerShell verfügt über erstklassige [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs)-Unterstützung, um diese Anforderung zu erfüllen.</span><span class="sxs-lookup"><span data-stu-id="2d75b-107">To address this need, Azure PowerShell provides first-class [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) support.</span></span>
+<span data-ttu-id="57b02-104">PowerShell unterstützt asynchrone Aktionen mit [PowerShell-Aufträgen](/powershell/module/microsoft.powershell.core/about/about_jobs).</span><span class="sxs-lookup"><span data-stu-id="57b02-104">PowerShell supports asynchronous action with [PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
+<span data-ttu-id="57b02-105">Azure PowerShell muss häufig Netzwerkaufrufe an Azure senden und anschließend warten.</span><span class="sxs-lookup"><span data-stu-id="57b02-105">Azure PowerShell is heavily dependent on making, and waiting for, network calls to Azure.</span></span> <span data-ttu-id="57b02-106">Es kann häufig vorkommen, dass Sie nicht blockierende Aufrufe durchführen müssen.</span><span class="sxs-lookup"><span data-stu-id="57b02-106">You may often find yourself needing to make non-blocking calls.</span></span> <span data-ttu-id="57b02-107">Azure PowerShell verfügt über erstklassige [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs)-Unterstützung, um diese Anforderung zu erfüllen.</span><span class="sxs-lookup"><span data-stu-id="57b02-107">To address this need, Azure PowerShell provides first-class [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) support.</span></span>
 
-## <a name="context-persistence-and-psjobs"></a><span data-ttu-id="2d75b-108">Kontextpersistenz und PS-Aufträge</span><span class="sxs-lookup"><span data-stu-id="2d75b-108">Context Persistence and PSJobs</span></span>
+## <a name="context-persistence-and-psjobs"></a><span data-ttu-id="57b02-108">Kontextpersistenz und PS-Aufträge</span><span class="sxs-lookup"><span data-stu-id="57b02-108">Context Persistence and PSJobs</span></span>
 
-<span data-ttu-id="2d75b-109">Da PS-Aufträge (PSJobs) als separate Prozesse ausgeführt werden, muss Ihre Azure-Verbindung dafür freigegeben werden.</span><span class="sxs-lookup"><span data-stu-id="2d75b-109">Since PSJobs are run as separate processes, your Azure connection must be shared with them.</span></span> <span data-ttu-id="2d75b-110">Nachdem Sie sich mit `Connect-AzAccount` an Ihrem Azure-Konto angemeldet haben, können Sie den Kontext an einen Auftrag übergeben.</span><span class="sxs-lookup"><span data-stu-id="2d75b-110">After signing in to your Azure account with `Connect-AzAccount`, pass the context to a job.</span></span>
+<span data-ttu-id="57b02-109">Da PS-Aufträge (PSJobs) als separate Prozesse ausgeführt werden, muss Ihre Azure-Verbindung dafür freigegeben werden.</span><span class="sxs-lookup"><span data-stu-id="57b02-109">Since PSJobs are run as separate processes, your Azure connection must be shared with them.</span></span> <span data-ttu-id="57b02-110">Nachdem Sie sich mit `Connect-AzAccount` an Ihrem Azure-Konto angemeldet haben, können Sie den Kontext an einen Auftrag übergeben.</span><span class="sxs-lookup"><span data-stu-id="57b02-110">After signing in to your Azure account with `Connect-AzAccount`, pass the context to a job.</span></span>
 
 ```azurepowershell-interactive
 $creds = Get-Credential
-$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzureRmContext $context -Credential $vmadmin} -Arguments (Get-AzContext),$creds
+$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -Arguments (Get-AzContext),$creds
 ```
 
-<span data-ttu-id="2d75b-111">Wenn Sie jedoch festgelegt haben, dass der Kontext automatisch mit `Enable-AzContextAutosave` gespeichert wird, wird er automatisch für alle von Ihnen erstellten Aufträge freigegeben.</span><span class="sxs-lookup"><span data-stu-id="2d75b-111">However, if you have chosen to have your context automatically saved with `Enable-AzContextAutosave`, the context is automatically shared with any jobs you create.</span></span>
+<span data-ttu-id="57b02-111">Wenn Sie jedoch festgelegt haben, dass der Kontext automatisch mit `Enable-AzContextAutosave` gespeichert wird, wird er automatisch für alle von Ihnen erstellten Aufträge freigegeben.</span><span class="sxs-lookup"><span data-stu-id="57b02-111">However, if you have chosen to have your context automatically saved with `Enable-AzContextAutosave`, the context is automatically shared with any jobs you create.</span></span>
 
 ```azurepowershell-interactive
 Enable-AzContextAutosave
@@ -36,17 +36,17 @@ $creds = Get-Credential
 $job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -Arguments $creds
 ```
 
-## <a name="automatic-jobs-with--asjob"></a><span data-ttu-id="2d75b-112">Automatische Aufträge mit `-AsJob`</span><span class="sxs-lookup"><span data-stu-id="2d75b-112">Automatic Jobs with `-AsJob`</span></span>
+## <a name="automatic-jobs-with--asjob"></a><span data-ttu-id="57b02-112">Automatische Aufträge mit `-AsJob`</span><span class="sxs-lookup"><span data-stu-id="57b02-112">Automatic Jobs with `-AsJob`</span></span>
 
-<span data-ttu-id="2d75b-113">Zur Vereinfachung steht in Azure PowerShell außerdem ein `-AsJob`-Switch für einige Cmdlets mit langer Ausführungsdauer zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="2d75b-113">As a convenience, Azure PowerShell also provides an `-AsJob` switch on some long-running cmdlets.</span></span>
-<span data-ttu-id="2d75b-114">Der `-AsJob`-Switch macht die Erstellung von PS-Aufträgen noch einfacher.</span><span class="sxs-lookup"><span data-stu-id="2d75b-114">The `-AsJob` switch makes creating PSJobs even easier.</span></span>
+<span data-ttu-id="57b02-113">Zur Vereinfachung steht in Azure PowerShell außerdem ein `-AsJob`-Switch für einige Cmdlets mit langer Ausführungsdauer zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="57b02-113">As a convenience, Azure PowerShell also provides an `-AsJob` switch on some long-running cmdlets.</span></span>
+<span data-ttu-id="57b02-114">Der `-AsJob`-Switch macht die Erstellung von PS-Aufträgen noch einfacher.</span><span class="sxs-lookup"><span data-stu-id="57b02-114">The `-AsJob` switch makes creating PSJobs even easier.</span></span>
 
 ```azurepowershell-interactive
 $creds = Get-Credential
 $job = New-AzVM -Name MyVm -Credential $creds -AsJob
 ```
 
-<span data-ttu-id="2d75b-115">Sie können den Auftrag und den Status jederzeit mit `Get-Job` und `Get-AzVM` überprüfen.</span><span class="sxs-lookup"><span data-stu-id="2d75b-115">You can inspect the job and progress at any time with `Get-Job` and `Get-AzVM`.</span></span>
+<span data-ttu-id="57b02-115">Sie können den Auftrag und den Status jederzeit mit `Get-Job` und `Get-AzVM` überprüfen.</span><span class="sxs-lookup"><span data-stu-id="57b02-115">You can inspect the job and progress at any time with `Get-Job` and `Get-AzVM`.</span></span>
 
 ```azurepowershell-interactive
 Get-Job $job
@@ -63,11 +63,11 @@ ResourceGroupName    Name Location          VmSize  OsType     NIC ProvisioningS
 MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Creating
 ```
 
-<span data-ttu-id="2d75b-116">Nach Abschluss des Auftrags rufen Sie das Ergebnis des Auftrags mit `Receive-Job` ab.</span><span class="sxs-lookup"><span data-stu-id="2d75b-116">When the job completes, get the result of the job with `Receive-Job`.</span></span>
+<span data-ttu-id="57b02-116">Nach Abschluss des Auftrags rufen Sie das Ergebnis des Auftrags mit `Receive-Job` ab.</span><span class="sxs-lookup"><span data-stu-id="57b02-116">When the job completes, get the result of the job with `Receive-Job`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="2d75b-117">`Receive-Job` gibt das Ergebnis vom Cmdlet so zurück, als wäre das Flag `-AsJob` nicht vorhanden.</span><span class="sxs-lookup"><span data-stu-id="2d75b-117">`Receive-Job` returns the result from the cmdlet as if the `-AsJob` flag were not present.</span></span>
-> <span data-ttu-id="2d75b-118">Beispiel: Das Ergebnis `Receive-Job` von `Do-Action -AsJob` ist vom gleichen Typ wie das Ergebnis von `Do-Action`.</span><span class="sxs-lookup"><span data-stu-id="2d75b-118">For example, the `Receive-Job` result of `Do-Action -AsJob` is of the same type as the result of `Do-Action`.</span></span>
+> <span data-ttu-id="57b02-117">`Receive-Job` gibt das Ergebnis vom Cmdlet so zurück, als wäre das Flag `-AsJob` nicht vorhanden.</span><span class="sxs-lookup"><span data-stu-id="57b02-117">`Receive-Job` returns the result from the cmdlet as if the `-AsJob` flag were not present.</span></span>
+> <span data-ttu-id="57b02-118">Beispiel: Das Ergebnis `Receive-Job` von `Do-Action -AsJob` ist vom gleichen Typ wie das Ergebnis von `Do-Action`.</span><span class="sxs-lookup"><span data-stu-id="57b02-118">For example, the `Receive-Job` result of `Do-Action -AsJob` is of the same type as the result of `Do-Action`.</span></span>
 
 ```azurepowershell-interactive
 $vm = Receive-Job $job
@@ -90,9 +90,9 @@ StorageProfile           : {ImageReference, OsDisk, DataDisks}
 FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
 ```
 
-## <a name="example-scenarios"></a><span data-ttu-id="2d75b-119">Beispielszenarien</span><span class="sxs-lookup"><span data-stu-id="2d75b-119">Example Scenarios</span></span>
+## <a name="example-scenarios"></a><span data-ttu-id="57b02-119">Beispielszenarien</span><span class="sxs-lookup"><span data-stu-id="57b02-119">Example Scenarios</span></span>
 
-<span data-ttu-id="2d75b-120">Gleichzeitiges Erstellen mehrerer virtueller Computer:</span><span class="sxs-lookup"><span data-stu-id="2d75b-120">Create several VMs at once:</span></span>
+<span data-ttu-id="57b02-120">Gleichzeitiges Erstellen mehrerer virtueller Computer:</span><span class="sxs-lookup"><span data-stu-id="57b02-120">Create several VMs at once:</span></span>
 
 ```azurepowershell-interactive
 $creds = Get-Credential
@@ -107,7 +107,7 @@ Get-Job | Wait-Job
 Get-AzVM
 ```
 
-<span data-ttu-id="2d75b-121">In diesem Beispiel führt das Cmdlet `Wait-Job` dazu, dass das Skript während der Ausführung von Aufträgen angehalten wird.</span><span class="sxs-lookup"><span data-stu-id="2d75b-121">In this example, the `Wait-Job` cmdlet causes the script to pause while jobs run.</span></span> <span data-ttu-id="2d75b-122">Die Ausführung des Skripts wird fortgesetzt, wenn alle Aufträge abgeschlossen sind.</span><span class="sxs-lookup"><span data-stu-id="2d75b-122">The script continues executing once all of the jobs have completed.</span></span> <span data-ttu-id="2d75b-123">Mehrere Aufträge werden gleichzeitig ausgeführt, und dann wartet das Skript auf deren Abschluss, bevor fortgefahren wird.</span><span class="sxs-lookup"><span data-stu-id="2d75b-123">Several jobs run in parallel then the script waits for completion before continuing.</span></span>
+<span data-ttu-id="57b02-121">In diesem Beispiel führt das Cmdlet `Wait-Job` dazu, dass das Skript während der Ausführung von Aufträgen angehalten wird.</span><span class="sxs-lookup"><span data-stu-id="57b02-121">In this example, the `Wait-Job` cmdlet causes the script to pause while jobs run.</span></span> <span data-ttu-id="57b02-122">Die Ausführung des Skripts wird fortgesetzt, wenn alle Aufträge abgeschlossen sind.</span><span class="sxs-lookup"><span data-stu-id="57b02-122">The script continues executing once all of the jobs have completed.</span></span> <span data-ttu-id="57b02-123">Mehrere Aufträge werden gleichzeitig ausgeführt, und dann wartet das Skript auf deren Abschluss, bevor fortgefahren wird.</span><span class="sxs-lookup"><span data-stu-id="57b02-123">Several jobs run in parallel then the script waits for completion before continuing.</span></span>
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
