@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: ae8bb8341209fedc3fadf8137f4faaf1ad3fe686
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 3ce1135cc81d11ce6faa62c790cb4358b5fceda4
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882259"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192921"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Erstellen eines Azure-Dienstprinzipals mit Azure PowerShell
 
@@ -88,7 +88,7 @@ Das von `New-AzADServicePrincipal` zurückgegebene Objekt enthält die Member `I
 
 ## <a name="get-an-existing-service-principal"></a>Abrufen eines vorhandenen Dienstprinzipals
 
-Eine Liste der Dienstprinzipale für den derzeit aktiven Mandanten kann mit [Get-AzADServicePrincipal](/module/az.resources/get-azadserviceprincipal) abgerufen werden. Dieser Befehl gibt standardmäßig __alle__ Dienstprinzipale in einem Mandanten zurück, daher kann die Rückgabe von Ergebnissen für große Organisationen lange dauern. Stattdessen wird die Verwendung eines der optionalen serverseitigen Filterungsargumente empfohlen:
+Eine Liste der Dienstprinzipale für den derzeit aktiven Mandanten kann mit [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) abgerufen werden. Dieser Befehl gibt standardmäßig __alle__ Dienstprinzipale in einem Mandanten zurück, daher kann die Rückgabe von Ergebnissen für große Organisationen lange dauern. Stattdessen wird die Verwendung eines der optionalen serverseitigen Filterungsargumente empfohlen:
 
 * `-DisplayNameBeginsWith` fordert Dienstprinzipale mit einem _Präfix_ an, das dem angegebenen Wert entspricht. Der Anzeigename eines Dienstprinzipals ist der Wert, der während der Erstellung mit `-DisplayName` festgelegt wird.
 * `-DisplayName` fordert die _genaue Übereinstimmung_ eines Dienstprinzipalnamens an.
@@ -121,7 +121,7 @@ Durch das Hinzufügen einer Rolle werden zuvor zugewiesene Berechtigungen _nicht
 Die Änderungen können durch Auflisten der zugewiesenen Rollen überprüft werden:
 
 ```azurepowershell-interactive
-Get-AzRoleAssignment -ServicePrinicpalName ServicePrincipalName
+Get-AzRoleAssignment -ServicePrincipalName ServicePrincipalName
 ```
 
 ## <a name="sign-in-using-a-service-principal"></a>Anmelden mithilfe eines Dienstprinzipals
