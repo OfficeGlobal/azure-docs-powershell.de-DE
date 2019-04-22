@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
 ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364126"
 ---
 # <a name="get-started-with-azure-powershell"></a>Erste Schritte mit Azure PowerShell
@@ -67,7 +67,7 @@ Um Ihnen die Suche nach häufig verwendeten Befehlen zu erleichtern, sind in der
 | [Ressourcengruppe](/azure/azure-resource-manager/resource-group-overview) | [Az.Resources](/powershell/module/az.resources#resources) | `AzResourceGroup` |
 | [Virtuelle Computer](/azure/virtual-machines) | [Az.Compute](/powershell/module/az.compute#virtual_machines) | `AzVM` |
 | [Speicherkonten](/azure/storage/common/storage-introduction) | [Az.Storage](/powershell/module/az.storage/) | `AzStorageAccount` |
-| [Key Vault](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
+| [Schlüsseltresor](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
 | [Webanwendungen](/azure/app-service) | [Az.Websites](/powershell/module/az.websites) | `AzWebApp` |
 | [SQL-Datenbanken](/azure/sql-database) | [Az.Sql](/powershell/module/az.sql) | `AzSqlDatabase` |
 
@@ -78,23 +78,23 @@ Eine vollständige Liste der Module in Azure PowerShell finden Sie unter [Azure 
 Für die ersten Schritte mit Azure PowerShell können Sie ein ausführliches Tutorial zum Einrichten von VMs und Abfragen dieser VMs nutzen.
 
 > [!div class="nextstepaction"]
-> [Create virtual machines with the Azure PowerShell (Erstellen virtueller Computer mit Azure PowerShell)](azureps-vm-tutorial.yml)
+> [Create virtual machines with Azure PowerShell](azureps-vm-tutorial.yml) (Erstellen von VMs mit Azure PowerShell)
 
 Zudem stehen Ihnen Azure PowerShell-Schnellstarts für andere beliebte Azure-Dienste zur Verfügung:
 
-* [Speicherkonto erstellen](/azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell)
-* [Schnellstart: Hochladen, Herunterladen und Auflisten von Blobs mit Azure PowerShell](/azure/storage/blobs/storage-quickstart-blobs-powershell)
-* [Schnellstart: Festlegen eines Geheimnisses und Abrufen des Geheimnisses aus Azure Key Vault mithilfe von PowerShell](/azure/key-vault/quick-create-powershell)
-* [Verwenden von PowerShell zum Erstellen einer einzelnen Azure SQL-Datenbank und Konfigurieren einer Firewallregel für einen SQL-Datenbankserver](/azure/sql-database/scripts/sql-database-create-and-configure-database-powershell)
-* [Schnellstart: Bereitstellen einer Containerinstanz in Azure mithilfe von Azure PowerShell](/azure/container-instances/container-instances-quickstart-powershell)
-* [Schnellstart: Erstellen einer VM-Skalierungsgruppe mit Azure PowerShell](/azure/virtual-machine-scale-sets/quick-create-powershell)
-* [Schnellstart: Erstellen einer Load Balancer Standard-Instanz mit Azure PowerShell](/azure/load-balancer/quickstart-create-standard-load-balancer-powershell)
+* [Erstellen eines Speicherkontos](/azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell)
+* [Übertragen von Objekten nach/aus Azure Blob Storage](/azure/storage/blobs/storage-quickstart-blobs-powershell)
+* [Erstellen und Abrufen von Geheimnissen in Azure Key Vault](/azure/key-vault/quick-create-powershell)
+* [Erstellen einer Azure SQL-Datenbank und Firewall](/azure/sql-database/scripts/sql-database-create-and-configure-database-powershell)
+* [Ausführen eines Containers in Azure Container Instances](/azure/container-instances/container-instances-quickstart-powershell)
+* [Erstellen einer VM-Skalierungsgruppe (VMSS)](/azure/virtual-machine-scale-sets/quick-create-powershell)
+* [Erstellen einer Load Balancer Standard-Instanz](/azure/load-balancer/quickstart-create-standard-load-balancer-powershell)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 * [Anmelden mit Azure PowerShell](authenticate-azureps.md)
 * [Verwalten von Azure-Abonnements mit Azure PowerShell](manage-subscriptions-azureps.md)
-* [Erstellen von Dienstprinzipalen mit Azure PowerShell](create-azure-service-principal-azureps.md)
+* [Create service principals with Azure PowerShell](create-azure-service-principal-azureps.md) (Erstellen von Dienstprinzipalen mit Azure PowerShell)
 * Hilfe aus der Community:
   * [Azure-Forum auf MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [Stack Overflow](http://go.microsoft.com/fwlink/?LinkId=320213)

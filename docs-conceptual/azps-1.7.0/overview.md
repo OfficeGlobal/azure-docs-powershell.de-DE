@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
 ms.openlocfilehash: 45ab083dd133c8c7b8dbe902484c92564bc216b9
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364167"
 ---
 # <a name="overview-of-azure-powershell"></a>Übersicht über Azure PowerShell
@@ -48,7 +48,7 @@ Lesen Sie den Artikel [Get Started with Azure PowerShell](get-started-azureps.md
 
 * [Installieren von PowerShell](/powershell/scripting/install/installing-powershell)
 * [Skripterstellung mit PowerShell](/powershell/scripting/powershell-scripting)
-* [PowerShell Basics: (Part 1) Getting Started with PowerShell (PowerShell-Grundlagen – Teil 1: Erste Schritte mit PowerShell)](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
+* [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (PowerShell-Grundlagen – Teil 1: Erste Schritte mit PowerShell)
 * [Getting Started with PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) (Erste Schritte mit PowerShell) in der Microsoft Virtual Academy
 
 Die folgenden Beispiele veranschaulichen einige gängige Nutzungsszenarien von Azure:
@@ -56,7 +56,7 @@ Die folgenden Beispiele veranschaulichen einige gängige Nutzungsszenarien von A
 * [Virtuelle Linux-Computer](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
 * [Virtuelle Windows-Computer](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
 * [Web-Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-* [SQL-DATENBANKEN](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+* [SQL-Datenbanken](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>Erweitern Ihrer Fähigkeiten mit Microsoft Learn
 

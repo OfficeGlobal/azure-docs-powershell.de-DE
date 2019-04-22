@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364154"
 ---
 # <a name="migration-guide-for-az-100"></a>Migrationsleitfaden für Az 1.0.0
@@ -60,7 +60,7 @@ Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-Um die Umstellung auf diese neuen Cmdlet-Namen zu vereinfachen, werden mit Az die beiden neuen Cmdlets ```Enable-AzureRmAlias``` und ```Disable-AzureRmAlias``` eingeführt.  ```Enable-AzureRmAlias``` erstellt Aliase aus den älteren Cmdlet-Namen in AzureRM für die neueren Az-Cmdlet-Namen.  Das Cmdlet ermöglicht die Erstellung von Aliasen in der aktuellen Sitzung oder übergreifend für alle Sitzungen, indem Ihr Benutzer- oder Computerprofil geändert wird. 
+Um die Umstellung auf diese neuen Cmdlet-Namen zu vereinfachen, werden mit Az die beiden neuen Cmdlets ```Enable-AzureRmAlias``` und ```Disable-AzureRmAlias``` eingeführt.  Mit ```Enable-AzureRmAlias``` werden aus den älteren Cmdlet-Namen in AzureRM Aliase für die neueren Az-Cmdlet-Namen erstellt.  Das Cmdlet ermöglicht die Erstellung von Aliasen in der aktuellen Sitzung oder übergreifend für alle Sitzungen, indem Ihr Benutzer- oder Computerprofil geändert wird. 
 
 Ein Beispiel hierfür ist das folgende Skript in AzureRM:
 ```powershell
@@ -82,7 +82,7 @@ Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 
 Führen Sie ```Get-Help -Online Enable-AzureRmAlias``` über die PowerShell-Eingabeaufforderung aus, um ausführliche Informationen zur Nutzung der Alias-Cmdlets zu erhalten.
 
-```Disable-AzureRmAlias``` entfernt AzureRM-Cmdlet-Aliase, die mit ```Enable-AzureRmAlias``` erstellt wurden.  Führen Sie ```Get-Help -Online Disable-AzureRmAlias``` an der PowerShell-Eingabeaufforderung aus, um alle Details anzuzeigen.
+Mit ```Disable-AzureRmAlias``` werden AzureRM-Cmdlet-Aliase entfernt, die mit ```Enable-AzureRmAlias``` erstellt wurden.  Führen Sie ```Get-Help -Online Disable-AzureRmAlias``` an der PowerShell-Eingabeaufforderung aus, um alle Details anzuzeigen.
 
 ### <a name="module-name-changes"></a>Änderungen von Modulnamen
 - Die Modulnamen wurden von `AzureRM.*` in `Az.*` geändert, mit Ausnahme der folgenden Module:
@@ -187,10 +187,10 @@ Die Tools für diese Dienste werden nicht mehr aktiv unterstützt.  Kunden wird 
 
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (bisher AzureRM.Compute)
 - `IdentityIds` wurden aus der `Identity`-Eigenschaft in den Objekten `PSVirtualMachine` und `PSVirtualMachineScaleSet` entfernt. In Skripts sollte der Wert dieses Felds nicht mehr verwendet werden, um Verarbeitungsentscheidungen zu treffen.
-- Der Typ der Eigenschaft `InstanceView` des `PSVirtualMachineScaleSetVM`-Objekts wurde von `VirtualMachineInstanceView` in Folgendes geändert: `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` und `AutomaticOSUpgrade` wurden aus der `UpgradePolicy`-Eigenschaft entfernt.
-- Der Typ der Eigenschaft `Sku` im `PSSnapshotUpdate`-Objekt wurde von `DiskSku` in Folgendes geändert: `SnapshotSku`
-- `VmScaleSetVMParameterSet` wurde aus dem Cmdlet `Add-AzVMDataDisk` entfernt. Sie können einer ScaleSet-VM nicht mehr einzeln einen Datenträger hinzufügen.
+- Der Typ der `InstanceView`-Eigenschaft des `PSVirtualMachineScaleSetVM`-Objekts wurde von `VirtualMachineInstanceView` in `VirtualMachineScaleSetVMInstanceView` geändert.
+- Die Eigenschaften `AutoOSUpgradePolicy` und `AutomaticOSUpgrade` wurden aus der `UpgradePolicy`-Eigenschaft entfernt.
+- Der Typ der `Sku`-Eigenschaft im `PSSnapshotUpdate`-Objekt wurde von `DiskSku` in `SnapshotSku` geändert.
+- `VmScaleSetVMParameterSet` wurde aus dem Cmdlet `Add-AzVMDataDisk` entfernt. Sie können einer ScaleSet-VM nicht mehr einzeln einen Datenträger für Daten hinzufügen.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (bisher AzureRM.DataFactories und AzureRM.DataFactoryV2)
 - Der Parameter `GatewayName` ist im Cmdlet `New-AzDataFactoryEncryptValue` jetzt obligatorisch.
@@ -198,7 +198,7 @@ Die Tools für diese Dienste werden nicht mehr aktiv unterstützt.  Kunden wird 
 - Der Parameter `LinkedServiceName` wurde aus dem Cmdlet `Get-AzDataFactoryV2ActivityRun` entfernt. In Skripts sollte der Wert dieses Felds nicht mehr verwendet werden, um Verarbeitungsentscheidungen zu treffen.
 
 ### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a>Az.DataLakeAnalytics (bisher AzureRM.DataLakeAnalytics)
-- Veraltete Cmdlets wurden entfernt: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` und `Set-AzDataLakeAnalyticsCatalogSecret`
+- Veraltete Cmdlets wurden entfernt: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` und `Set-AzDataLakeAnalyticsCatalogSecret`.
 
 ### <a name="azdatalakestore-previously-azurermdatalakestore"></a>Az.DataLakeStore (bisher AzureRM.DataLakeStore)
 - Für die folgenden Cmdlets wurde der Typ des Parameters `Encoding` von `FileSystemCmdletProviderEncoding` in `System.Text.Encoding` geändert. Bei dieser Änderung wurden die Codierungswerte `String` und `Oem` entfernt. Alle anderen bisherigen Codierungswerte bleiben erhalten.
@@ -264,7 +264,7 @@ Für Skripts sollten basierend auf den Werten dieser Felder keine Verarbeitungse
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (bisher AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup und AzureRM.RecoveryServices.SiteRecovery)
 - Der Parameter `Encryption` wurde aus dem Cmdlet `New/Set-AzRecoveryServicesAsrPolicy` entfernt.
-- `TargetStorageAccountName` ist für Wiederherstellungen von verwalteten Datenträgern im Cmdlet `Restore-AzRecoveryServicesBackupItem` jetzt obligatorisch.
+- Der Parameter `TargetStorageAccountName` ist für Wiederherstellungen von verwalteten Datenträgern im Cmdlet `Restore-AzRecoveryServicesBackupItem` jetzt obligatorisch.
 - Die Parameter `StorageAccountName` und `StorageAccountResourceGroupName` im Cmdlet `Restore-AzRecoveryServicesBackupItem` wurden entfernt.
 - Der Parameter `Name` im Cmdlet `Get-AzRecoveryServicesBackupContainer` wurde entfernt.
 
@@ -304,13 +304,13 @@ Für Skripts sollten basierend auf den Werten dieser Felder keine Verarbeitungse
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (bisher AzureRM.Sql)
 - Die Parameter `State` und `ResourceId` wurden aus dem Cmdlet `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` entfernt.
-- Die folgenden veralteten Cmdlets wurden entfernt: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing` und `Remove-AzSqlServerAuditing`
+- Veraltete Cmdlets wurden entfernt: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing` und `Remove-AzSqlServerAuditing`.
 - Der veraltete Parameter `Current` wurde aus dem Cmdlet `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` entfernt.
 - Der veraltete Parameter `DatabaseName` wurde aus dem Cmdlet `Get-AzSqlServerServiceObjective` entfernt.
 - Der veraltete Parameter `PrivilegedLogin` wurde aus dem Cmdlet `Set-AzSqlDatabaseDataMaskingPolicy` entfernt.
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (bisher Azure.Storage und AzureRM.Storage)
-- Um die Erstellung eines Oauth-Speicherkontexts ausschließlich mit dem Speichernamen zu unterstützen, wurde der Standardparametersatz in Folgendes geändert: `OAuthParameterSet`
+- Der Standardparametersatz wurde in `OAuthParameterSet` geändert, um die Erstellung eines OAuth-Speicherkontexts nur mit dem Speicherkontonamen zu unterstützen.
   - Beispiel: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
 - Der Parameter `Location` ist im Cmdlet `Get-AzStorageUsage` jetzt obligatorisch.
 - Für die Methoden der Storage-API wird jetzt anstelle von synchronen API-Aufrufen das aufgabenbasierte asynchrone Muster (Task-based Asynchronous Pattern, TAP) verwendet.

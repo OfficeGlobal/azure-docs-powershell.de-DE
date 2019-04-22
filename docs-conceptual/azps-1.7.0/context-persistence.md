@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363730"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Speichern von Benutzeranmeldeinformationen zwischen PowerShell-Sitzungen
@@ -92,8 +92,7 @@ Zum Entfernen eines Kontexts steht das Cmdlet `Remove-AzContext` zur Verfügung.
 PS C:\> Remove-AzContext Contoso2
 ```
 
-Verwirft den Kontext namens „Contoso2“. Sie können diesen Kontext mit dem folgenden Cmdlet neu erstellen:
-`Set-AzContext`
+Verwirft den Kontext namens „Contoso2“. Sie können diesen Kontext neu erstellen, indem Sie `Set-AzContext` verwenden.
 
 ## <a name="removing-credentials"></a>Entfernen von Anmeldeinformationen
 
