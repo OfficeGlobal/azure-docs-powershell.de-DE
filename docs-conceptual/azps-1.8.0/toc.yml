@@ -1,13 +1,12 @@
 - name: Azure PowerShell
   href: overview.md
   items:
+    - name: Einführung in das neue Az-Modul
+      href: new-azureps-module-az.md
     - name: Installieren
-      href: install-azurerm-ps.md
-      items:
-        - name: Installieren unter macOS und Linux
-          href: install-azurermps-maclinux.md
-        - name: Andere Installationsmethoden
-          href: other-install.md
+      href: install-az-ps.md
+    - name: Deinstallieren
+      href: uninstall-az-ps.md
     - name: Erste Schritte
       href: get-started-azureps.md
     - name: Cloud Shell
@@ -19,6 +18,8 @@
           href: create-azure-service-principal-azureps.md
         - name: Beständige Anmeldeinformationen
           href: context-persistence.md
+    - name: Migrieren aus AzureRM
+      href: migrate-from-azurerm-to-az.md
     - name: Abfragen
       href: queries-azureps.md
     - name: Formatieren der Ausgabe
@@ -37,11 +38,17 @@
       items:
         - name: Experimentelle Module
           href: using-experimental-modules.md
+        - name: PowerShell-Aufträge
+          href: using-psjobs.md
     - name: Versionshinweise
       href: release-notes-azureps.md
       items:
-        - name: Grundlegende Änderungen für Azure PowerShell 4.x
-          href: migration-guide.4.0.0.md
+        - name: Grundlegende Änderungen für Az 1.0.0
+          href: migrate-az-1.0.0.md
+- name: Lernprogramme
+  items:
+    - name: Erstellen von virtuellen Computern
+      href: azureps-vm-tutorial.yml
 - name: Beispielskripts
   items:
     - name: Virtuelle Linux-Computer
