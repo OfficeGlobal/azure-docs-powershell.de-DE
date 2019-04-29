@@ -165,11 +165,11 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
 * ResourceName-Argumentvervollständigung zu allen Cmdlets hinzugefügt.
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
-* Unterstützung für Regeln für virtuelle Netzwerke hinzugefügt
-    - Get-AzureRmDataLakeStoreVirtualNetworkRule: Dient zum Abrufen oder Auflisten der Azure Data Lake Store-Regel für das virtuelle Netzwerk.
-    - Add-AzureRmDataLakeStoreVirtualNetworkRule: Fügt dem angegebenen Data Lake Store-Konto eine Regel für das virtuelle Netzwerk hinzu.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Ändert die angegebene Regel für das virtuelle Netzwerk in das angegebene Data Lake Store-Konto.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Dient zum Löschen der Azure Data Lake Store-Regel für das virtuelle Netzwerk.
+* Unterstützung für VNET-Regeln hinzugefügt
+    - Get-AzureRmDataLakeStoreVirtualNetworkRule: Dient zum Abrufen oder Auflisten der VNET-Regel für Azure Data Lake Store.
+    - Add-AzureRmDataLakeStoreVirtualNetworkRule: Fügt dem angegebenen Data Lake Store-Konto eine VNET-Regel hinzu.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Ändert die angegebene VNET-Regel in das angegebene Data Lake Store-Konto.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Dient zum Löschen der VNET-Regel für Azure Data Lake Store.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Cmdlet „Test-AzureRmNetworkWatcherConnectivity“ aktualisiert, Protokollwert wird jetzt an Back-End übergeben.

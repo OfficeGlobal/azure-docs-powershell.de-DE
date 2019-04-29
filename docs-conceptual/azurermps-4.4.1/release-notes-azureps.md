@@ -183,11 +183,11 @@ Hierbei handelt es sich um eine Liste der Änderungen, die in dieser Version an 
     - Cmdlet „Remove-AzureRmManagedApplicationDefinition“ zum Löschen einer Definition für verwaltete Anwendungen
     - Cmdlet „Set-AzureRmManagedApplicationDefinition“ zum Aktualisieren einer vorhandenen Definition für verwaltete Anwendungen
 * Sql
-  * Unterstützung für Regeln für virtuelle Netzwerke hinzugefügt
-    - Cmdlet „Get-AzureRmSqlServerVirtualNetworkRule“ zum Abrufen der Regeln für virtuelle Netzwerke anhand eines spezifischen Regelnamens oder zum Auflisten einer Liste mit Regeln für virtuelle Netzwerke einer Azure SQL Server-Instanz hinzugefügt
+  * Unterstützung für VNET-Regeln hinzugefügt
+    - Cmdlet „Get-AzureRmSqlServerVirtualNetworkRule“ zum Abrufen der VNET-Regeln anhand eines spezifischen Regelnamens oder zum Auflisten einer Liste mit VNET-Regeln einer Azure SQL Server-Instanz hinzugefügt
     - Cmdlet „Set-AzureRmSqlServerVirtualNetworkRule“ zum Ändern des virtuellen Netzwerks hinzugefügt, auf das die Regel verweist
-    - Cmdlet „Remove-AzureRmSqlServerVirtualNetworkRule“ zum Entfernen einer Regel für virtuelle Netzwerke für eine Azure SQL Server-Instanz hinzugefügt
-    - Cmdlet „New-AzureRmSqlServerVirtualNetworkRule“ zum Erstellen einer neuen Regel für virtuelle Netzwerke für eine Azure SQL Server-Instanz hinzugefügt
+    - Cmdlet „Remove-AzureRmSqlServerVirtualNetworkRule“ zum Entfernen einer VNET-Regel für eine Azure SQL Server-Instanz hinzugefügt
+    - Cmdlet „New-AzureRmSqlServerVirtualNetworkRule“ zum Erstellen einer neuen VNET-Regel für eine Azure SQL Server-Instanz hinzugefügt
 * Websites
   * PremiumV2-Tarif für App Service-Pläne hinzugefügt
 * Azure.Storage
