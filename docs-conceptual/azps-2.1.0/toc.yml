@@ -6,6 +6,12 @@
   href: install-az-ps.md
 - name: Deinstallieren
   href: uninstall-az-ps.md
+- name: Migrieren aus AzureRM
+  items:
+    - name: Schritte bei der Migration
+      href: migrate-from-azurerm-to-az.md
+    - name: Änderungen zwischen AzureRM und Az
+      href: migrate-az-1.0.0.md
 - name: Erste Schritte
   href: get-started-azureps.md
 - name: Cloud Shell
@@ -18,8 +24,6 @@
       href: create-azure-service-principal-azureps.md
     - name: Beständige Anmeldeinformationen
       href: context-persistence.md
-- name: Migrieren aus AzureRM
-  href: migrate-from-azurerm-to-az.md
 - name: Abfragen
   href: queries-azureps.md
 - name: Formatieren der Ausgabe
@@ -57,6 +61,8 @@
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
 - name: Versionshinweise
-  href: release-notes-azureps.md
-- name: Grundlegende Änderungen für Az 1.0.0
-  href: migrate-az-1.0.0.md
+  items:
+    - name: Versionshinweise zu Az 2.1.0
+      href: release-notes-azureps.md
+    - name: Wichtige Änderungen in Az 2.0.0
+      href: migrate-az-2.0.0.md
