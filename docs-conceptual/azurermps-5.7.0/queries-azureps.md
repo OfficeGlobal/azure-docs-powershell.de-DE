@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: 30778a650e7e6769cac814f8da581371a7943de4
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: dae1db158f940587d81a3fe47dfad8524f136d56
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144305"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534623"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Abfragen der Ausgabe von Azure PowerShell-Cmdlets
 
-Abfragen können in PowerShell mithilfe integrierter Cmdlets ausgeführt werden. Cmdlet-Namen haben in PowerShell das Format **_Verb-Nomen_**. Die Abfrage-Cmdlets sind am Verb **_Get_** zu erkennen. Bei den Cmdlet-Nomen handelt es sich um die Arten von Azure-Ressourcen, für die eine dem Cmdlet-Verb entsprechende Aktion ausgeführt wird.
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
+Abfragen können in PowerShell mithilfe integrierter Cmdlets ausgeführt werden. Cmdlet-Namen haben in PowerShell das Format **_Verb-Nomen_** . Die Abfrage-Cmdlets sind am Verb **_Get_** zu erkennen. Bei den Cmdlet-Nomen handelt es sich um die Arten von Azure-Ressourcen, für die eine dem Cmdlet-Verb entsprechende Aktion ausgeführt wird.
 
 ## <a name="select-simple-properties"></a>Auswählen einfacher Eigenschaften
 

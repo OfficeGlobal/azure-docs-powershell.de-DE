@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 379bbc788e530598f51e893a2bad71f09b059193
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: b966025532a3bb4d4423ac1a7a6d398988758043
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153166"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534605"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Grundlegende Änderungen für Microsoft Azure PowerShell 4.0.0
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Dieses Dokument informiert über grundlegende Änderungen und fungiert als Migrationsleitfaden für Kunden mit Microsoft Azure PowerShell-Cmdlets. In den einzelnen Abschnitten werden jeweils der Grund für die grundlegende Änderung und der Migrationspfad des geringsten Widerstands beschrieben. Ausführlichen Kontext finden Sie unter der Pull-Anforderung für die jeweilige Änderung.
 

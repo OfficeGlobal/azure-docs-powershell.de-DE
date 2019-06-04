@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 39d9fa6e354c3c3448053c9cdc98fdc7f55b068d
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1fbd24996da2fbc7d4e95c2a63f828aea6cb3145
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153228"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534923"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Grundlegende Änderungen für Microsoft Azure PowerShell 6.0.0
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Dieses Dokument informiert über grundlegende Änderungen und fungiert als Migrationsleitfaden für Kunden mit Microsoft Azure PowerShell-Cmdlets. In den einzelnen Abschnitten werden jeweils der Grund für die grundlegende Änderung und der Migrationspfad des geringsten Widerstands beschrieben. Ausführlichen Kontext finden Sie unter der Pull-Anforderung für die jeweilige Änderung.
 

@@ -16,22 +16,15 @@ metadata:
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 79cc104858e107d69b8946d9c7674ca75ec5650a
-  ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+  ms.openlocfilehash: a037b16eef107ecfab9a8df9de0b085b0c9a9ae2
+  ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 02/12/2019
-  ms.locfileid: "56144638"
+  ms.lasthandoff: 05/11/2019
+  ms.locfileid: "65534788"
 items:
 - durationInMinutes: 1
-  content: >-
-    In diesem Tutorial lernen Sie alle Schritte kennen, die beim Einrichten eines virtuellen Computers mit Azure PowerShell ausgeführt werden müssen. Dieses Tutorial behandelt außerdem Ausgabeabfragen, die erneute Verwendung von Azure-Ressourcen und die Ressourcenbereinigung.
-
-
-    Dieses Tutorial kann über die interaktive Benutzeroberfläche von Azure Cloud Shell abgeschlossen werden. Alternativ können Sie lokal [Azure PowerShell installieren](install-azurerm-ps.md).
-
-
-    Verwenden Sie __STRG+UMSCHALT+V__ (unter macOS: __CMD+UMSCHALT+V__), um Tutorialtext in Azure Cloud Shell einzufügen.
+  content: "\n[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]\n\nIn diesem Tutorial lernen Sie alle Schritte kennen, die beim Einrichten eines virtuellen Computers mit Azure PowerShell ausgeführt werden müssen. Dieses Tutorial behandelt außerdem Ausgabeabfragen, die erneute Verwendung von Azure-Ressourcen und die Ressourcenbereinigung.\n\nDieses Tutorial kann über die interaktive Benutzeroberfläche von Azure Cloud Shell abgeschlossen werden. Alternativ können Sie lokal [Azure PowerShell installieren](install-azurerm-ps.md).\n\nVerwenden Sie __STRG+UMSCHALT+V__ (unter macOS: __CMD+UMSCHALT+V__), um Tutorialtext in Azure Cloud Shell einzufügen."
 - durationInMinutes: 1
   title: Anmelden
   content: >-

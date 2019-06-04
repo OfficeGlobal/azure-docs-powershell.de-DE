@@ -7,18 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 8049b156e1c881ed2d4fe35a0d29c9dcd48e6e97
-ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
+ms.openlocfilehash: d41e7ce2faac6a82b63ed173b5b64b85b56577c0
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65511602"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535087"
 ---
 # <a name="other-installation-methods"></a>Andere Installationsmethoden
 
-Für Azure PowerShell stehen unterschiedliche Installationsmethoden zur Verfügung. Bevorzugt wird die Kombination aus „PowerShellGet“ und PowerShell-Katalog. Azure PowerShell kann mithilfe des Webplattform-Installers (WebPI) oder unter Verwendung der bei GitHub verfügbaren MSI-Datei unter Windows installiert werden.
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+Für Azure PowerShell stehen unterschiedliche Installationsmethoden zur Verfügung. Bevorzugt wird die Kombination aus „PowerShellGet“ und PowerShell-Katalog. Azure PowerShell kann mithilfe des Webplattform-Installers (WebPI) oder unter Verwendung der bei GitHub verfügbaren MSI-Datei unter Windows installiert werden.
 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Installieren unter Windows mit dem Webplattform-Installer
 
@@ -56,7 +56,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-Starten Sie zum Beheben dieses Fehlers den Computer neu, oder importieren Sie das Modul unter Verwendung des vollqualifizierten Pfads. Beispiel: 
+Starten Sie zum Beheben dieses Fehlers den Computer neu, oder importieren Sie das Modul unter Verwendung des vollqualifizierten Pfads. Beispiel:
 
 ```powershell-interactive
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"

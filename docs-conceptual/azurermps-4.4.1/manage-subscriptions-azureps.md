@@ -8,14 +8,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 99a2d9c9c1d233a6468e904e322e8d846d7d78aa
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144954"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534812"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Verwalten mehrerer Azure-Abonnements
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Falls Sie noch keine Erfahrung mit Azure haben, verfügen Sie wahrscheinlich nur über ein einzelnes Abonnement. Wenn Sie Azure hingegen schon eine Weile verwenden, haben Sie möglicherweise bereits mehrere Azure-Abonnements erstellt. Sie können Azure PowerShell so konfigurieren, dass Befehle für ein bestimmtes Abonnement ausgeführt werden.
 
